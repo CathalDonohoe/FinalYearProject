@@ -5,7 +5,9 @@ export default class SignUp extends Component {
         return (
             <form>
                 <h3>Sign Up</h3>
-
+                <br/><br/><br/><br/><br/><br/><br/>
+                <div className="auth-inner">
+                <div className="auth-wrapper">
                 <div className="form-group">
                     <label>First name</label>
                     <input type="text" className="form-control" placeholder="First name" />
@@ -30,6 +32,8 @@ export default class SignUp extends Component {
                 <p className="forgot-password text-right">
                     Already registered <a href="#">sign in?</a>
                 </p>
+                </div>
+                </div>
             </form>
         );
     }

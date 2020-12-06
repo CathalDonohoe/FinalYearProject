@@ -4,8 +4,10 @@ export default class Login extends Component {
     render() {
         return (
             <form>
+                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                <div className="auth-inner">
+                <div className="auth-wrapper">
                 <h3>Sign In</h3>
-
                 <div className="form-group">
                     <label>Email address</label>
                     <input type="email" className="form-control" placeholder="Enter email" />
@@ -27,6 +29,8 @@ export default class Login extends Component {
                 <p className="forgot-password text-right">
                     Forgot <a href="#">password?</a>
                 </p>
+                </div>
+                </div>
             </form>
         );
     }
