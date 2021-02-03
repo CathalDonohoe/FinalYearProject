@@ -6,6 +6,26 @@ import Login from "./components/login.component";
 import SignUp from "./components/signup.component";
 import Homepage from "./components/homepage.component"
 
+import ReactDOM from 'react-dom';
+import AppRouter from './routers/AppRouter';
+import getAppStore from './store/store';
+import { getItems } from './actions/items';
+//import './styles/styles.scss';
+ 
+import { Provider } from 'react-redux';
+ 
+const store = getAppStore();
+ 
+const template = (
+    <Provider store={store}>
+        <AppRouter />
+    </Provider>
+);
+ 
+store.dispatch(getItems()).then(() => {
+    ReactDOM.render(template, document.getElementById('app'));
+});
+
 function App() {
   return (<Router>
     <div className="App">
