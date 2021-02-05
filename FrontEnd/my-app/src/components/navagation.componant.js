@@ -2,6 +2,11 @@ import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 
 export default class Navagation extends Component {
+    componentDidMount = () => {
+        localStorage.getItem('user');
+        console.log('inside navigation componentdidmount ' + localStorage.getItem('user'));
+    }
+
     render() {
         return (
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">

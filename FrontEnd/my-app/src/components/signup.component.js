@@ -13,7 +13,7 @@ export default class SignUp extends Component {
             // confirmPassword: this.confirmPassword
         }
 
-        axios.post('http://localhost:8081/api/auth/signup', data).then(
+        axios.post('api/auth/signup', data).then(
             res => {
                 console.log(res);
             }
