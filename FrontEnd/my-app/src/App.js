@@ -1,53 +1,27 @@
 import React from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+import { Switch } from "react-router-dom";
+import { Route } from "react-router-dom";
 
 import Login from "./components/login.component";
 import SignUp from "./components/signup.component";
-import Homepage from "./components/homepage.component"
+import Homepage from "./components/homepage.component";
+import Navagation from "./components/navagation.componant";
 
 function App() {
-  return (<Router>
-    <div className="App">
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"> 
-        <div className="container">
-        <img src="https://i.ibb.co/qmLk76K/icons8-b-64.png"/>
-          <Link className="navbar-brand" to={"/homepage"}>BorrowNearME</Link>
-          <div className="collapse navbar-collapse" id="middleNavbar">
-            <Link className="nav-link" to={"/homepage"}>Home</Link>
-          </div>
-          <div className="collapse navbar-collapse" id="rightNavbar">
-            <ul className="navbar-nav ml-auto">
-            <form class="form-inline">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-              <li className="nav-item">
-                <Link className="nav-link" to={"/sign-in"}>Login</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to={"/sign-up"}>Sign up</Link>
-              </li>
-            </ul>
-
-          </div>
-        </div>
-      </nav>
-      
-          <Switch>
-            <Route path="/sign-in" component={Login} />
-            <Route path="/sign-up" component={SignUp} />
-          </Switch>
-
-        
-        <div class="container">    
-      <div class="row">
-        <Route exact path='/' component={Homepage} />
-        <Route path="/homepage" component={Homepage}/>
-        </div>
-          </div>
-    </div>
-    </Router>
+  return (
+    <BrowserRouter>
+      <div className="App">
+        <Navagation />
+        <Switch>
+          <Route exact path="/" component={Homepage} />
+          <Route exact path="/homepage" component={Homepage} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/signup" component={SignUp} />
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 

@@ -1,46 +1,42 @@
-import React, { useState } from "react";
-import {CheckUser } from './utiltileslogin';
-import { useHistory } from "react-router-dom";
+import axios from "axios";
+import React, { Component } from "react";
 
-export default function Login() {
+export default class Login extends Component {
 
-    const [username, setUserName] = useState(0);
-    const [password, setPassword] = useState(0);
-    const history = useHistory();
+    handleSubmit = e => {
+        e.preventDefault();
 
-    const handleSubmit = async (evt) => {
-        evt.preventDefault();
-        //send request 
-        let details = {
-            username: username,
-            password: password,
-            roles: ["user"]
-        };
+        const data = {
+            username: this.username,
+            password: this.password
+        }
 
-        await CheckUser(details).then(response => {
-            if(response.accessToken){                 
-                history.push("/homepage")             
-            } 
-            else{
-                alert("Either the username or password are incorrect")
-            }        
-        });
+        axios.post('http://localhost:8081/api/auth/signin', data)
+            .then(res => {
+                console.log(res);
+            })
+            .catch(err => {
+                console.log(err);
+            });
     }
 
+    render() {
         return (
-            <form onSubmit = {handleSubmit}>
+            <form onSubmit={this.handleSubmit}>
                 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
                 <div className="auth-inner">
                     <div className="auth-wrapper">
-                        <h3>Sign In</h3>
+                        <h3>Login</h3>
                         <div className="form-group">
-                            <label>User Name</label>
-                            <input type="username" className="form-control" placeholder="Enter username" onChange={e => setUserName(e.target.value)} />
+                            <label>Username</label>
+                            <input type="text" className="form-control" placeholder="First name"
+                                onChange={e => this.username = e.target.value} />
                         </div>
 
                         <div className="form-group">
                             <label>Password</label>
-                            <input type="password" className="form-control" placeholder="Enter password" onChange={e => setPassword(e.target.value)} />
+                            <input type="password" className="form-control" placeholder="Enter password"
+                                onChange={e => this.password = e.target.value} />
                         </div>
 
                         <div className="form-group">
@@ -50,7 +46,7 @@ export default function Login() {
                             </div>
                         </div>
 
-                        <button type="submit" className="btn btn-dark btn-block">Submit</button>
+                        <button type="submit" className="btn btn-dark btn-block">Login</button>
                         <p className="forgot-password text-right">
                             Forgot <a href="#">password?</a>
                         </p>
@@ -58,4 +54,5 @@ export default function Login() {
                 </div>
             </form>
         );
+    }
 }

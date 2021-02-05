@@ -1,57 +1,67 @@
-import React, { useState } from "react";
-import {SaveUser } from './utilities';
-import { useHistory } from "react-router-dom";
+import axios from "axios";
+import React, { Component } from "react";
 
-export default function SignUp() {
+export default class SignUp extends Component {
 
-    const [username, setUserName] = useState(0);
-    const [email, setEmail] = useState(0);
-    const [password, setPassword] = useState(0);
-    const history = useHistory();
+    handleSubmit = e => {
+        e.preventDefault();
 
-    const handleSubmit = async (evt) => {
-        evt.preventDefault();
-        //send request 
-        let details = {
-            username: username,
-            email: email,
-            password: password,
-            roles: ["user"]
-        };
+        const data = {
+            username: this.username,
+            email: this.email,
+            password: this.password,
+            // confirmPassword: this.confirmPassword
+        }
 
-        await SaveUser(details).then(
-            history.push("")
-        );
+        axios.post('http://localhost:8081/api/auth/signup', data).then(
+            res => {
+                console.log(res);
+            }
+        ).catch(
+            err => {
+                console.log(err);
+            }
+        )
     }
 
-    return (
-        <form onSubmit = {handleSubmit}>
-            <h3>Sign Up</h3>
-            <br /><br /><br /><br /><br /><br /><br />
-            <div className="auth-inner">
-                <div className="auth-wrapper">
-                    <div className="form-group">
-                        <label>User name</label>
-                        <input type="text" className="form-control" placeholder="User Name" onChange={e => setUserName(e.target.value)} />
+    render() {
+        return (
+            <form onSubmit={this.handleSubmit}>
+                <br /><br /><br /><br /><br /><br /><br />
+                <div className="auth-inner">
+                    <div className="auth-wrapper">
+                        <h3>Sign Up</h3>
+                        <div className="form-group">
+                            <label>Username</label>
+                            <input type="text" className="form-control" placeholder="First name"
+                                onChange={e => this.username = e.target.value} />
+                        </div>
+
+                        <div className="form-group">
+                            <label>Email address</label>
+                            <input type="email" className="form-control" placeholder="Enter email"
+                                onChange={e => this.email = e.target.value} />
+                        </div>
+
+                        <div className="form-group">
+                            <label>Password</label>
+                            <input type="password" className="form-control" placeholder="Enter password"
+                                onChange={e => this.password = e.target.value} />
+                        </div>
+
+                        {/* <div className="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" className="form-control" placeholder="Confirm password" 
+                        onChange = {e => this.confirmPassword = e.target.value}/>
+                </div> */}
+
+                        <button type="submit" className="btn btn-dark btn-block">Sign Up</button>
+                        <p className="forgot-password text-right">
+                            Already registered? <a href="#">Sign in</a>
+                        </p>
                     </div>
-
-                    <div className="form-group">
-                        <label>Email address</label>
-                        <input type="email" className="form-control" placeholder="Enter email" onChange={e => setEmail(e.target.value)}/>
-                    </div>
-
-                    <div className="form-group">
-                        <label>Password</label>
-                        <input type="password" className="form-control" placeholder="Enter password" onChange={e => setPassword(e.target.value)}/>
-                    </div>
-
-                    <button type="submit" className="btn btn-dark btn-block">Sign Up</button>
-                    <p className="forgot-password text-right">
-                        Already registered <a href="#">sign in?</a>
-                    </p>
-
                 </div>
-            </div>
-        </form>
-    );
+            </form>
+        );
+    }
 }
