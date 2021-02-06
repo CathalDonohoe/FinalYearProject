@@ -1,7 +1,10 @@
 import axios from "axios";
 import React, { Component } from "react";
+import { Router } from "react-router-dom";
+import { Redirect } from 'react-router'
 
 export default class Login extends Component {
+    state = {}
 
     handleSubmit = e => {
         e.preventDefault();
@@ -16,6 +19,9 @@ export default class Login extends Component {
                 console.log(res);
                 localStorage.setItem('token', res.data.token);
                 localStorage.setItem('user', res.data.username);
+                this.setState({
+                    loggedIn: true
+                });
             })
             .catch(err => {
                 console.log(err);
@@ -23,6 +29,9 @@ export default class Login extends Component {
     }
 
     render() {
+        if (this.state.loggedIn) {
+            return <Redirect to={'/'} />
+        }
         return (
             <form onSubmit={this.handleSubmit}>
                 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />

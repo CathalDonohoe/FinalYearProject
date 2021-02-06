@@ -1,18 +1,13 @@
 import React, { Component } from "react";
-import Carousel from 'react-bootstrap/Carousel';
-import Card from 'react-bootstrap/Card';
 import clothingImg from "../images/clothing.jpg";
 import sportsImg from "../images/sports.jpg";
 import electronicsImg from "../images/electronics.jpg";
-import booksImg from "../images/books.jpg";
-import toolsImg from "../images/tools.png";
+// import booksImg from "../images/books.jpg";
+// import toolsImg from "../images/tools.png";
 import '../App.css';
 import axios from "axios";
 
 export default class Homepage extends Component {
-
-  state = {};
-
   componentDidMount() {
     const config = {
       headers: {
@@ -21,12 +16,11 @@ export default class Homepage extends Component {
     };
 
     axios.get('/api/auth/user', config).then(
-      res =>{
+      res => {
         console.log(res);
         this.setState({
           user: res.data
         });
-        // console.log(axios.get('api/auth/user'));
       },
       err => {
         console.log(err);
@@ -35,15 +29,10 @@ export default class Homepage extends Component {
   }
 
   render() {
-    // if(this.state.user) {
-    //   return (
-    //     <h1>my name jeff {this.state.user}</h1>
-    //   )
-    // }
     return (
       <html>
         <head>
-        <title>HomePage</title>
+          <title>HomePage</title>
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
@@ -75,6 +64,7 @@ export default class Homepage extends Component {
               </div>
             </div>
           </nav>
+
           <div className="container">
             <div className="row">
               <div className="col-sm-4">
@@ -98,6 +88,7 @@ export default class Homepage extends Component {
                   <div className="panel-footer">Borrow Electronics</div>
                 </div>
               </div>
+
               <div className="container">
                 <div className="row">
                   <div className="col-sm-4">
@@ -124,6 +115,7 @@ export default class Homepage extends Component {
                 </div>
               </div>
               <br />
+
               <div className="container">
                 <div className="row">
                   <div className="col-sm-4">
@@ -144,6 +136,7 @@ export default class Homepage extends Component {
                       <div className="panel-body"><img src={electronicsImg} width="220px" className="img-responsive" alt="Image" /></div>
                     </div>
                   </div>
+
                   <div className="container">
                     <div className="row">
                       <div className="col-sm-4">
@@ -170,6 +163,7 @@ export default class Homepage extends Component {
                 </div>
               </div>
               <br />
+
               <div className="container">
                 <div className="row">
                   <div className="col-sm-4">
@@ -199,19 +193,12 @@ export default class Homepage extends Component {
                       <button type="button" className="btn btn-danger">Sign Up</button>
                     </form>
                   </footer>
-
                 </div>
               </div>
               <br />
             </div>
           </div>
           <br />
-
-
-
-
-
-
         </body>
       </html>
     )
