@@ -22,6 +22,7 @@ export default class Login extends Component {
                 this.setState({
                     loggedIn: true
                 });
+                window.location.reload(false);
             })
             .catch(err => {
                 console.log(err);
