@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { Component } from "react";
 
-export default class SignUp extends Component {
+export default class AddItem extends Component {
 
     handleSubmit = e => {
         e.preventDefault();
@@ -9,7 +9,10 @@ export default class SignUp extends Component {
         const data = {
             username: this.username,
             email: this.email,
-            password: this.password,
+            itemname: this.itemname,
+            itemcatagory: this.itemcatagory,
+            itemdescription: this.itemdescription,
+
             // confirmPassword: this.confirmPassword
         }
 
@@ -30,7 +33,7 @@ export default class SignUp extends Component {
                 <br /><br /><br /><br /><br /><br /><br />
                 <div className="auth-inner">
                     <div className="auth-wrapper">
-                        <h3>Sign Up</h3>
+                        <h3>Add Item</h3>
                         <div className="form-group">
                             <label>Username</label>
                             <input type="text" className="form-control" placeholder="User Name"
@@ -44,9 +47,21 @@ export default class SignUp extends Component {
                         </div>
 
                         <div className="form-group">
-                            <label>Password</label>
-                            <input type="password" className="form-control" placeholder="Enter password"
-                                onChange={e => this.password = e.target.value} />
+                            <label>Item Name</label>
+                            <input type="text" className="form-control" placeholder="Enter Item's Name"
+                                onChange={e => this.itemname = e.target.value} />
+                        </div>
+
+                        <div className="form-group">
+                            <label>Item Catagory</label>
+                            <input type="text" className="form-control" placeholder="Item Catagory"
+                                onChange={e => this.itemcatagory = e.target.value} />
+                        </div>
+
+                        <div className="form-group">
+                            <label>Item Description</label>
+                            <input type="text" className="form-control" placeholder="Item Description"
+                                onChange={e => this.itemdescription = e.target.value} />
                         </div>
 
                         {/* <div className="form-group">
@@ -55,10 +70,7 @@ export default class SignUp extends Component {
                         onChange = {e => this.confirmPassword = e.target.value}/>
                 </div> */}
 
-                        <button type="submit" className="btn btn-dark btn-block">Sign Up</button>
-                        <p className="forgot-password text-right">
-                            Already registered? <a href="#">Sign in</a>
-                        </p>
+                        <button type="submit" className="btn btn-dark btn-block">Add Item</button>
                     </div>
                 </div>
             </form>

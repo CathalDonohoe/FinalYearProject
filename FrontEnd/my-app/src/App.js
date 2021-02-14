@@ -8,6 +8,7 @@ import Login from "./components/login.component";
 import SignUp from "./components/signup.component";
 import Homepage from "./components/homepage.component";
 import Navagation from "./components/navagation.componant";
+import AddItem from "./components/addItem.component";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route exact path="/homepage" component={Homepage} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/addItem" component={AddItem}/>
         </Switch>
       </div>
     </BrowserRouter>
