@@ -12,19 +12,19 @@ import getAppStore from './store/store';
 import { getItems } from './actions/items';
 //import './styles/styles.scss';
  
-import { Provider } from 'react-redux';
+// import { Provider } from 'react-redux';
  
-const store = getAppStore();
+// const store = getAppStore();
  
-const template = (
-    <Provider store={store}>
-        <AppRouter />
-    </Provider>
-);
+// const template = (
+//     <Provider store={store}>
+//         <AppRouter />
+//     </Provider>
+// );
  
-store.dispatch(getItems()).then(() => {
-    ReactDOM.render(template, document.getElementById('app'));
-});
+// store.dispatch(getItems()).then(() => {
+//     ReactDOM.render(template, document.getElementById('app'));
+// });
 
 function App() {
   return (<Router>
