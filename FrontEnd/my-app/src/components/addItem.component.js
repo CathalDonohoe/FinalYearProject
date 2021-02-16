@@ -7,16 +7,12 @@ export default class AddItem extends Component {
         e.preventDefault();
 
         const data = {
-            username: this.username,
-            email: this.email,
-            itemname: this.itemname,
-            itemcatagory: this.itemcatagory,
-            itemdescription: this.itemdescription,
-
-            // confirmPassword: this.confirmPassword
+            title: this.title,
+            //itemcatagory: this.itemcatagory,
+            description: this.itemdescription
         }
 
-        axios.post('api/auth/signup', data).then(
+        axios.post('api/test/tutorials', data).then(
             res => {
                 console.log(res);
             }
@@ -35,28 +31,16 @@ export default class AddItem extends Component {
                     <div className="auth-wrapper">
                         <h3>Add Item</h3>
                         <div className="form-group">
-                            <label>Username</label>
-                            <input type="text" className="form-control" placeholder="User Name"
-                                onChange={e => this.username = e.target.value} />
-                        </div>
-
-                        <div className="form-group">
-                            <label>Email address</label>
-                            <input type="email" className="form-control" placeholder="Enter email"
-                                onChange={e => this.email = e.target.value} />
-                        </div>
-
-                        <div className="form-group">
                             <label>Item Name</label>
                             <input type="text" className="form-control" placeholder="Enter Item's Name"
-                                onChange={e => this.itemname = e.target.value} />
+                                onChange={e => this.title = e.target.value} />
                         </div>
 
-                        <div className="form-group">
+                        {/* <div className="form-group">
                             <label>Item Catagory</label>
                             <input type="text" className="form-control" placeholder="Item Catagory"
                                 onChange={e => this.itemcatagory = e.target.value} />
-                        </div>
+                        </div> */}
 
                         <div className="form-group">
                             <label>Item Description</label>
