@@ -64,7 +64,7 @@ export default class Homepage extends Component {
               </div>
             </div>
           </nav>
-
+          
           <div className="container">
             <div className="row">
               <div className="col-sm-4">

@@ -88,3 +88,8 @@ body, html, .App, #root, .auth-wrapper {
 .forgot-password a {
   color: #167bff;
 }
+
+.grid_list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
