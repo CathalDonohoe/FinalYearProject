@@ -5,20 +5,33 @@ export default class availableItems extends Component {
 
     state = {
         items: []
-      }
-    
-      componentDidMount() {
+    }
+
+    componentDidMount() {
         axios.get(`api/test/tutorials`)
-          .then(res => {
-            const items = res.data;
-            this.setState({ items });
-          })
-      }
+            .then(res => {
+                const items = res.data;
+                this.setState({ items });
+            })
+    }
+
+    // <div className="panel-body">{this.state.items.map(item => <li>{item.title}<br /></li>)}</div>
+    //               <div className="panel-footer">{this.state.items.map(item => <li>{item.description}</li>)}</div>
 
     render() {
         return (
             <ul>
-                { this.state.items.map(item => <li>{item.title}</li>)}
+                <br/><br/><br/><br/>
+                {this.state.items.map(function (items, index) {
+                    return (
+                        <div key={index}>
+                            <h1>{items.title}</h1>
+                            <p>{items.description}</p>
+                            <br/><br/><br/><br/>
+                        </div>
+                    )
+                }
+                )}
             </ul>
         );
     }
