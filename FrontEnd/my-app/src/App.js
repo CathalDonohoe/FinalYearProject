@@ -9,6 +9,7 @@ import SignUp from "./components/signup.component";
 import Homepage from "./components/homepage.component";
 import Navagation from "./components/navagation.componant";
 import AddItem from "./components/addItem.component";
+import AvailableItems from './components/availableItems.component';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/addItem" component={AddItem}/>
+          <Route exact path="/availableItems" component={AvailableItems}/>
         </Switch>
       </div>
     </BrowserRouter>
