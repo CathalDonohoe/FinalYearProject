@@ -1,6 +1,11 @@
 import React, { Component } from "react";
-import clothingImg from "../images/clothing.jpg";
+import mensImg from "../images/manInSuit.jpg";
+import womensImg from "../images/womanSuit.jpg";
+import childsImg from "../images/childClothes.jpg";
+import ballImg from "../images/ball.jpg"
 import sportsImg from "../images/sports.jpg";
+import golfClubImg from "../images/golfClubs.jpg";
+import otherEquipmentImg from "../images/sportMisc.jpg"
 import electronicsImg from "../images/electronics.jpg";
 // import booksImg from "../images/books.jpg";
 // import toolsImg from "../images/tools.png";
@@ -46,47 +51,47 @@ export default class Homepage extends Component {
             <div className="row">
               <div className="col-sm-4">
                 <div className="panel panel-primary">
-                  <div className="panel-heading">Borrow Near Me</div>
-                  <div className="panel-body"><img src={clothingImg} width="220px" className="img-responsive" alt="Image" /></div>
-                  <div className="panel-footer">Borrow Clothes</div>
+                  <div className="panel-heading">Borrow Clothing</div>
+                  <div className="panel-body"><img src={mensImg} className="img-responsive" alt="Image" /></div>
+                  <div className="panel-footer">Men's</div>
                 </div>
               </div>
               <div className="col-sm-4">
-                <div className="panel panel-danger">
-                  <div className="panel-heading">Borrow Near Me</div>
-                  <div className="panel-body"><img src={sportsImg} width="220px" className="img-responsive" alt="Image" /></div>
-                  <div className="panel-footer">Borrow Sports Items</div>
+                <div className="panel panel-primary">
+                  <div className="panel-heading">Borrow Clothing</div>
+                  <div className="panel-body"><img src={womensImg} className="img-responsive" alt="Image" /></div>
+                  <div className="panel-footer">Women's</div>
                 </div>
               </div>
               <div className="col-sm-4">
-                <div className="panel panel-success">
-                  <div className="panel-heading">Borrow Near Me</div>
-                  <div className="panel-body"><img src={electronicsImg} width="220px" className="img-responsive" alt="Image" /></div>
-                  <div className="panel-footer">Borrow Electronics</div>
+                <div className="panel panel-primary">
+                  <div className="panel-heading">Borrow Clothing</div>
+                  <div className="panel-body"><img src={childsImg} className="img-responsive" alt="Image" /></div>
+                  <div className="panel-footer">Children's</div>
                 </div>
               </div>
 
               <div className="container">
                 <div className="row">
                   <div className="col-sm-4">
-                    <div className="panel panel-primary">
-                      <div className="panel-heading">Borrow Near Me</div>
-                      <div className="panel-body"><img src={clothingImg} width="220px" className="img-responsive" alt="Image" /></div>
-                      <div className="panel-footer">Borrow Clothes</div>
+                    <div className="panel panel-danger">
+                      <div className="panel-heading">Borrow Sports Items</div>
+                      <div className="panel-body"><img src={ballImg} width="350px" height="150" className="img-responsive" alt="Image" /></div>
+                      <div className="panel-footer">Balls</div>
                     </div>
                   </div>
                   <div className="col-sm-4">
                     <div className="panel panel-danger">
-                      <div className="panel-heading">Borrow Near Me</div>
-                      <div className="panel-body"><img src={sportsImg} width="220px" className="img-responsive" alt="Image" /></div>
-                      <div className="panel-footer">Borrow Sports Items</div>
+                      <div className="panel-heading">Borrow Sports Items</div>
+                      <div className="panel-body"><img src={golfClubImg} width="350px" height="150" className="img-responsive" alt="Image" /></div>
+                      <div className="panel-footer">Sticks/Bats/Clubs</div>
                     </div>
                   </div>
                   <div className="col-sm-4">
-                    <div className="panel panel-success">
-                      <div className="panel-heading">Borrow Near Me</div>
-                      <div className="panel-body"><img src={electronicsImg} width="220px" className="img-responsive" alt="Image" /></div>
-                      <div className="panel-footer">Borrow Electronics</div>
+                    <div className="panel panel-danger">
+                      <div className="panel-heading">Borrow Sports Items</div>
+                      <div className="panel-body"><img src={otherEquipmentImg} width="350" height="150" className="img-responsive" alt="Image" /></div>
+                      <div className="panel-footer">Other equipment</div>
                     </div>
                   </div>
                 </div>
@@ -96,21 +101,24 @@ export default class Homepage extends Component {
               <div className="container">
                 <div className="row">
                   <div className="col-sm-4">
-                    <div className="panel panel-primary">
-                      <div className="panel-heading">Borrow Clothes</div>
-                      <div className="panel-body"><img src={clothingImg} width="220px" className="img-responsive" alt="Image" /></div>
-                    </div>
-                  </div>
-                  <div className="col-sm-4">
-                    <div className="panel panel-danger">
-                      <div className="panel-heading">Borrow Sports Items</div>
-                      <div className="panel-body"><img src={sportsImg} width="220px" className="img-responsive" alt="Image" /></div>
+                    <div className="panel panel-success">
+                      <div className="panel-heading">Borrow Electronics</div>
+                      <div className="panel-body"><img src={electronicsImg} width="350" height="150" className="img-responsive" alt="Image" /></div>
+                      <div className="panel-footer">Devices</div>
                     </div>
                   </div>
                   <div className="col-sm-4">
                     <div className="panel panel-success">
-                      <div className="panel-heading">Borrow Near Me</div>
-                      <div className="panel-body"><img src={electronicsImg} width="220px" className="img-responsive" alt="Image" /></div>
+                      <div className="panel-heading">Borrow Electronics</div>
+                      <div className="panel-body"><img src={electronicsImg} width="350" height="150" className="img-responsive" alt="Image" /></div>
+                      <div className="panel-footer">Wires/Chargers</div>
+                    </div>
+                  </div>
+                  <div className="col-sm-4">
+                    <div className="panel panel-success">
+                      <div className="panel-heading">Borrow Electronics</div>
+                      <div className="panel-body"><img width="350" height="150" src={electronicsImg} className="img-responsive" alt="Image" /></div>
+                      <div className="panel-footer">Miscellaneous</div>
                     </div>
                   </div>
 
@@ -118,20 +126,23 @@ export default class Homepage extends Component {
                     <div className="row">
                       <div className="col-sm-4">
                         <div className="panel panel-primary">
-                          <div className="panel-heading">Borrow Near Me</div>
-                          <div className="panel-body"><img src={clothingImg} width="220px" className="img-responsive" alt="Image" /></div>
+                          <div className="panel-heading">Borrow Tools</div>
+                          <div className="panel-body"><img width="350" height="150" src={mensImg} className="img-responsive" alt="Image" /></div>
+                          <div className="panel-footer">Ladders</div>
                         </div>
                       </div>
                       <div className="col-sm-4">
-                        <div className="panel panel-danger">
-                          <div className="panel-heading">Borrow Near Me</div>
-                          <div className="panel-body"><img src={sportsImg} width="220px" className="img-responsive" alt="Image" /></div>
+                        <div className="panel panel-primary">
+                        <div className="panel-heading">Borrow Tools</div>
+                          <div className="panel-body"><img width="350" height="150" src={sportsImg} className="img-responsive" alt="Image" /></div>
+                          <div className="panel-footer">Hand tools</div>
                         </div>
                       </div>
                       <div className="col-sm-4">
-                        <div className="panel panel-success">
-                          <div className="panel-heading">Borrow Near Me</div>
-                          <div className="panel-body"><img src={electronicsImg} width="220px" className="img-responsive" alt="Image" /></div>
+                        <div className="panel panel-primary">
+                        <div className="panel-heading">Borrow Tools</div>
+                          <div className="panel-body"><img width="350" height="150" src={electronicsImg} className="img-responsive" alt="Image" /></div>
+                          <div className="panel-footer">Power Tools</div>
                         </div>
                       </div>
                     </div>
@@ -142,26 +153,27 @@ export default class Homepage extends Component {
               <br />
 
               <div className="container">
-                <div className="row">
-                  <div className="col-sm-4">
-                    <div className="panel panel-primary">
-                      <div className="panel-heading">Borrow Near Me</div>
-                      <div className="panel-body"><img src={clothingImg} width="220px" className="img-responsive" alt="Image" /></div>
-
-                    </div>
-                  </div>
-                  <div className="col-sm-4">
-                    <div className="panel panel-danger">
-                      <div className="panel-heading">Borrow Near Me</div>
-                      <div className="panel-body"><img src={sportsImg} width="220px" className="img-responsive" alt="Image" /></div>
-
-                    </div>
-                  </div>
-                  <div className="col-sm-4">
-                    <div className="panel panel-success">
-                      <div className="panel-heading">Borrow Near Me</div>
-                      <div className="panel-body"><img src={electronicsImg} width="220px" className="img-responsive" alt="Image" /></div>
-                    </div>
+                    <div className="row">
+                      <div className="col-sm-4">
+                        <div className="panel panel-primary">
+                          <div className="panel-heading">Borrow Tools</div>
+                          <div className="panel-body"><img width="350" height="150" src={mensImg} className="img-responsive" alt="Image" /></div>
+                          <div className="panel-footer">Gardening Tools</div>
+                        </div>
+                      </div>
+                      <div className="col-sm-4">
+                        <div className="panel panel-primary">
+                        <div className="panel-heading">Borrow Tools</div>
+                          <div className="panel-body"><img src={sportsImg} width="350px" height="150" className="img-responsive" alt="Image" /></div>
+                          <div className="panel-footer">Painting Tools</div>
+                        </div>
+                      </div>
+                      <div className="col-sm-4">
+                        <div className="panel panel-primary">
+                        <div className="panel-heading">Borrow Tools</div>
+                          <div className="panel-body"><img src={electronicsImg} width="350px" height="150" className="img-responsive" alt="Image" /></div>
+                          <div className="panel-footer">Fastener tools</div>
+                        </div>
                   </div>
                   <footer className="container-fluid text-center">
                     <p>Online Store Copyright</p>
