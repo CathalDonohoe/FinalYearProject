@@ -6,6 +6,7 @@ import electronicsImg from "../images/electronics.jpg";
 // import toolsImg from "../images/tools.png";
 import '../App.css';
 import axios from "axios";
+import HomeNavBar from "./homeNavBar.component"
 
 export default class Homepage extends Component {
   componentDidMount() {
@@ -40,31 +41,7 @@ export default class Homepage extends Component {
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         </head>
         <body>
-          <nav className="navbar navbar-inverse">
-            <div className="container-fluid">
-              <div className="navbar-header">
-                <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                  <span className="icon-bar"></span>
-                  <span className="icon-bar"></span>
-                  <span className="icon-bar"></span>
-                </button>
-              </div>
-              <div className="collapse navbar-collapse" id="myNavbar">
-                <ul className="nav navbar-nav">
-                  <a className="navbar-brand" href="/homepage">BorrowNearMe</a>
-                  <li className="active"><a href="/homepage"><span className="glyphicon glyphicon-home"></span>Home</a></li>
-                  <li><a href="#"><span className="glyphicon glyphicon-refresh"></span>Available Items</a></li>
-                  <li><a href="#"><span className="glyphicon glyphicon-gift"></span>Wanted Items</a></li>
-                  <li><a href="#"><span className="glyphicon glyphicon-save"></span>Saved Items</a></li>
-                  <li><a href="#"><span className="glyphicon glyphicon-save"></span>Contact</a></li>
-                  <li><a href="#"><span className="glyphicon glyphicon-user"></span> Your Account</a></li>
-                  <li className="active"><a href="/addItem"><span className="glyphicon glyphicon-eye-open"></span> Add new wanted item</a></li>
-                  <li><a href="#"><span className="glyphicon glyphicon-send"></span> Add new  item for trade</a></li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-          
+         <HomeNavBar/>
           <div className="container">
             <div className="row">
               <div className="col-sm-4">

@@ -28,12 +28,31 @@ export default class Navagation extends Component {
                     <div className="collapse navbar-collapse" id="middleNavbar">
                         <Link className="nav-link" to={"/homepage"}>Home</Link>
                     </div>
+                    <div className="collapse navbar-collapse" id="middleNavbar">
+                        <Link className="nav-link" to={"/availableItems"}>Available Items</Link>
+                    </div>
+                    <div className="collapse navbar-collapse" id="middleNavbar">
+                        <Link className="nav-link" to={"/homepage"}>Add Available Item</Link>
+                    </div>
+                    <div className="collapse navbar-collapse" id="middleNavbar">
+                        <Link className="nav-link" to={"/homepage"}>Wanted Items</Link>
+                    </div>
+                    <div className="collapse navbar-collapse" id="middleNavbar">
+                        <Link className="nav-link" to={"/homepage"}>Add Wanted Item</Link>
+                    </div>
+                    <div className="collapse navbar-collapse" id="middleNavbar">
+                        <Link className="nav-link" to={"/homepage"}>Saved Items</Link>
+                    </div>
+                    <div className="collapse navbar-collapse" id="middleNavbar">
+                        <Link className="nav-link" to={"/homepage"}>Contact</Link>
+                    </div>
+                    
                     <div className="collapse navbar-collapse" id="rightNavbar">
                         <ul className="navbar-nav ml-auto">
-                            <form className="form-inline">
+                            {/* <form className="form-inline">
                                 <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
                                 <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                            </form>
+                            </form> */}
                             {isLoggedIn && (
                                 <li className="nav-item">
                                     <Link className="nav-link" to={"/homepage"}>{myUser}</Link>
