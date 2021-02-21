@@ -46,7 +46,7 @@ export default class Navagation extends Component {
                     <div className="collapse navbar-collapse" id="middleNavbar">
                         <Link className="nav-link" to={"/homepage"}>Contact</Link>
                     </div>
-                    
+
                     <div className="collapse navbar-collapse" id="rightNavbar">
                         <ul className="navbar-nav ml-auto">
                             {/* <form className="form-inline">
