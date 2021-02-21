@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { Component } from "react";
+import NotLoggedIn from "./notLoggedIn.component"
 
 export default class AddItem extends Component {
 
@@ -23,9 +24,23 @@ export default class AddItem extends Component {
         )
     }
 
+    componentDidMount = () => {
+        localStorage.getItem('user');
+    }
+
     render() {
+        let isLoggedIn = false;
+        let myUser = localStorage.getItem('user');
+        let myToken = localStorage.getItem('token');
+
+        if (myToken && myUser != null) {
+            isLoggedIn = true;
+        }
+        
         return (
-            <form onSubmit={this.handleSubmit}>
+            <div>
+            {isLoggedIn && (
+                <form onSubmit={this.handleSubmit}>
                 <br /><br /><br /><br /><br /><br /><br />
                 <div className="auth-inner">
                     <div className="auth-wrapper">
@@ -58,6 +73,13 @@ export default class AddItem extends Component {
                     </div>
                 </div>
             </form>
+            )}
+
+            {!isLoggedIn && (
+                <NotLoggedIn/>
+            )}
+            
+            </div>
         );
     }
 }

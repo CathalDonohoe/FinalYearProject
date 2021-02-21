@@ -7,6 +7,14 @@ import sportsImg from "../images/sports.jpg";
 import golfClubImg from "../images/golfClubs.jpg";
 import otherEquipmentImg from "../images/sportMisc.jpg"
 import electronicsImg from "../images/electronics.jpg";
+import electricDevices from "../images/electricDevices.jpg";
+import electricCharger from "../images/electricCharger.jpg";
+import ladderImg from "../images/ladder.jpg";
+import handTools from "../images/handTools.jpg"
+import powerTools from "../images/powerTools.jpg"
+import gardeningTools from "../images/gardeningTools.jpg"
+import paintingTools from "../images/paintingTools.jpg"
+import fastenerTools from "../images/fastenerTools.jpg"
 // import booksImg from "../images/books.jpg";
 // import toolsImg from "../images/tools.png";
 import '../App.css';
@@ -42,8 +50,6 @@ export default class Homepage extends Component {
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         </head>
         <body>
          <HomeNavBar/>
@@ -103,14 +109,14 @@ export default class Homepage extends Component {
                   <div className="col-sm-4">
                     <div className="panel panel-success">
                       <div className="panel-heading">Borrow Electronics</div>
-                      <div className="panel-body"><img src={electronicsImg} width="350" height="150" className="img-responsive" alt="Image" /></div>
+                      <div className="panel-body"><img src={electricDevices} width="350" height="150" className="img-responsive" alt="Image" /></div>
                       <div className="panel-footer">Devices</div>
                     </div>
                   </div>
                   <div className="col-sm-4">
                     <div className="panel panel-success">
                       <div className="panel-heading">Borrow Electronics</div>
-                      <div className="panel-body"><img src={electronicsImg} width="350" height="150" className="img-responsive" alt="Image" /></div>
+                      <div className="panel-body"><img src={electricCharger} width="350" height="150" className="img-responsive" alt="Image" /></div>
                       <div className="panel-footer">Wires/Chargers</div>
                     </div>
                   </div>
@@ -127,21 +133,21 @@ export default class Homepage extends Component {
                       <div className="col-sm-4">
                         <div className="panel panel-primary">
                           <div className="panel-heading">Borrow Tools</div>
-                          <div className="panel-body"><img width="350" height="150" src={mensImg} className="img-responsive" alt="Image" /></div>
+                          <div className="panel-body"><img width="350" height="150" src={ladderImg} className="img-responsive" alt="Image" /></div>
                           <div className="panel-footer">Ladders</div>
                         </div>
                       </div>
                       <div className="col-sm-4">
                         <div className="panel panel-primary">
                         <div className="panel-heading">Borrow Tools</div>
-                          <div className="panel-body"><img width="350" height="150" src={sportsImg} className="img-responsive" alt="Image" /></div>
+                          <div className="panel-body"><img width="350" height="150" src={handTools} className="img-responsive" alt="Image" /></div>
                           <div className="panel-footer">Hand tools</div>
                         </div>
                       </div>
                       <div className="col-sm-4">
                         <div className="panel panel-primary">
                         <div className="panel-heading">Borrow Tools</div>
-                          <div className="panel-body"><img width="350" height="150" src={electronicsImg} className="img-responsive" alt="Image" /></div>
+                          <div className="panel-body"><img width="350" height="150" src={powerTools} className="img-responsive" alt="Image" /></div>
                           <div className="panel-footer">Power Tools</div>
                         </div>
                       </div>
@@ -157,21 +163,21 @@ export default class Homepage extends Component {
                       <div className="col-sm-4">
                         <div className="panel panel-primary">
                           <div className="panel-heading">Borrow Tools</div>
-                          <div className="panel-body"><img width="350" height="150" src={mensImg} className="img-responsive" alt="Image" /></div>
+                          <div className="panel-body"><img width="350" height="150" src={gardeningTools} className="img-responsive" alt="Image" /></div>
                           <div className="panel-footer">Gardening Tools</div>
                         </div>
                       </div>
                       <div className="col-sm-4">
                         <div className="panel panel-primary">
                         <div className="panel-heading">Borrow Tools</div>
-                          <div className="panel-body"><img src={sportsImg} width="350px" height="150" className="img-responsive" alt="Image" /></div>
+                          <div className="panel-body"><img src={paintingTools} width="350px" height="150" className="img-responsive" alt="Image" /></div>
                           <div className="panel-footer">Painting Tools</div>
                         </div>
                       </div>
                       <div className="col-sm-4">
                         <div className="panel panel-primary">
                         <div className="panel-heading">Borrow Tools</div>
-                          <div className="panel-body"><img src={electronicsImg} width="350px" height="150" className="img-responsive" alt="Image" /></div>
+                          <div className="panel-body"><img src={fastenerTools} width="350px" height="150" className="img-responsive" alt="Image" /></div>
                           <div className="panel-footer">Fastener tools</div>
                         </div>
                   </div>

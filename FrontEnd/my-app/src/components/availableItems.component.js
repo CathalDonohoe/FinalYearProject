@@ -25,7 +25,6 @@ export default class availableItems extends Component {
     render() {
         return (
             <div>
-                <br /><br /><br /><br />
                 <ul className="grid_list">
                     {this.state.items.map(function (items, index) {
                         return (

@@ -21,9 +21,9 @@ export default class HomeNavBar extends Component {
                             <li><a href="#"><span className="glyphicon glyphicon-gift"></span>Wanted Items</a></li>
                             <li><a href="#"><span className="glyphicon glyphicon-save"></span>Saved Items</a></li>
                             <li><a href="#"><span className="glyphicon glyphicon-save"></span>Contact</a></li>
-                            <li><a href="#"><span className="glyphicon glyphicon-user"></span> Your Account</a></li>
-                            <li><a href="/addItem"><span className="glyphicon glyphicon-eye-open"></span> Add new wanted item</a></li>
-                            <li><a href="#"><span className="glyphicon glyphicon-send"></span> Add new  item for trade</a></li>
+                            <li><a href="#"><span className="glyphicon glyphicon-user"></span> Your account</a></li>
+                            <li><a href="#"><span className="glyphicon glyphicon-eye-open"></span> Add new wanted item</a></li>
+                            <li><a href="/addItem"><span className="glyphicon glyphicon-send"></span> Add new available item</a></li>
                         </ul>
                     </div>
                 </div>
