@@ -14,15 +14,21 @@ public class Tutorial {
     private String title;
     private String description;
     private boolean published;
+    private String category;
+
+
+
+
 
     public Tutorial() {
 
     }
 
-    public Tutorial(String title, String description, boolean published) {
+    public Tutorial(String title, String description, boolean published, String category) {
         this.title = title;
         this.description = description;
         this.published = published;
+        this.category = category;
     }
 
     public String getId() {
@@ -53,8 +59,16 @@ public class Tutorial {
         this.published = isPublished;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
     @Override
     public String toString() {
-        return "Tutorial [id=" + id + ", title=" + title + ", desc=" + description + ", published=" + published + "]";
+        return "Tutorial [id=" + id + ", title=" + title + ", desc=" + description + ", published=" + published + ", category=" + category+ "]";
     }
 }
