@@ -1,8 +1,19 @@
 import axios from "axios";
 import React, { Component } from "react";
 import NotLoggedIn from "./notLoggedIn.component"
+import { Redirect } from 'react-router'
+import { newExpression } from '@babel/types';
 
 export default class AddItem extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            Base64Image: ''
+        };
+
+        this.handleImageChange = this.handleImageChange.bind(this);
+    }
 
     handleSubmit = e => {
         e.preventDefault();
@@ -18,12 +29,34 @@ export default class AddItem extends Component {
         axios.post('api/test/tutorials', data).then(
             res => {
                 console.log(res);
+                this.setState({
+                    itemAdded: true
+                });
             }
         ).catch(
             err => {
                 console.log(err);
             }
         )
+    }
+
+    getBase64(file, cb) {
+        let reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function () {
+            cb(reader.result)
+        };
+        reader.onerror = function (error) {
+            console.log('Error: ', error);
+        };
+    }
+
+    handleImageChange(e) {
+        alert(e.target.files[0]);
+        this.getBase64(e.target.files[0], (base64) => {
+            this.setState({ Base64Image: base64 });
+            this.image = base64;
+        })
     }
 
     componentDidMount = () => {
@@ -37,6 +70,10 @@ export default class AddItem extends Component {
 
         if (myToken && myUser != null) {
             isLoggedIn = true;
+        }
+
+        if (this.state.itemAdded) {
+            return <Redirect to={'/'} />
         }
 
         return (
@@ -66,10 +103,28 @@ export default class AddItem extends Component {
                                         onChange={e => this.itemdescription = e.target.value} />
                                 </div>
 
-                                <div className="form-group">
+                                {/* <div className="form-group">
                                     <label>Item image</label>
                                     <input type="text" className="form-control" placeholder="Item image"
                                         onChange={e => this.image = e.target.value} />
+                                </div> */}
+
+                                {/* <div className='form-group'>
+                                    <label>Item image Url</label>
+                                    <textarea
+                                        row='3'
+                                        className='form-control'
+                                        value={this.state.Poster}
+                                        onChange={this.handleMoviePosterChange}
+                                    ></textarea>
+                                </div> */}
+                                <div>
+                                    <label>Item image Upload</label>
+                                    <input
+                                        type='file'
+                                        className='form-control'
+                                        onChange={this.handleImageChange}
+                                    ></input>
                                 </div>
 
                                 <div className="form-group">
