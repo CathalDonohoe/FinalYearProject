@@ -23,7 +23,8 @@ export default class AddItem extends Component {
             category: this.itemcategory,
             description: this.itemdescription,
             imageurl: this.image,
-            location: this.location
+            location: this.location,
+            username: this.username
         }
 
         axios.post('api/test/tutorials', data).then(
@@ -67,6 +68,8 @@ export default class AddItem extends Component {
         let isLoggedIn = false;
         let myUser = localStorage.getItem('user');
         let myToken = localStorage.getItem('token');
+
+        this.username = myUser;
 
         if (myToken && myUser != null) {
             isLoggedIn = true;
