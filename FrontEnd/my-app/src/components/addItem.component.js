@@ -20,7 +20,7 @@ export default class AddItem extends Component {
 
         const data = {
             title: this.title,
-            category: this.itemcategory,
+            category: this.category,
             description: this.itemdescription,
             imageurl: this.image,
             location: this.location,
@@ -96,8 +96,31 @@ export default class AddItem extends Component {
                                 {/* Dropdown menu */}
                                 <div className="form-group">
                                     <label>Item Catagory</label>
-                                    <input type="text" className="form-control" placeholder="Item Catagory"
-                                        onChange={e => this.itemcatagory = e.target.value} />
+                                    <select onChange={e => this.category = e.target.value}>
+                                        <p>Clothing</p>
+                                        <option value="Mens Clothing">Men's Clothing</option>
+                                        <option value="Womens Clothing">Women's Clothing</option>
+                                        <option value="Childrens Clothing">Children's Clothing</option>
+                                        <p>Sports</p>
+                                        <option value="Sports Balls">Sports Balls</option>
+                                        <option value="Sports Sticks/Bats/Clubs">Sports Sticks/Bats/Clubs</option>
+                                        <option value="Sports Misc">Other Sports equipment</option>
+
+                                        <option value="Electronic Devices">Electronic Devices</option>
+                                        <option value="Electronic Wires">Electronic Wires/Chargers</option>
+                                        <option value="Electronic Misc">Other Electronics equipment</option>
+
+                                        <option value="Ladders">Ladders</option>
+                                        <option value="Hand Tools">Hand Tools</option>
+                                        <option value="Power Tools">Power Tools</option>
+                                        <option value="Gardening Tools">Gardening Tools</option>
+                                        <option value="Painting Tools">Painting Tools</option>
+                                        <option value="Fastener Tools">Fastener Tools</option>
+
+                                        <option value="OtherItems">Other Items</option>
+                                    </select>
+                                    {/* <input type="text" className="form-control" placeholder="Item Catagory"
+                                        onChange={e => this.itemcatagory = e.target.value} /> */}
                                 </div>
 
                                 <div className="form-group">
