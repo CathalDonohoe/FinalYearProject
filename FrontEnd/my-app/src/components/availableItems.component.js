@@ -30,7 +30,7 @@ export default class availableItems extends Component {
                         return (
                             <div key={index}>
                                 <Card>
-                                    <CardImg top width="100%" src={{uri: `data:image/gif;base64','${items.image}`}} alt="Card image cap" />
+                                    <CardImg top width="100%" src={items.imageurl} alt="Card image cap" />
                                     <CardBody>
                                         <CardTitle tag="h5">{items.title}</CardTitle>
                                         <CardSubtitle tag="h6" className="mb-2 text-muted">Item description</CardSubtitle>
