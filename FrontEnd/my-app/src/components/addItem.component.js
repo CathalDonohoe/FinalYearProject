@@ -97,11 +97,10 @@ export default class AddItem extends Component {
                                 <div className="form-group">
                                     <label>Item Catagory</label>
                                     <select onChange={e => this.category = e.target.value}>
-                                        <p>Clothing</p>
                                         <option value="Mens Clothing">Men's Clothing</option>
                                         <option value="Womens Clothing">Women's Clothing</option>
                                         <option value="Childrens Clothing">Children's Clothing</option>
-                                        <p>Sports</p>
+
                                         <option value="Sports Balls">Sports Balls</option>
                                         <option value="Sports Sticks/Bats/Clubs">Sports Sticks/Bats/Clubs</option>
                                         <option value="Sports Misc">Other Sports equipment</option>
@@ -128,22 +127,6 @@ export default class AddItem extends Component {
                                     <input type="text" className="form-control" placeholder="Item Description"
                                         onChange={e => this.itemdescription = e.target.value} />
                                 </div>
-
-                                {/* <div className="form-group">
-                                    <label>Item image</label>
-                                    <input type="text" className="form-control" placeholder="Item image"
-                                        onChange={e => this.image = e.target.value} />
-                                </div> */}
-
-                                {/* <div className='form-group'>
-                                    <label>Item image Url</label>
-                                    <textarea
-                                        row='3'
-                                        className='form-control'
-                                        value={this.state.Poster}
-                                        onChange={this.handleMoviePosterChange}
-                                    ></textarea>
-                                </div> */}
                                 <div>
                                     <label>Item image Upload</label>
                                     <input
@@ -155,8 +138,44 @@ export default class AddItem extends Component {
 
                                 <div className="form-group">
                                     <label>Item location</label>
-                                    <input type="text" className="form-control" placeholder="Item location"
-                                        onChange={e => this.location = e.target.value} />
+                                    <select onChange={e => this.location = e.target.value}>
+                                        <option value="Antrim">Antrim</option>
+                                        <option value="Armagh">Armagh</option>
+                                        <option value="Carlow">Carlow</option>
+                                        <option value="Cavan">Cavan</option>
+                                        <option value="Clare">Clare</option>
+                                        <option value="Cork">Cork</option>
+                                        <option value="Derry (Londonderry)">Derry (Londonderry)</option>
+                                        <option value="Donegal">Donegal</option>
+                                        <option value="Down">Down</option>
+                                        <option value="North Dublin">North Dublin</option>
+                                        <option value="South Dublin">South Dublin</option>
+                                        <option value="West Dublin">West Dublin</option>
+                                        <option value="East Dublin">East Dublin</option>
+                                        <option value="Central Dublin">Central Dublin</option>
+                                        <option value="Fermanagh">Fermanagh</option>
+                                        <option value="Galway">Galway</option>
+                                        <option value="Kerry">Kerry</option>
+                                        <option value="Kildare">Kildare</option>
+                                        <option value="Kilkenny">Kilkenny</option>
+                                        <option value="Laois">Laois</option>
+                                        <option value="Leitrim">Leitrim</option>
+                                        <option value="Limerick">Limerick</option>
+                                        <option value="Longford">Longford</option>
+                                        <option value="Louth">Louth</option>
+                                        <option value="Mayo">Mayo</option>
+                                        <option value="Meath">Meath</option>
+                                        <option value="Monaghan">Monaghan</option>
+                                        <option value="Offaly">Offaly</option>
+                                        <option value="Roscommon">Roscommon</option>
+                                        <option value="Sligo">Sligo</option>
+                                        <option value="Tipperary">Tipperary</option>
+                                        <option value="Tyrone">Tyrone</option>
+                                        <option value="Waterford">Waterford</option>
+                                        <option value="Westmeath">Westmeath</option>
+                                        <option value="Wexford">Wexford</option>
+                                        <option value="Wicklow">Wicklow</option>
+                                    </select>
                                 </div>
 
                                 <button type="submit" className="btn btn-dark btn-block">Add Item</button>
