@@ -29,7 +29,7 @@ export default class Navagation extends Component {
                         <Link className="nav-link" to={"/homepage"}>Home</Link>
                     </div>
                     <div className="collapse navbar-collapse" id="middleNavbar">
-                        <Link className="nav-link" to={"/availableItems"}>Available Items</Link>
+                        <Link className="nav-link" to={"/availableItems"} onClick={() => localStorage.setItem('filter', null)}>Available Items</Link>
                     </div>
                     <div className="collapse navbar-collapse" id="middleNavbar">
                         <Link className="nav-link" to={"/addItem"}>Add Available Item</Link>
