@@ -17,6 +17,21 @@
   color: #ffffff !important;
 }
 
+.panel:hover {
+  color: yellow;
+}
+
+.panel-heading {
+  text-align: center;
+  font-weight: bold;
+}
+
+.panel-footer {
+  text-align: center;
+  color: black;
+  font-weight: bold;
+}
+
 a:link, a:visited {
   color: white;
   text-decoration: none;

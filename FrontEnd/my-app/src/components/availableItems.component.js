@@ -19,16 +19,24 @@ export default class availableItems extends Component {
             })
     }
 
-    // <div className="panel-body">{this.state.items.map(item => <li>{item.title}<br /></li>)}</div>
-    //               <div className="panel-footer">{this.state.items.map(item => <li>{item.description}</li>)}</div>
-    
     render() {
+        let isFiltered = false;
+        let filter = localStorage.getItem('filter')
+
+        if(filter != null)
+        {
+            isFiltered = true;
+        }
+
         return (
             <div>
                 <ul className="grid_list">
                     {this.state.items.map(function (items, index) {
                         return (
                             <div key={index}>
+                                {console.log(items.category)}
+                                {console.log(filter)}
+                                {items.category == filter && (
                                 <Card>
                                     <CardImg top width="100%" src={items.imageurl} alt="Card image cap" />
                                     <CardBody>
@@ -44,6 +52,7 @@ export default class availableItems extends Component {
                                         <Button>Details</Button>
                                     </CardBody>
                                 </Card>
+                                )}
                             </div>
                         )
                     }

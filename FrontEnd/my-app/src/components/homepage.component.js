@@ -20,8 +20,11 @@ import fastenerTools from "../images/fastenerTools.jpg"
 import '../App.css';
 import axios from "axios";
 import HomeNavBar from "./homeNavBar.component"
+import { Button } from "react-bootstrap";
+import { Redirect } from 'react-router'
 
 export default class Homepage extends Component {
+
   componentDidMount() {
     const config = {
       headers: {
@@ -42,6 +45,10 @@ export default class Homepage extends Component {
     );
   }
 
+  processChoice(filter) {
+    localStorage.setItem('filter', filter);
+  }
+
   render() {
     return (
       <html>
@@ -56,25 +63,33 @@ export default class Homepage extends Component {
           <div className="container">
             <div className="row">
               <div className="col-sm-4">
-                <div className="panel panel-primary bg-transparent">
-                  <div className="panel-heading">Borrow Clothing</div>
-                  <div className="panel-body"><img src={mensImg} className="img-responsive" alt="Image" /></div>
-                  <div className="panel-footer">Men's</div>
-                </div>
+                  <div className="panel panel-primary bg-transparent">
+                  <a href="/availableItems" onClick={this.processChoice("Mens Clothing")}>
+                    <div className="panel-heading">Borrow Clothing</div>
+                    <div className="panel-body"><img src={mensImg} className="img-responsive" alt="Image" /></div>
+                    <div className="panel-footer">Men's'
+                    {/* <Button color="primary" onClick={localStorage.setItem('filter', 'Mens Clothing')}>Men's</Button> */}
+                    </div>
+                    </a>
+                  </div>
               </div>
               <div className="col-sm-4">
-                <div className="panel panel-primary bg-transparent">
-                  <div className="panel-heading">Borrow Clothing</div>
-                  <div className="panel-body"><img src={womensImg} className="img-responsive" alt="Image" /></div>
-                  <div className="panel-footer">Women's</div>
-                </div>
+                  <div className="panel panel-primary bg-transparent">
+                  <a href="/availableItems" onClick={this.processChoice("Womens Clothing")}>
+                    <div className="panel-heading">Borrow Clothing</div>
+                    <div className="panel-body"><img src={womensImg} className="img-responsive" alt="Image" /></div>
+                    <div className="panel-footer">Women's</div>
+                    </a>
+                  </div>
               </div>
               <div className="col-sm-4">
-                <div className="panel panel-primary bg-transparent">
-                  <div className="panel-heading">Borrow Clothing</div>
-                  <div className="panel-body"><img src={childsImg} className="img-responsive" alt="Image" /></div>
-                  <div className="panel-footer">Children's</div>
-                </div>
+                  <div className="panel panel-primary bg-transparent">
+                  <a href="/availableItems" onClick={this.processChoice("Childrens Clothing")}>
+                    <div className="panel-heading">Borrow Clothing</div>
+                    <div className="panel-body"><img src={childsImg} className="img-responsive" alt="Image" /></div>
+                    <div className="panel-footer">Children's</div>
+                    </a>
+                  </div>
               </div>
 
               <div className="container">
