@@ -32,6 +32,14 @@ export default class availableItems extends Component {
 
         return (
             <div>
+                <div className="available">
+                {isFiltered == true && (
+                    <h1>{filter}</h1>
+                )}
+                {isFiltered == false && (
+                    <h1>All Items</h1>
+                )}
+                </div>
                 <ul className="grid_list">
                     {this.state.items.map(function (items, index) {
                         return (

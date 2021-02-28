@@ -93,3 +93,9 @@ body, html, .App, #root, .auth-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
+
+.available h1 {
+  color: whitesmoke;
+  text-align: center;
+  text-decoration-style: solid;
+}

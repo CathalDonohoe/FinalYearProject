@@ -86,13 +86,14 @@ export default class AddItem extends Component {
                         <br /><br /><br /><br /><br /><br /><br />
                         <div className="auth-inner">
                             <div className="auth-wrapper">
-                                <h3>Add New Item For Trade</h3>
+                                <h2>Add New Item For Trade</h2>
+                                <br />
                                 <div className="form-group">
                                     <label>Item Name</label>
                                     <input type="text" className="form-control" placeholder="Enter Item's Name"
                                         onChange={e => this.title = e.target.value} />
                                 </div>
-
+                                <br />
                                 {/* Dropdown menu */}
                                 <div className="form-group">
                                     <label>Item Catagory</label>
@@ -120,13 +121,13 @@ export default class AddItem extends Component {
                                         <option value="OtherItems">Other Items</option>
                                     </select>
                                 </div>
-
+                                <br />
                                 <div className="form-group">
                                     <label>Item Description</label>
                                     <input type="text" className="form-control" placeholder="Item Description"
                                         onChange={e => this.itemdescription = e.target.value} />
                                 </div>
-
+                                <br />
                                 <div>
                                     <label>Item image Upload</label>
                                     <input
@@ -135,7 +136,7 @@ export default class AddItem extends Component {
                                         onChange={this.handleImageChange}
                                     ></input>
                                 </div>
-
+                                <br /><br />
                                 <div className="form-group">
                                     <label>Item location</label>
                                     <select onChange={e => this.location = e.target.value}>
@@ -178,7 +179,7 @@ export default class AddItem extends Component {
                                         <option value="Wicklow">Wicklow</option>
                                     </select>
                                 </div>
-
+                                <br /><br />
                                 <button type="submit" className="btn btn-dark btn-block">Add Item</button>
                             </div>
                         </div>
