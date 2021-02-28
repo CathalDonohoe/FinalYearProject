@@ -90,7 +90,7 @@ export default class AddItem extends Component {
                                 <br />
                                 <div className="form-group">
                                     <label>Item Name</label>
-                                    <input type="text" className="form-control" placeholder="Enter Item's Name"
+                                    <input type="text" className="form-control" placeholder="Enter Item's Name" required="true"
                                         onChange={e => this.title = e.target.value} />
                                 </div>
                                 <br />
@@ -134,6 +134,7 @@ export default class AddItem extends Component {
                                         type='file'
                                         className='form-control'
                                         onChange={this.handleImageChange}
+                                        required="true"
                                     ></input>
                                 </div>
                                 <br /><br />
