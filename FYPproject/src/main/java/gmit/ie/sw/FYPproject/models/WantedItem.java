@@ -22,11 +22,11 @@ public class WantedItem {
 
 
 
-    public Tutorial() {
+    public WantedItem() {
 
     }
 
-    public Tutorial(String title, String description, boolean published, String category, String imageurl, String location) {
+    public WantedItem(String title, String description, boolean published, String category, String imageurl, String location) {
         this.title = title;
         this.description = description;
         this.published = published;
