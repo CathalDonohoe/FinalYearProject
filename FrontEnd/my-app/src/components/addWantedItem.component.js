@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import NotLoggedIn from "./notLoggedIn.component"
 import { Redirect } from 'react-router'
 
-export default class AddItem extends Component {
+export default class AddWantedItem extends Component {
     constructor(props) {
         super(props);
 
@@ -22,11 +22,11 @@ export default class AddItem extends Component {
             category: this.category,
             description: this.itemdescription,
             imageurl: this.image,
-            location: this.location,
-            username: this.username
+            //username: this.username,
+            location: this.location
         }
 
-        axios.post('api/test/tutorials', data).then(
+        axios.post('api/test/wanted', data).then(
             res => {
                 console.log(res);
                 this.setState({
@@ -68,7 +68,7 @@ export default class AddItem extends Component {
         let myUser = localStorage.getItem('user');
         let myToken = localStorage.getItem('token');
 
-        this.username = myUser;
+        //this.username = myUser;
 
         if (myToken && myUser != null) {
             isLoggedIn = true;
@@ -85,7 +85,7 @@ export default class AddItem extends Component {
                         <br /><br /><br /><br /><br /><br /><br />
                         <div className="auth-inner">
                             <div className="auth-wrapper">
-                                <h2>Add New Item For Trade</h2>
+                                <h2>Add New Wanted Item</h2>
                                 <br />
                                 <div className="form-group">
                                     <label>Item Name</label>
@@ -138,7 +138,7 @@ export default class AddItem extends Component {
                                 </div>
                                 <br /><br />
                                 <div className="form-group">
-                                    <label>Item location</label>
+                                    <label>Your location</label>
                                     <select onChange={e => this.location = e.target.value}>
                                         <option value="Mens Clothing">---</option>
                                         <option value="Antrim">Antrim</option>

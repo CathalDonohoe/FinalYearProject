@@ -38,7 +38,7 @@ export default class Navagation extends Component {
                         <Link className="nav-link" to={"/homepage"}>Wanted Items</Link>
                     </div>
                     <div className="collapse navbar-collapse" id="middleNavbar">
-                        <Link className="nav-link" to={"/homepage"}>Add Wanted Item</Link>
+                        <Link className="nav-link" to={"/addWantedItem"}>Add Wanted Item</Link>
                     </div>
                     <div className="collapse navbar-collapse" id="middleNavbar">
                         <Link className="nav-link" to={"/homepage"}>Saved Items</Link>

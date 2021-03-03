@@ -72,7 +72,6 @@ export default class Contact extends Component {
     onMessageChange(event) {
         this.setState({ message: event.target.value })
     }
-
-    handleSubmit(event) {
-    }
 }
+
+// // https://blog.mailtrap.io/react-contact-form/ 

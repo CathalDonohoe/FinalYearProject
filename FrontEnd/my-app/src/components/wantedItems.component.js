@@ -5,7 +5,7 @@ import {
     CardTitle, CardSubtitle, Button
 } from 'reactstrap';
 
-export default class AvailableItems extends Component {
+export default class WantedItems extends Component {
 
     state = {
         items: []

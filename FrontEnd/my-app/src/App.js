@@ -10,7 +10,9 @@ import Homepage from "./components/homepage.component";
 import Navagation from "./components/navagation.componant";
 import AddItem from "./components/addItem.component";
 import AvailableItems from './components/availableItems.component';
-import Contact from "./components/contact.component"
+import Contact from "./components/contact.component";
+import AddWantedItem from "./components/addWantedItem.component";
+import WantedItems from "./components/wantedItems.component";
 
 function App() {
   return (
@@ -24,7 +26,9 @@ function App() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/addItem" component={AddItem}/>
+          <Route exact path="/addWantedItem" component={AddWantedItem}/>
           <Route exact path="/availableItems" component={AvailableItems}/>
+          <Route exact path="/wantedItems" component={WantedItems}/>
           <Route exact path="/contact" component={Contact}/>
         </Switch>
       </div>
