@@ -18,7 +18,7 @@ export default class HomeNavBar extends Component {
                             <a className="navbar-brand" href="/homepage">BorrowNearMe</a>
                             <li className="active"><a href="/homepage"><span className="glyphicon glyphicon-home"></span>Home</a></li>
                             <li><a href="availableItems" onClick={() => localStorage.setItem('filter', null)}><span className="glyphicon glyphicon-refresh"></span>Available Items</a></li>
-                            <li><a href="#"><span className="glyphicon glyphicon-gift"></span>Wanted Items</a></li>
+                            <li><a href="/wantedItems"><span className="glyphicon glyphicon-gift"></span>Wanted Items</a></li>
                             <li><a href="#"><span className="glyphicon glyphicon-save"></span>Saved Items</a></li>
                             <li><a href="contact"><span className="glyphicon glyphicon-save"></span>Contact</a></li>
                             <li><a href="#"><span className="glyphicon glyphicon-user"></span> Your account</a></li>

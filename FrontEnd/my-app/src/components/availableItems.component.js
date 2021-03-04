@@ -37,7 +37,7 @@ export default class AvailableItems extends Component {
                     <h1>{filter}</h1>
                 )}
                 {isFiltered == false && (
-                    <h1>All Items</h1>
+                    <h1>All Available Items</h1>
                 )}
                 </div>
                 <ul className="grid_list">

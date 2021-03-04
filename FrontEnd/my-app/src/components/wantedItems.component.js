@@ -12,7 +12,7 @@ export default class WantedItems extends Component {
     }
 
     componentDidMount() {
-        axios.get(`api/test/tutorials`)
+        axios.get(`api/test/wanted`)
             .then(res => {
                 const items = res.data;
                 this.setState({ items });
@@ -20,71 +20,30 @@ export default class WantedItems extends Component {
     }
 
     render() {
-        let isFiltered = false;
-        let filter = localStorage.getItem('filter')
-
-        if (filter != 'null') {
-            isFiltered = true;
-        }
-        else if (filter == 'null') {
-            isFiltered = false;
-        }
-
         return (
             <div>
                 <div className="available">
-                {isFiltered == true && (
-                    <h1>{filter}</h1>
-                )}
-                {isFiltered == false && (
-                    <h1>All Items</h1>
-                )}
+                    <h1>All Wanted Items</h1>
                 </div>
                 <ul className="grid_list">
                     {this.state.items.map(function (items, index) {
                         return (
-                            <div>
-                                {isFiltered == true && (
-                                    <div key={index}>
-                                        {items.category == filter && (
-                                            <Card>
-                                                <CardImg top width="100%" src={items.imageurl} alt="Card image cap" />
-                                                <CardBody>
-                                                    <CardTitle tag="h4"><b>{items.title}</b></CardTitle>
-                                                    <CardSubtitle tag="h6" className="mb-2 text-muted">Category</CardSubtitle>
-                                                    <CardText>{items.category}</CardText>
-                                                    <CardSubtitle tag="h6" className="mb-2 text-muted">Description</CardSubtitle>
-                                                    <CardText>{items.description}.</CardText>
-                                                    <CardSubtitle tag="h6" className="mb-2 text-muted">Location</CardSubtitle>
-                                                    <CardText>{items.location}</CardText>
-                                                    <CardSubtitle tag="h6" className="mb-2 text-muted">Posted by</CardSubtitle>
-                                                    <CardText>{items.username}</CardText>
-                                                    <Button>Details</Button>
-                                                </CardBody>
-                                            </Card>
-                                        )}
-                                    </div>
-                                )}
-                                {isFiltered == false && (
-                                    <div key={index}>
-                                        <Card>
-                                            <CardImg top width="100%" src={items.imageurl} alt="Card image cap" />
-                                            <CardBody>
-                                                <CardTitle tag="h4"><b>{items.title}</b></CardTitle>
-                                                <CardSubtitle tag="h6" className="mb-2 text-muted">Category</CardSubtitle>
-                                                <CardText>{items.category}</CardText>
-                                                <CardSubtitle tag="h6" className="mb-2 text-muted">Description</CardSubtitle>
-                                                <CardText>{items.description}.</CardText>
-                                                <CardSubtitle tag="h6" className="mb-2 text-muted">Location</CardSubtitle>
-                                                <CardText>{items.location}</CardText>
-                                                <CardSubtitle tag="h6" className="mb-2 text-muted">Posted by</CardSubtitle>
-                                                <CardText>{items.username}</CardText>
-                                                <Button>Details</Button>
-                                            </CardBody>
-                                        </Card>
-                                    </div>
-                                )}
-
+                            <div key={index}>
+                                <Card>
+                                    <CardImg top width="100%" src={items.imageurl} alt="Card image cap" />
+                                    <CardBody>
+                                        <CardTitle tag="h4"><b>{items.title}</b></CardTitle>
+                                        <CardSubtitle tag="h6" className="mb-2 text-muted">Category</CardSubtitle>
+                                        <CardText>{items.category}</CardText>
+                                        <CardSubtitle tag="h6" className="mb-2 text-muted">Description</CardSubtitle>
+                                        <CardText>{items.description}.</CardText>
+                                        <CardSubtitle tag="h6" className="mb-2 text-muted">Location</CardSubtitle>
+                                        <CardText>{items.location}</CardText>
+                                        <CardSubtitle tag="h6" className="mb-2 text-muted">Wanted by</CardSubtitle>
+                                        <CardText>{items.username}</CardText>
+                                        <Button>Details</Button>
+                                    </CardBody>
+                                </Card>
                             </div>
                         )
                     }
