@@ -64,7 +64,7 @@ public class WantedItemController {
     @PostMapping("/wanted")
     public ResponseEntity<WantedItem> createWantedItem(@RequestBody WantedItem wantedItem) {
         try {
-            WantedItem _wantedItem = wantedItemRepository.save(new WantedItem(wantedItem.getTitle(), wantedItem.getDescription(), false, wantedItem.getCategory(), wantedItem.getImageurl(), wantedItem.getLocation()));
+            WantedItem _wantedItem = wantedItemRepository.save(new WantedItem(wantedItem.getTitle(), wantedItem.getDescription(), false, wantedItem.getCategory(), wantedItem.getUsername(), wantedItem.getImageurl(), wantedItem.getLocation()));
             return new ResponseEntity<>(_wantedItem, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
@@ -82,6 +82,7 @@ public class WantedItemController {
             _wantedItem.setDescription(wantedItem.getDescription());
             _wantedItem.setPublished(wantedItem.isPublished());
             _wantedItem.setCategory(wantedItem.getCategory());
+            _wantedItem.setUsername(wantedItem.getUsername());
             _wantedItem.setImageurl(wantedItem.getImageurl());
             _wantedItem.setLocation(wantedItem.getLocation());
             return new ResponseEntity<>(wantedItemRepository.save(_wantedItem), HttpStatus.OK);
