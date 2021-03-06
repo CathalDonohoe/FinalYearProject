@@ -1,77 +1,44 @@
-import React, { Component } from "react";
-import axios from 'axios'
+import React, { useState } from "react";
 
-export default class Contact extends Component {
+const ContactForm = () => {
+  const [status, setStatus] = useState("Submit");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("Sending...");
+    const { name, email, message } = e.target.elements;
+    let details = {
+      name: name.value,
+      email: email.value,
+      message: message.value,
+    };
+    let response = await fetch("http://localhost:5000/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+      body: JSON.stringify(details),
+    });
+    setStatus("Submit");
+    let result = await response.json();
+    alert(result.status);
+  };
+  return (
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="name">Name:</label>
+        <input type="text" id="name" required />
+      </div>
+      <div>
+        <label htmlFor="email">Email:</label>
+        <input type="email" id="email" required />
+      </div>
+      <div>
+        <label htmlFor="message">Message:</label>
+        <textarea id="message" required />
+      </div>
+      <button type="submit">{status}</button>
+    </form>
+  );
+};
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: '',
-            email: '',
-            message: ''
-        }
-    }
-
-    handleSubmit(event) {
-        event.preventDefault();
-        axios({
-            method: "POST",
-            url: "http://localhost:3002/send",
-            data: this.state
-        }).then((response) => {
-            if (response.data.status === 'success') {
-                alert("Message Sent.");
-                this.resetForm()
-            } else if (response.data.status === 'fail') {
-                alert("Message failed to send.")
-            }
-        })
-    }
-
-    resetForm() {
-        this.setState({ name: "", email: "", message: "" })
-    }
-
-    render() {
-        return (
-            <div>
-                <br /><br /><br /><br /><br /><br /><br />
-                <div className="auth-inner">
-                    <h2>Contact us:</h2>
-                    <br />
-                    <div className="App">
-                        <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
-                            <div className="form-group">
-                                <label htmlFor="name">Name</label>
-                                <input type="text" className="form-control" value={this.state.name} onChange={this.onNameChange.bind(this)} />
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="exampleInputEmail1">Email address</label>
-                                <input type="email" className="form-control" aria-describedby="emailHelp" value={this.state.email} onChange={this.onEmailChange.bind(this)} />
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="message">Message</label>
-                                <textarea className="form-control" rows="5" value={this.state.message} onChange={this.onMessageChange.bind(this)} />
-                            </div>
-                            <button type="submit" className="btn btn-dark">Submit</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        );
-    }
-
-    onNameChange(event) {
-        this.setState({ name: event.target.value })
-    }
-
-    onEmailChange(event) {
-        this.setState({ email: event.target.value })
-    }
-
-    onMessageChange(event) {
-        this.setState({ message: event.target.value })
-    }
-}
-
-// // https://blog.mailtrap.io/react-contact-form/ 
+export default ContactForm;
