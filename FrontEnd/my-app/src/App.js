@@ -10,7 +10,7 @@ import Homepage from "./components/homepage.component";
 import Navagation from "./components/navagation.componant";
 import AddItem from "./components/addItem.component";
 import AvailableItems from './components/availableItems.component';
-import Contact from "./components/contact.component";
+import ContactForm from './ContactForm';
 import AddWantedItem from "./components/addWantedItem.component";
 import WantedItems from "./components/wantedItems.component";
 
@@ -29,7 +29,7 @@ function App() {
           <Route exact path="/addWantedItem" component={AddWantedItem}/>
           <Route exact path="/availableItems" component={AvailableItems}/>
           <Route exact path="/wantedItems" component={WantedItems}/>
-          <Route exact path="/contact" component={Contact}/>
+          <Route exact path="/contact" component={ContactForm}/>
         </Switch>
       </div>
     </BrowserRouter>
