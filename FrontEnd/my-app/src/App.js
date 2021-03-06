@@ -10,7 +10,7 @@ import Homepage from "./components/homepage.component";
 import Navagation from "./components/navagation.componant";
 import AddItem from "./components/addItem.component";
 import AvailableItems from './components/availableItems.component';
-import ContactForm from './ContactForm';
+import ContactForm from './components/ContactForm';
 import AddWantedItem from "./components/addWantedItem.component";
 import WantedItems from "./components/wantedItems.component";
 
