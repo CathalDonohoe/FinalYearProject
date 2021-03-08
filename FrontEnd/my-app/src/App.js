@@ -13,6 +13,8 @@ import AvailableItems from './components/availableItems.component';
 import ContactForm from './components/ContactForm';
 import AddWantedItem from "./components/addWantedItem.component";
 import WantedItems from "./components/wantedItems.component";
+import Account from "./components/account.component";
+import MyAvailable from './components/myAvailable.component';
 
 function App() {
   return (
@@ -30,6 +32,8 @@ function App() {
           <Route exact path="/availableItems" component={AvailableItems}/>
           <Route exact path="/wantedItems" component={WantedItems}/>
           <Route exact path="/contact" component={ContactForm}/>
+          <Route exact path="/account" component={Account}/>
+          <Route exact path="/myAvailable" component={MyAvailable}/>
         </Switch>
       </div>
     </BrowserRouter>
