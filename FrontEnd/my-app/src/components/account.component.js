@@ -9,6 +9,7 @@ export default class Account extends Component {
     
 
     render() {
+        const textStyle = { color: 'white' };
         let isLoggedIn = false;
         let myUser = localStorage.getItem('user');
         let myToken = localStorage.getItem('token');
@@ -20,7 +21,7 @@ export default class Account extends Component {
             <div className="container">
                 {isLoggedIn && (
                     <div className="my-5 p-1 bg-dark rounded box-shadow">
-                        <h4 className="border-bottom border-gray pb-2 mb-0">{myUser}</h4>
+                        <h3 style={textStyle} className="border-bottom border-gray pb-2 mb-0">{myUser}</h3>
                         <div className="media text-muted pt-3">
                             <a href="/myAvailable">
                                 <p className="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">

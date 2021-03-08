@@ -55,7 +55,7 @@ export default class Navagation extends Component {
                             </form> */}
                             {isLoggedIn && (
                                 <li className="nav-item">
-                                    <Link className="nav-link" to={"/homepage"}>{myUser}</Link>
+                                    <Link className="nav-link" to={"/account"}>{myUser}</Link>
                                 </li>
                             )}
                             {!isLoggedIn && (
