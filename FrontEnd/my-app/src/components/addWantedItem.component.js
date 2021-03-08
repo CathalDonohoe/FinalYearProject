@@ -22,7 +22,7 @@ export default class AddWantedItem extends Component {
             category: this.category,
             description: this.itemdescription,
             imageurl: this.image,
-            //username: this.username,
+            username: this.username,
             location: this.location
         }
 
@@ -68,7 +68,7 @@ export default class AddWantedItem extends Component {
         let myUser = localStorage.getItem('user');
         let myToken = localStorage.getItem('token');
 
-        //this.username = myUser;
+        this.username = myUser;
 
         if (myToken && myUser != null) {
             isLoggedIn = true;

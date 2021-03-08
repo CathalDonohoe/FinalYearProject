@@ -6,7 +6,7 @@ export default class Account extends Component {
     componentDidMount = () => {
         localStorage.getItem('user');
     }
-    
+
 
     render() {
         const textStyle = { color: 'white' };
@@ -32,10 +32,12 @@ export default class Account extends Component {
                         </div>
                         <div className="my-5 p-1 bg-dark rounded box-shadow">
                             <div className="media text-muted pt-3">
-                                <p className="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-                                    <strong className="d-block text-gray-dark">My Wanted Items</strong>
-                                    <Button variant="warning">Edit and delete your wanted items</Button>
-                                </p>
+                                <a href="/myWanted">
+                                    <p className="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                                        <strong className="d-block text-gray-dark">My Wanted Items</strong>
+                                        <Button variant="warning">Edit and delete your wanted items</Button>
+                                    </p>
+                                </a>
                             </div>
                         </div>
                         <div className="my-5 p-1 bg-dark rounded box-shadow">

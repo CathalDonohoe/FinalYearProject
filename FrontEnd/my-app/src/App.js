@@ -15,6 +15,7 @@ import AddWantedItem from "./components/addWantedItem.component";
 import WantedItems from "./components/wantedItems.component";
 import Account from "./components/account.component";
 import MyAvailable from './components/myAvailable.component';
+import MyWanted from "./components/myWantedItems.component";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route exact path="/contact" component={ContactForm}/>
           <Route exact path="/account" component={Account}/>
           <Route exact path="/myAvailable" component={MyAvailable}/>
+          <Route exact path="/myWanted" component={MyWanted}/>
         </Switch>
       </div>
     </BrowserRouter>
