@@ -1,44 +1,3 @@
-// import React, { useState } from "react";
-// import { SendEmail } from './utils';
-
-// const ContactForm = () => {
-//   const [status] = useState("Submit");
-//   const handleSubmit = async (event) => {
-     
-//         event.preventDefault();
-//         //this.setState({ clearScreen: true, messageSubmitted: true });
-//         const { name, email, message } = event.target.elements;
-//         let details = {
-//           name: name.value,
-//           email: email.value,
-//           message: message.value,
-//         };
-//         let status = await SendEmail(details);
-//         alert(status.status);
-    
-// }
-
-//   return (
-//     <form onSubmit={handleSubmit}>
-//       <div>
-//         <label htmlFor="name">Name:</label>
-//         <input type="text" id="name" required />
-//       </div>
-//       <div>
-//         <label htmlFor="email">Email:</label>
-//         <input type="email" id="email" required />
-//       </div>
-//       <div>
-//         <label htmlFor="message">Message:</label>
-//         <textarea id="message" required />
-//       </div>
-//       <button type="submit">{status}</button>
-//     </form>
-//   );
-// };
-
-// export default ContactForm;
-
 import React, { useState } from "react";
 
 const ContactForm = () => {
@@ -64,21 +23,27 @@ const ContactForm = () => {
     alert(result.status);
   };
   return (
+    <div>
+      <br/><br/><br/><br/><br/><br/>
     <form onSubmit={handleSubmit}>
-      <div>
+      <div className="auth-inner">
+        <h3>Contact Us</h3>
+        <div className="my-1 p-1 bg-light rounded box-shadow">
         <label htmlFor="name">Name:</label>
         <input type="text" id="name" required />
-      </div>
-      <div>
+        </div>
+        <div className="my-1 p-1 bg-light rounded box-shadow">
         <label htmlFor="email">Email:</label>
         <input type="email" id="email" required />
-      </div>
-      <div>
+        </div>
+        <div className="my-1 p-1 bg-light rounded box-shadow">
         <label htmlFor="message">Message:</label>
         <textarea id="message" required />
+        </div>
+        <button type="submit">{status}</button>
       </div>
-      <button type="submit">{status}</button>
     </form>
+    </div>
   );
 };
 

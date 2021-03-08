@@ -32,7 +32,7 @@ export default class WantedItems extends Component {
         let isFiltered = false;
         let filter = localStorage.getItem('county')
 
-        if (filter != 'null') {
+        if (filter !== 'null') {
             isFiltered = true;
         }
         else {
@@ -42,10 +42,10 @@ export default class WantedItems extends Component {
         return (
             <div>
                 <div className="available">
-                    {isFiltered == true && (
+                    {isFiltered === true && (
                         <h1>Wanted Items in {filter}</h1>
                     )}
-                    {isFiltered == false && (
+                    {isFiltered === false && (
                         <h1>All Wanted Items</h1>
                     )}
                 </div>
@@ -104,9 +104,9 @@ export default class WantedItems extends Component {
                     {this.state.items.map(function (items, index) {
                         return (
                             <div>
-                                {isFiltered == true && (
+                                {isFiltered === true && (
                                     <div key={index}>
-                                        {items.location == filter && (
+                                        {items.location === filter && (
                                             <Card>
                                                 <CardImg top width="100%" src={items.imageurl} alt="Card image cap" />
                                                 <CardBody>
@@ -125,7 +125,7 @@ export default class WantedItems extends Component {
                                         )}
                                     </div>
                                 )}
-                                {isFiltered == false && (
+                                {isFiltered === false && (
                                     <div key={index}>
                                         <Card>
                                             <CardImg top width="100%" src={items.imageurl} alt="Card image cap" />
