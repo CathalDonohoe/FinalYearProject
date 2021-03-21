@@ -10,9 +10,17 @@ export default class AvailableItems extends Component {
     state = {
         items: []
     }
-
+    
     componentDidMount() {
         axios.get(`api/test/tutorials`)
+            .then(res => {
+                const items = res.data;
+                this.setState({ items });
+            })
+    }
+
+    deleteItem(it) {
+        axios.delete(`api/test/tutorials/`+it)
             .then(res => {
                 const items = res.data;
                 this.setState({ items });

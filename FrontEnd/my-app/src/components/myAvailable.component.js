@@ -4,6 +4,11 @@ import NotLoggedIn from "./notLoggedIn.component"
 import Button from 'react-bootstrap/Button'
 
 export default class MyAvailable extends Component {
+    constructor(props, context) {
+        super(props, context);
+        this.deleteItem = this.deleteItem.bind(this);
+    }
+
     state = {
         items: []
     }
@@ -15,6 +20,14 @@ export default class MyAvailable extends Component {
                 this.setState({ items });
             })
         localStorage.getItem('user');
+    }
+
+    deleteItem(id, e) {
+       axios.delete(`api/test/tutorials/${id}`)
+            .then(res => {
+                const items = this.state.posts.filter(item=> item.id !== id);
+                this.setState({ items })
+            })
     }
 
     render() {
@@ -41,8 +54,8 @@ export default class MyAvailable extends Component {
                                                 <br/>
                                                 <img width="200px" height="200px" src={items.imageurl} alt="Problem loading item image!" />
                                                 <p style={textStyle}>{items.description}</p>
-                                                <Button variant="warning">Edit</Button>
-                                                <Button variant="danger">Delete</Button>
+                                                <Button variant="warning" onClick={() => console.log(items.id)}>Edit</Button>
+                                                <Button variant="danger" onClick={(e) => this.deleteItem(items.id, e)}>Delete</Button>
                                             </div>
 
                                         )}

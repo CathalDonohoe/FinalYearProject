@@ -24,25 +24,25 @@ const ContactForm = () => {
   };
   return (
     <div>
-      <br/><br/><br/><br/><br/><br/>
-    <form onSubmit={handleSubmit}>
-      <div className="auth-inner">
-        <h3>Contact Us</h3>
-        <div className="my-1 p-1 bg-light rounded box-shadow">
-        <label htmlFor="name">Name:</label>
-        <input type="text" id="name" required />
+      <br /><br /><br /><br /><br /><br />
+      <form onSubmit={handleSubmit}>
+        <div className="auth-inner">
+          <h3>Contact Us</h3>
+          <div className="my-1 p-1 bg-light rounded box-shadow">
+            <label htmlFor="name">Name:</label>
+            <input type="text" id="name" required />
+          </div>
+          <div className="my-1 p-1 bg-light rounded box-shadow">
+            <label htmlFor="email">Email:</label>
+            <input type="email" id="email" required />
+          </div>
+          <div className="my-1 p-1 bg-light rounded box-shadow">
+            <label htmlFor="message">Message:</label>
+            <textarea id="message" required />
+          </div>
+          <button type="submit">{status}</button>
         </div>
-        <div className="my-1 p-1 bg-light rounded box-shadow">
-        <label htmlFor="email">Email:</label>
-        <input type="email" id="email" required />
-        </div>
-        <div className="my-1 p-1 bg-light rounded box-shadow">
-        <label htmlFor="message">Message:</label>
-        <textarea id="message" required />
-        </div>
-        <button type="submit">{status}</button>
-      </div>
-    </form>
+      </form>
     </div>
   );
 };
