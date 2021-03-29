@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import axios from "axios";
 import MyAvailableItem from "./myAvailableItem.component";
+import NotLoggedIn from "./notLoggedIn.component";
 
 export default class MyAvailable extends Component {
     state = {
         items: []
     }
-    
+
     componentDidMount() {
         axios.get(`api/test/tutorials`)
             .then(res => {
@@ -25,10 +26,14 @@ export default class MyAvailable extends Component {
         if (myToken && myUser != null) {
             isLoggedIn = true;
         }
-
-        return this.state.items.map((item) => {
-            return <MyAvailableItem item={item} />
-        })
+        if (isLoggedIn) {
+            return this.state.items.map((item) => {
+                return <MyAvailableItem item={item} />
+            })
+        }
+        else if (!isLoggedIn) {
+            <NotLoggedIn />
+        }
 
     }
 }

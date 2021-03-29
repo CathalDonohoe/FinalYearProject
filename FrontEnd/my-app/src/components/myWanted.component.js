@@ -38,7 +38,7 @@ export default class MyWanted extends Component {
                                         {items.username == myUser && (
                                             <div className="my-1 p-1 bg-dark rounded box-shadow">
                                                 <h4 style={textStyle} className="border-bottom border-gray pb-2 mb-0">{items.title}</h4>
-                                                <br/>
+                                                <br />
                                                 <img width="200px" height="200px" src={items.imageurl} alt="Problem loading item image!" />
                                                 <p style={textStyle}>{items.description}</p>
                                                 <Button variant="warning">Edit</Button>
