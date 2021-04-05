@@ -25,7 +25,8 @@ export default class MyAvailableItem extends Component {
             category: props.item.category,
             description: props.item.description,
             imageurl: props.item.imageurl,
-            location: props.item.location
+            location: props.item.location,
+            username: props.item.username
         };
     }
 
@@ -42,8 +43,6 @@ export default class MyAvailableItem extends Component {
         axios.delete(`api/test/tutorials/${id}`)
             .then(res => {
                 this.props.ReloadData();
-
-                console.log(res);
                 console.log(res.data);
                 const items = this.state.posts.filter(item => item.id !== id);
                 //this.setState({ items })
@@ -65,17 +64,14 @@ export default class MyAvailableItem extends Component {
     }
 
     onChangeTitle(e) {
-        console.log('title:', e.target.value);
         this.setState({ title: e.target.value });
     }
 
     onChangeCategory(e) {
-        console.log('category:', e.target.value);
         this.setState({ category: e.target.value });
     }
 
     onChangeDescription(e) {
-        console.log('description:', e.target.value);
         this.setState({ description: e.target.value });
     }
 
@@ -84,7 +80,6 @@ export default class MyAvailableItem extends Component {
     }
 
     onChangeLocation(e) {
-        console.log('location:', e.target.value);
         this.setState({ location: e.target.value });
     }
 
@@ -99,13 +94,15 @@ export default class MyAvailableItem extends Component {
             category: this.state.category,
             description: this.state.description,
             imageurl: this.state.imageurl,
-            location: this.state.location
+            location: this.state.location,
+            username: this.state.username
         };
 
-        axios.put(`api/test/tutorials/` + this.state.id, newItem)
+        axios.put(`api/test/tutorials/` + this.props.item.id, newItem)
             .then((y) => {
                 console.log(y);
                 this.setState({ show: false });
+                window.location.reload(false);
             })
             .catch((err) => {
                 console.log('ERROR!' + err)
@@ -151,9 +148,8 @@ export default class MyAvailableItem extends Component {
                                                     onChange={this.onChangeTitle}></input>
                                             </div>
                                             <div className="form-group">
-                                                {console.log(this.props.item.category)}
                                                 <label>Item Category</label>
-                                                <select defaultValue={ this.props.item.category } onChange={this.onChangeCategory}>
+                                                <select defaultValue={this.props.item.category} onChange={this.onChangeCategory}>
                                                     <option value="OtherItems">---</option>
                                                     <option value="Mens Clothing">Men's Clothing</option>
                                                     <option value="Womens Clothing">Women's Clothing</option>
@@ -181,7 +177,7 @@ export default class MyAvailableItem extends Component {
                                             <div className="form-group">
                                                 <label>Item Description</label>
                                                 <input type="text" className="form-control" placeholder="Item Description"
-                                                    placeholder={this.props.item.description}
+                                                    defaultValue={this.props.item.description}
                                                     onChange={this.onChangeDescription} />
                                             </div>
                                             <br />
@@ -240,8 +236,9 @@ export default class MyAvailableItem extends Component {
 
                                             <div className="form-group">
                                                 <input type='submit'
-                                                    value='Edit Movie'
-                                                    className='btn btn-primary'></input>
+                                                    value='Edit Item'
+                                                    className='btn btn-primary'>
+                                                </input>
                                             </div>
                                         </form>
                                     </div>
