@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 
-export default class MyAvailableItem extends Component {
+export default class MyWantedItem extends Component {
     constructor(props) {
         super(props);
         this.deleteItem = this.deleteItem.bind(this);
@@ -29,7 +29,7 @@ export default class MyAvailableItem extends Component {
     }
 
     componentDidMount() {
-        axios.get(`api/test/tutorials`)
+        axios.get(`api/test/wanted`)
             .then(res => {
                 const items = res.data;
                 this.setState({ items });
@@ -38,12 +38,11 @@ export default class MyAvailableItem extends Component {
     }
 
     deleteItem(id, e) {
-        axios.delete(`api/test/tutorials/${id}`)
+        axios.delete(`api/test/wanted/${id}`)
             .then(res => {
                 this.props.ReloadData();
                 console.log(res.data);
                 const items = this.state.posts.filter(item => item.id !== id);
-                //this.setState({ items })
                 window.location.reload(false);
             })
             .catch((err) => {
@@ -96,7 +95,7 @@ export default class MyAvailableItem extends Component {
             username: this.state.username
         };
 
-        axios.put(`api/test/tutorials/` + this.props.item.id, newItem)
+        axios.put(`api/test/wanted/` + this.props.item.id, newItem)
             .then((y) => {
                 console.log(y);
                 this.setState({ show: false });
