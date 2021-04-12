@@ -4,13 +4,14 @@ import {
     Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Button
 } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 export default class AvailableItems extends Component {
 
     state = {
         items: []
     }
-    
+
     componentDidMount() {
         axios.get(`api/test/tutorials`)
             .then(res => {
@@ -20,7 +21,7 @@ export default class AvailableItems extends Component {
     }
 
     deleteItem(it) {
-        axios.delete(`api/test/tutorials/`+it)
+        axios.delete(`api/test/tutorials/` + it)
             .then(res => {
                 const items = res.data;
                 this.setState({ items });
@@ -41,12 +42,12 @@ export default class AvailableItems extends Component {
         return (
             <div>
                 <div className="available">
-                {isFiltered == true && (
-                    <h1>{filter}</h1>
-                )}
-                {isFiltered == false && (
-                    <h1>All Available Items</h1>
-                )}
+                    {isFiltered == true && (
+                        <h1>{filter}</h1>
+                    )}
+                    {isFiltered == false && (
+                        <h1>All Available Items</h1>
+                    )}
                 </div>
                 <ul className="grid_list">
                     {this.state.items.map(function (items, index) {
@@ -67,7 +68,8 @@ export default class AvailableItems extends Component {
                                                     <CardText>{items.location}</CardText>
                                                     <CardSubtitle tag="h6" className="mb-2 text-muted">Posted by</CardSubtitle>
                                                     <CardText>{items.username}</CardText>
-                                                    <Button>Details</Button>
+                                                    <Link to={'/availableItems/' + items.id}
+                                                        className="btn btn-primary">See Item</Link>
                                                 </CardBody>
                                             </Card>
                                         )}
@@ -87,7 +89,8 @@ export default class AvailableItems extends Component {
                                                 <CardText>{items.location}</CardText>
                                                 <CardSubtitle tag="h6" className="mb-2 text-muted">Posted by</CardSubtitle>
                                                 <CardText>{items.username}</CardText>
-                                                <Button>Details</Button>
+                                                <Link to={'/availableItems/' + items.id}
+                                                        className="btn btn-primary">See Item</Link>
                                             </CardBody>
                                         </Card>
                                     </div>

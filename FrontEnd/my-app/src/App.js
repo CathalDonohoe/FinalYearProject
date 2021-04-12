@@ -17,6 +17,7 @@ import Account from "./components/account.component";
 import MyAvailable from './components/myAvailable.component';
 import MyWanted from "./components/myWanted.component";
 import EditAvailable from './components/editAvailableItem';
+import SpecificItem from './components/specificItem.component';
 
 function App() {
   return (
@@ -32,6 +33,8 @@ function App() {
           <Route exact path="/addItem" component={AddItem}/>
           <Route exact path="/addWantedItem" component={AddWantedItem}/>
           <Route exact path="/availableItems" component={AvailableItems}/>
+          <Route path='/availableItems/:id' component={SpecificItem}></Route>
+          {/* <Route path='/wantedItems/:id' component={Edit}></Route> */}
           <Route exact path="/wantedItems" component={WantedItems}/>
           <Route exact path="/contact" component={ContactForm}/>
           <Route exact path="/account" component={Account}/>
