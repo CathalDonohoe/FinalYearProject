@@ -72,6 +72,7 @@ public class Tutorial {
     public void setCategory(String category) {
         this.category = category;
     }
+
     public String getUsername() {
         return username;
     }
