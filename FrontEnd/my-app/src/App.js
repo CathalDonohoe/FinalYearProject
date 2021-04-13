@@ -17,7 +17,8 @@ import Account from "./components/account.component";
 import MyAvailable from './components/myAvailable.component';
 import MyWanted from "./components/myWanted.component";
 import EditAvailable from './components/editAvailableItem';
-import SpecificItem from './components/specificItem.component';
+import SavedItem from './components/savedItem.component';
+import MySaved from './components/mySaved.component';
 
 function App() {
   return (
@@ -33,7 +34,7 @@ function App() {
           <Route exact path="/addItem" component={AddItem}/>
           <Route exact path="/addWantedItem" component={AddWantedItem}/>
           <Route exact path="/availableItems" component={AvailableItems}/>
-          <Route path='/availableItems/:id' component={SpecificItem}></Route>
+          <Route path='/availableItems/:id' component={SavedItem}></Route>
           {/* <Route path='/wantedItems/:id' component={Edit}></Route> */}
           <Route exact path="/wantedItems" component={WantedItems}/>
           <Route exact path="/contact" component={ContactForm}/>
@@ -41,6 +42,7 @@ function App() {
           <Route exact path="/myAvailable" component={MyAvailable}/>
           <Route exact path="/myWanted" component={MyWanted}/>
           <Route path="/edit/" component={EditAvailable}></Route>
+          <Route path="/mySaved/" component={MySaved}></Route>
         </Switch>
       </div>
     </BrowserRouter>

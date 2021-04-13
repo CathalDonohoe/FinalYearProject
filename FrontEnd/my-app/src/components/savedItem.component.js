@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 
-export default class MyAvailableItem extends Component {
+export default class SavedItem extends Component {
     constructor(props) {
         super(props);
         this.deleteItem = this.deleteItem.bind(this);
@@ -126,8 +126,8 @@ export default class MyAvailableItem extends Component {
                                 Edit
                             </Button>
 
-                             {/* EDIT ITEM //
-                             This Modal is only shown when show state is true */}
+                            {/* EDIT ITEM */}
+                            {/* This Modal is only shown when show state is true */}
                             <Modal show={this.state.show} onHide={this.handleClose} animation={false}>
                                 <Modal.Header closeButton>
                                     <Modal.Title>{this.props.item.title}</Modal.Title>

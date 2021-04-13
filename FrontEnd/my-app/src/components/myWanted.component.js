@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import MyAvailableItem from "./myAvailableItem.component";
 import NotLoggedIn from "./notLoggedIn.component";
 import MyWantedItem from "./myWantedItem.component";
 
