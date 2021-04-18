@@ -20,13 +20,6 @@ export default class AvailableItems extends Component {
             })
     }
 
-    deleteItem(it) {
-        axios.delete(`api/test/tutorials/` + it)
-            .then(res => {
-                const items = res.data;
-                this.setState({ items });
-            })
-    }
 
     render() {
         let isFiltered = false;

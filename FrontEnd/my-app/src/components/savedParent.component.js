@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import axios from "axios";
 import NotLoggedIn from "./notLoggedIn.component";
-import MyWantedItem from "./myWantedItem.component";
+import MySavedItems from "./mySavedItems.component";
 
-export default class MyWanted extends Component {
+export default class SavedParent extends Component {
     state = {
         items: []
     }
 
     componentDidMount() {
-        axios.get(`api/test/wanted`)
+        axios.get(`api/test/savedItems`)
             .then(res => {
                 const items = res.data;
                 this.setState({ items });
@@ -27,7 +27,7 @@ export default class MyWanted extends Component {
         }
         if (isLoggedIn) {
             return this.state.items.map((item) => {
-                return <MyWantedItem item={item} />
+                return <MySavedItems item={item} />
             })
         }
         else if (!isLoggedIn) {

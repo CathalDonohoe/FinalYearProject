@@ -8,63 +8,75 @@ import { Redirect } from 'react-router';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class MySaved extends React.Component {
-
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.saveItem = this.saveItem.bind(this);
 
         this.state = {
-            id: '',
+            id: this.props.match.params.id,
             title: '',
-            username: ''
+            username: '',
+            location: '',
+            category: '',
+            description: '',
+            itemSaved: false
         }
     }
 
     componentDidMount() {
-        axios.get('api/test/savedItems/' + this.props.match.params.id)
+        axios.get('api/test/tutorials/' + this.props.match.params.id)
             .then((response) => {
                 this.setState({
-                    // props id
-                    id: this.props.match.params.id,
                     title: response.data.title,
-                    category: response.data.category,
-                    description: response.data.description,
-                    imageurl: response.data.imageurl,
+                    username: response.data.username,
                     location: response.data.location,
-                    // username is logged in user
-                    username: localStorage.getItem('user')
-                })
-                console.log(this.state.username);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-        
-        axios.get('api/test/savedItems/' + this.props.match.params.id)
-            .then((response) => {
-                this.setState({ itemSaved: true });
-                console.log(this.state.itemSaved);
+                    category: response.data.category,
+                    description: response.data.description
+                });
             })
             .catch((err) => {
                 "Item not in database"
                 console.log(err);
             });
+
+        // Check if item is already saved
+        axios.get('api/test/savedItems/' + this.props.match.params.id)
+            .then((res) => {
+                console.log("AFTERGOODGET" + res)
+                this.setState({
+                    itemSaved: true
+                })
+            }
+            ).catch((err) => {
+                "Item not in database"
+                this.setState({
+                    itemSaved: false
+                })
+                console.log(err);
+            });
     }
+
 
     saveItem() {
         // puts state and id to database
         // id and username for saved item
+        console.log('saveId ' + this.state.id)
+        console.log('savetitle ' + this.state.title)
+        console.log('saveUsername ' + this.state.username)
         const item = {
             id: this.state.id,
             title: this.state.title,
-            username: this.state.username
+            username: localStorage.getItem('user')
         };
+        // console.log("id: " +item.id);
+        // console.log("title: " +item.title);
+        // console.log("username: " +item.username);
 
         // put item to database
         axios.post(`api/test/savedItems/`, item)
             .then((res) => {
                 console.log(res);
-                window.location.reload(false);
+                // window.location.reload(false);
                 this.setState({ itemSaved: true });
             })
             .catch((err) => {
@@ -74,7 +86,7 @@ export default class MySaved extends React.Component {
 
     render() {
         return (
-            <div className='App'>
+            <div className='App' >
                 <ul className="grid_list">
                     <div>
                         <div>

@@ -42,10 +42,12 @@ export default class Account extends Component {
                         </div>
                         <div className="my-5 p-1 bg-dark rounded box-shadow">
                             <div className="media text-muted pt-3">
-                                <p className="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-                                    <strong className="d-block text-gray-dark">My Saved Items</strong>
-                                    <Button variant="warning">Edit and delete your saved items</Button>
-                                </p>
+                                <a href="/mySaved">
+                                    <p className="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                                        <strong className="d-block text-gray-dark">My Saved Items</strong>
+                                        <Button variant="warning">Edit and delete your saved items</Button>
+                                    </p>
+                                </a>
                             </div>
                         </div>
                     </div>

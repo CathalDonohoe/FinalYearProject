@@ -27,16 +27,7 @@ export default class MyWantedItem extends Component {
             username: props.item.username
         };
     }
-
-    componentDidMount() {
-        axios.get(`api/test/wanted`)
-            .then(res => {
-                const items = res.data;
-                this.setState({ items });
-            })
-        localStorage.getItem('user');
-    }
-
+    
     deleteItem(id, e) {
         axios.delete(`api/test/wanted/${id}`)
             .then(res => {

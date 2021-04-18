@@ -28,22 +28,10 @@ export default class MyAvailableItem extends Component {
         };
     }
 
-    componentDidMount() {
-        axios.get(`api/test/tutorials`)
-            .then(res => {
-                const items = res.data;
-                this.setState({ items });
-            })
-        localStorage.getItem('user');
-    }
-
     deleteItem(id, e) {
         axios.delete(`api/test/tutorials/${id}`)
             .then(res => {
-                this.props.ReloadData();
                 console.log(res.data);
-                const items = this.state.posts.filter(item => item.id !== id);
-                //this.setState({ items })
                 window.location.reload(false);
             })
             .catch((err) => {
