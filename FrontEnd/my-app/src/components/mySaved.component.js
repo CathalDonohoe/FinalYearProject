@@ -4,7 +4,6 @@ import {
     Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Button
 } from 'reactstrap';
-import { Redirect } from 'react-router';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class MySaved extends React.Component {
@@ -19,6 +18,7 @@ export default class MySaved extends React.Component {
             location: '',
             category: '',
             description: '',
+            imageurl: '',
             itemSaved: false
         }
     }
@@ -31,6 +31,7 @@ export default class MySaved extends React.Component {
                     username: response.data.username,
                     location: response.data.location,
                     category: response.data.category,
+                    imageurl: response.data.imageurl,
                     description: response.data.description
                 });
             })
@@ -42,7 +43,6 @@ export default class MySaved extends React.Component {
         // Check if item is already saved
         axios.get('api/test/savedItems/' + this.props.match.params.id)
             .then((res) => {
-                console.log("AFTERGOODGET" + res)
                 this.setState({
                     itemSaved: true
                 })
@@ -58,25 +58,17 @@ export default class MySaved extends React.Component {
 
 
     saveItem() {
-        // puts state and id to database
-        // id and username for saved item
-        console.log('saveId ' + this.state.id)
-        console.log('savetitle ' + this.state.title)
-        console.log('saveUsername ' + this.state.username)
+        // puts item data to database for loading later
         const item = {
             id: this.state.id,
             title: this.state.title,
             username: localStorage.getItem('user')
         };
-        // console.log("id: " +item.id);
-        // console.log("title: " +item.title);
-        // console.log("username: " +item.username);
 
         // put item to database
         axios.post(`api/test/savedItems/`, item)
             .then((res) => {
                 console.log(res);
-                // window.location.reload(false);
                 this.setState({ itemSaved: true });
             })
             .catch((err) => {
@@ -100,7 +92,7 @@ export default class MySaved extends React.Component {
                                     <CardText>{this.state.description}.</CardText>
                                     <CardSubtitle tag="h6" className="mb-2 text-muted">Location</CardSubtitle>
                                     <CardText>{this.state.location}</CardText>
-                                    <CardSubtitle tag="h6" className="mb-2 text-muted">Wanted by</CardSubtitle>
+                                    <CardSubtitle tag="h6" className="mb-2 text-muted">Posted by</CardSubtitle>
                                     <CardText>{this.state.username}</CardText>
                                     {this.state.itemSaved == false && (
                                         <Button variant="outline-success" className="btn-outline-success" onClick={this.saveItem}>Add to Saved Items</Button>

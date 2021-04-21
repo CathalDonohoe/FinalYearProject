@@ -31,9 +31,7 @@ export default class MyWantedItem extends Component {
     deleteItem(id, e) {
         axios.delete(`api/test/wanted/${id}`)
             .then(res => {
-                this.props.ReloadData();
                 console.log(res.data);
-                const items = this.state.posts.filter(item => item.id !== id);
                 window.location.reload(false);
             })
             .catch((err) => {
