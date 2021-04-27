@@ -68,58 +68,106 @@ Describe the way you went about your project:
 \item Agile / incremental and iterative approach to development. Planning, meetings.
 \item What about validation and testing? Junit or some other framework.
 \item If team based, did you use GitHub during the development process.
-\item Selection criteria for algorithms, languages, platforms and technolo-gies.
+\item Selection criteria for algorithms, languages, platforms and technologies.
 \end{itemize}
-Check out the nice graphs in Figure \ref{tikz:graphs}, and the nice diagram in Figure \ref{tikz:mydiagram}.
 
-\begin{figure}
-  \centering
-  \begin{tikzpicture}
-  \begin{scope}[every node/.style={circle,thick,draw}]
-  \node (a) at (0,2) {a};
-  \node (b) at (2,2) {b};
-  \node (c) at (2,0) {c};
-  \node (d) at (0,0) {d};
-  \end{scope}
-  \begin{scope}[every edge/.style={draw=black,thick}]
-  \path (a) edge (b);
-  \path (b) edge (c);
-  \path (b) edge (d);
-  \path (c) edge (d);
-  \end{scope}
-  \node () at (1,-1) {$G_1$};
-  \end{tikzpicture}
-  \hspace{1.5cm}
-  \begin{tikzpicture}
-  \begin{scope}[every node/.style={circle,thick,draw}]
-  \node (1) at (0,2) {a};
-  \node (2) at (2,2) {b};
-  \node (3) at (2,0) {c};
-  \node (4) at (0,0) {d};
-  \end{scope}
-  \begin{scope}[every edge/.style={draw=black,thick}]
-  \path (1) edge (2);
-  \path (1) edge (3);
-  \path (1) edge (4);
-  \path (3) edge (4);
-  \end{scope}
-  \node () at (1,-1) {$G_2$};
-  \end{tikzpicture}
-  \caption{Nice pictures}
-  \label{tikz:graphs}
-\end{figure}
+\section{Criteria}
+\subsection{React}
+React is an open-source, front end, JavaScript library for building user interfaces or UI components. It is maintained by Facebook and a community of individual developers and companies. We decided to use this for our Front End as it aesthetically pleasing and once saved, the page will update automatically allowing for a quicker and easier development process.
+
+\subsection{Java}
+Java is a class-based, object-orientated programming language that is designed to have as few implementation dependencies as possible. This is the language that our Back End API, wrote in the Spring Boot framework, relies on. As we chose our API framework in Spring Boot first, we subsequently had to develop it in in Java. This language is one that Cathal has been programming for 6 years in, so as he focused on the Back End Development this was an ideal language to choose.
+
+\subsection{Spring Boot}
+Spring Boot is an open Source Java-Based framework used to create a micro Service. We used this framework to create and store collections in our Mongo Database. Spring Boot is developed by the team at Pivotal, it was designed to simplify the development of a new Spring application. The framework takes an opinionated approach to configuration, freeing developers from the need to define boilerplate configuration. Spring boot provides a good platform for Java developers to develop a stand-alone and production-grade spring application.
+
+\subsection{MongoDB}
+MongoDB is a document database, which means it stores data in JSON-like documents. When it came to a decision as to what to use for our database, we had two main choices, MySQL and MongoDB. We both had more experience with MySQL and decided to use a Mongo Database instead to expand our knowledge and experience with more types of technologies.
+
+\subsection{Docker}
+Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. Containers allow the developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and deploy it as one package. This was an ideal platform to store our Mongo Database on, and to package our Front End and Back End for deployment on AWS.
+
+\subsection{Robo 3T}
+Robo 3T (formerly Robomongo) is a graphical user interface (GUI) for MongoDB hosting deployments that allows users to interact with their data through visual indicators instead of a text-based interface. We decided on using this ton confirm objects being added to our collections as we found the visual indicator to be very pleasing when in comparison to a Command line interface that we would normally use when deploying to a Mongo Database.
+
+\subsection{Postman}
+Postman is an API client that makes it east for developers to create, share, test and document APIs. This is done by allowing users to create and save complex HTTP/s requests, as well as read their responses. This allows users to automate manual tests and integrate them into their CI/CD pipeline to ensure that ant code changes wont break the API in production. \par
+This allowed us to test our Back End development was working and could POST and GET API calls without a Front End Environment being connected.
+
+\subsection{AWS}
+Amazon Web Services (AWS) is a secure cloud service platform, offering compute power, database storage, content delivery and other functionality to help businesses scale and grow. In short, AWS allows the user to run a web application server in the cloud. This is the technology that we decided best suited our needs for deploying the application onto a live server.
+
+\subsection{IntelliJ}
+IntelliJ IDEA is an integrated development environment written in Java for developing computer software. It is developed by JetBrains, and is available as a community licensed edition and as a commercial edition. This is the IDE we chose for developing our Java code as it is a visually pleasing and organised IDE. Most of our Java modules required us to use Eclipse, so this was also a nice method of keeping our Final Year Project separate form our other Java code.
+
+\subsection{Visual Studio Code}
+Visual Studio Code is a freeware source-code editor made by Microsoft for Windows, Linux and mac OS. it has supported features for debugging, syntax highlighting, intelligent code completion, snippets, code refactoring and embedded GIT. This IDE is ideal for development of JavaScript as it provides a clear and concise UI for the developer.
+
+\subsection{GitHub}
+GitHub Inc is a provider of internet hosting for software development and version control using Git. It offers the distributed version control and source code management functionality of git plus its own features. We have been using this platform to store our projects since second year of college, so it was an ideal platform to use again to ensure we both had to most up to date version of our code.
+
+\subsection{Jira}
+Jira is a proprietary issue tracking product developed by Atlassian that allows bug tracking and agile project management. This software allows users to create weekly sprints with goals and deadlines to be achieved. We found this to be an ideal methodology for keeping us both knowledgeable of what is to be accomplished next and what needs to be completed.
+
+\subsection{Discord}
+Discord is a VoIP, instant messaging and digital distribution platform designed for creating communities. Users communicate with voice calls, video calls, text messaging, media and files in private chats. We used this platform to communicate live when we were both in development. We also used it to exchange texts, code and images with each other through a Discord Server we created.
+
+\subsection{Facebook Messenger}
+Facebook Messenger is an American messaging app and platform developed by Facebook inc. This is another service that allows for instant massaging between users. This was our main source of communicating with each other for organisation as it has been our main form of communicating since we were in first year.
+
+\subsection{Microsoft Teams}
+Microsoft Teams is a proprietary business communication platform developed by Microsoft. Teams offers work space chat and videoconferencing, file storage and application integration. When Covid-19 first affected us, GMIT switched to using Microsoft Teams for their main form of lecturing and live meetings. We used this platform weekly t have meeting with our supervisor and to communicate with them for advice.
+
+% Check out the nice graphs in Figure \ref{tikz:graphs}, and the nice diagram in Figure \ref{tikz:mydiagram}.
+
+% \begin{figure}
+%   \centering
+%   \begin{tikzpicture}
+%   \begin{scope}[every node/.style={circle,thick,draw}]
+%   \node (a) at (0,2) {a};
+%   \node (b) at (2,2) {b};
+%   \node (c) at (2,0) {c};
+%   \node (d) at (0,0) {d};
+%   \end{scope}
+%   \begin{scope}[every edge/.style={draw=black,thick}]
+%   \path (a) edge (b);
+%   \path (b) edge (c);
+%   \path (b) edge (d);
+%   \path (c) edge (d);
+%   \end{scope}
+%   \node () at (1,-1) {$G_1$};
+%   \end{tikzpicture}
+%   \hspace{1.5cm}
+%   \begin{tikzpicture}
+%   \begin{scope}[every node/.style={circle,thick,draw}]
+%   \node (1) at (0,2) {a};
+%   \node (2) at (2,2) {b};
+%   \node (3) at (2,0) {c};
+%   \node (4) at (0,0) {d};
+%   \end{scope}
+%   \begin{scope}[every edge/.style={draw=black,thick}]
+%   \path (1) edge (2);
+%   \path (1) edge (3);
+%   \path (1) edge (4);
+%   \path (3) edge (4);
+%   \end{scope}
+%   \node () at (1,-1) {$G_2$};
+%   \end{tikzpicture}
+%   \caption{Nice pictures}
+%   \label{tikz:graphs}
+% \end{figure}
 
 
-\begin{figure}
-  \centering
-  \begin{tikzpicture}[node distance=6cm]
-  \node (a) [rect] {A Big Blue Block};
-  \node (b) [oval, right of=a] {And His Oval Friend};
-  \draw [line] (a) -- (b);
-  \end{tikzpicture}
-  \caption{Nice pictures}
-  \label{tikz:graphs}
-\end{figure}
+% \begin{figure}
+%   \centering
+%   \begin{tikzpicture}[node distance=6cm]
+%   \node (a) [rect] {A Big Blue Block};
+%   \node (b) [oval, right of=a] {And His Oval Friend};
+%   \draw [line] (a) -- (b);
+%   \end{tikzpicture}
+%   \caption{Nice pictures}
+%   \label{tikz:graphs}
+% \end{figure}
 
 
 \chapter{Technology Review}
@@ -129,7 +177,7 @@ About seven to ten pages.///////
 \begin{itemize}
 \item Describe each of the technologies you used at a conceptual level. Standards, Database Model (e.g. MongoDB, CouchDB), XMl, WSDL, JSON, JAXP."break in". The Front End: the technologies that were used in the Front End development were React...
 \item Use references (IEEE format, e.g. [1]), Books, Papers, URLs (timestamp) – sources should be authoritative. "break in". The Back End: the technologies that were used in the Back End development were Spring Boot, MongoDB, Docker, Robo 3T, Postman and AWS.
-\item This section will cover the technology used for the development process, mainly the Integrated Development Environments, IntelliJ and Microsoft Code.
+\item This section will cover the technology used for the development process, mainly the Integrated Development Environments, IntelliJ and Visual Studio Code.
 \item Lastly is the technology used in the organisation of the project development: Github, Jira, Discord and Microsoft Teams.
 \end{itemize}
 
@@ -142,7 +190,6 @@ About seven to ten pages.///////
 \subsection{Java}
 
 \subsection{Spring Boot}
-Spring Boot is an open Source Java-Based framework used to create a micro Service. We used this framework to create and store collections in our Mongo Database. Spring Boot is developed by the team at Pivotal, it was designed to simplify the development of a new Spring application. The framework takes an opinionated approach to configuration, freeing developers from the need to define boilerplate configuration. Spring boot provides a good platform for Java developers to develop a stand-alone and production-grade spring application.\par
 Spring Boot Auto Configuration automatically configures the Spring Boot Application based on the JAR dependencies added in the project. For example with this application when we are using the Mongo Database, we don't need to configure a database connection, the Spring Boot auto-configures an in-memory database. To do this though we must add the @EnableAutoConfiguration annotation to the main class file. Then the Spring Boot application will be automatically configured.\par
 Spring Boot application scans all the beans and package declarations when the application initializes. the @ComponsnentScan annotation must be added for the class file to scan the components added to the project. \par
 The class that contains the @SpringBootApplication and the main method is the entry point of the spring boot application. This class must have the main method to run the Spring Boot applicaton. The @SpringBootApplication annotation includes the Auto-configuration, Component Scan and the Spring Boot Configuaration. Since the @SpringBootApplication annotation has been added to the main class we do not need to add the @EnableAutoConfiguration, @ComponentScan and the @SpringBootConfiguration annotations. The @SpringBootApplication annotation includes all other annotations. \par
@@ -167,17 +214,15 @@ public class FyPprojectApplication {
 \subsection{Docker}
 
 \subsection{Robo 3T}
-Robo 3T (formerly Robomongo) is a graphical user interface (GUI) for MongoDb hosting deployments that allows users to interact with their data through visual indicators instead of a text-based interface. We decided on using this ton confirm objects being added to our collections as we found the visual indicator to be very pleasing when in comparison to a Command line interface that we would normally use when deploying to a Mongo Database.
 
 \subsection{Postman}
-
 \subsection{AWS}
 
 \section{Development Technologies}
 
 \subsection{IntelliJ}
 
-\subsection{Microsoft Code}
+\subsection{Visual Studio Code}
 
 \section{Organisation Technology}
 
@@ -187,7 +232,11 @@ Robo 3T (formerly Robomongo) is a graphical user interface (GUI) for MongoDb hos
 
 \subsection{Discord}
 
+\subsection{Facebook Messenger}
+
 \subsection{Microsoft Teams}
+
+
 \chapter{System Design}
 Provide a detailed explanation of the overall system
 architecture. The HOW of the project.
