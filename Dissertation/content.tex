@@ -1,4 +1,12 @@
 %!TEX root = project.tex
+\begin{titlepage}
+   \begin{center}
+       \vspace*{1cm}
+
+       \textbf{Acknowledgements}
+       \end{center}
+       We would like to take this part of the dissertation to acknowledge our supervisor Martin Kenirons and the GMIT staff for all of their support and help throughout our final year project and the past four years.
+\end{titlepage}
 
 \chapter*{About this project}
 \paragraph{Abstract}
@@ -7,25 +15,38 @@ People often buy items that they only intend to use once, and just throw it in t
 \paragraph{Authors}
 Explain here who the authors are. Nathan Garrihy and Cathal Donohoe.
 
+
+
 \chapter{Introduction}
 
-The introduction should be about three to five pages long. (5 recommended)
-Provide a clear context for your project.
-– What is it about? Is it at the right level (8)?
-– Is the scope correct?
-– Do not assume that the reader knows anything about the domain.
-– Why should a reader care or be interested?
-q Set out the objectives of the project clearly.
-– You will have to address each of these in the evaluation /
-conclusion.
-– The metrics by which success or failure is measured.
-q Briefly list each chapter / section and provide a brief description
-of what each section contains.
-– List the resource URL (GitHub address) for the project and provide
-a brief list and description of the main elements at the URL.
-q After reading the introduction, a reader should be 100% certain
-of what the project is all about and why it is relevant.
-Make sure you use references~\cite{einstein}
+% The introduction should be about three to five pages long. (5 recommended)
+% Provide a clear context for your project.
+% – What is it about? Is it at the right level (8)?
+% – Is the scope correct?
+% – Do not assume that the reader knows anything about the domain.
+% – Why should a reader care or be interested?
+% q Set out the objectives of the project clearly.
+% – You will have to address each of these in the evaluation /
+% conclusion.
+% – The metrics by which success or failure is measured.
+% q Briefly list each chapter / section and provide a brief description
+% of what each section contains.
+% – List the resource URL (GitHub address) for the project and provide
+% a brief list and description of the main elements at the URL.
+% q After reading the introduction, a reader should be 100% certain
+% of what the project is all about and why it is relevant.
+% Make sure you use references~\cite{einstein}
+
+At the beginning of our final year, our year were given the opportunity to work as a team or individually to develop a project over the course of the year across two semesters. We worked together on the end of year project in year 3 semester 6 of the course in which we developed a first person shooter in Unity. We were both very happy with our results and our ability to work together so we decided to group up together along with a fellow student Anton Golubev. We knew that what we were to develop had to be up to standards for a level 8 final year project, had to use a multitude of languages, technologies and had to test our knowledge and kills to improve them as software developers. Our initial ideas mostly centered around a CRUD(Create-Read-Update-Delete) application focused on E-commerce or a social media platform. After much debate as to what our final year project would consist of, we agreed on an E-commerce website in users could upload, view and save products for buying and trading. The intention of the project was to improve our abilities and understanding of new technologies and create a better foundation of our skills in our field of work.
+
+\section{The Idea}
+Our final decision on an idea for the final year project was to develop a CRUD application developed for trade and exchange of items between multiple users. 
+
+\section{Scope}
+Project scope is a detailed outline of all aspects of a project, including all related activities, resources, timelines, and deliveries, as well as the project's boundaries. 
+
+
+
 
 \chapter{Context}
 (3-5 pages)
@@ -51,13 +72,27 @@ q Was an empirical approach used? How were problems solved?
 \item List the resource URL (GitHub address) for the project and provide a brief list of the main elements at the URL.
 \end{itemize}
 
-\section{Filler}
+\section{Overview of chapters}
+This dissertation is divided into chapters, each of which contains information about a different aspect of the project. We'll list these chapters and provide a brief summary of each in this section. 
 
+\subsection{Context}
+In the context section of this dissertation we will describe the way we went about executing our project. We will discuss if out approach to the problem was valid or not. We will explain our context of the project, set out its objectives and list the resource to the project.
 
-\subsection{More filler}
+\subsection{Methodology}
+The methods we used to build our project will be described in this section. The approach would delve into the basic processes and strategies used by the project at hand. It will describe our development process, as well as version control and testing.  
 
+\subsection{Technology Review}
+This section will cover the technologies we discovered and used during our research and development. Different technologies, such as Spring Boot, React, MongoDB, and AWS, will be plotted and evaluated. We'll go into how to set them up and how to use them. 
 
-\section{Filler}
+\subsection{System Design}
+This chapter provides an overview of how the whole system architecture is designed and how it all works together, with diagrams to help explain each component of the system. 
+
+\subsection{System Evaluation}
+The performance, robustness, and scalability of the system will be discussed in this section of the dissertation. We'll also go through the benefits and drawbacks we faced while working on this project. 
+
+\subsection{Conclusion}
+The conclusion is a segment in which we summarize our observations, conclusions, and insights gained while developing and deploying this project. 
+
 
 
 
@@ -70,7 +105,7 @@ Describe the way you went about your project:
 \item If team based, did you use GitHub during the development process.
 \item Selection criteria for algorithms, languages, platforms and technologies.
 \end{itemize}
-
+\section{}
 \section{Criteria}
 \subsection{React}
 React is an open-source, front end, JavaScript library for building user interfaces or UI components. It is maintained by Facebook and a community of individual developers and companies. We decided to use this for our Front End as it aesthetically pleasing and once saved, the page will update automatically allowing for a quicker and easier development process.
@@ -188,6 +223,9 @@ About seven to ten pages.///////
 \section{Back End Technology}
 
 \subsection{Java}
+\includegraphics[scale = 0.6]{img/java-logo-1.png}\newline
+The main coding language used on the Back End Development of the project is Java. Java was originally developed by James Gosling at Sun Micro systems (Later to be acquired by Oracle) and released in 1995 as a core component of Sun Micro systems' Java platform. Java is a general-purpose programming language intended to let application developers write once, run anywhere(WORA), meaning that compiled Java code can run on all platforms that support Java without the need of recompilation. \newline
+This was the main reason in our choosing of the language for an application in which we intended to deploy, allowing us to not have to worry about errors once the program executed locally without any compilation errors. This is also a language in which we both had many years of experience in allowing us to commit the time we had gained by already knowing the language for our development, into other technologies we hadn't used such as AWS or MongoDB.
 
 \subsection{Spring Boot}
 Spring Boot Auto Configuration automatically configures the Spring Boot Application based on the JAR dependencies added in the project. For example with this application when we are using the Mongo Database, we don't need to configure a database connection, the Spring Boot auto-configures an in-memory database. To do this though we must add the @EnableAutoConfiguration annotation to the main class file. Then the Spring Boot application will be automatically configured.\par
@@ -214,28 +252,69 @@ public class FyPprojectApplication {
 \subsection{Docker}
 
 \subsection{Robo 3T}
-
+We used Robo 3T to check the Mongo database without having to use a Command Line. This allowed us to visualise our database in a more innovative way.
 \subsection{Postman}
 \subsection{AWS}
 
 \section{Development Technologies}
 
 \subsection{IntelliJ}
-
+This is the Integrated Development Environment that we used for our Back End Java Spring Boot API. IntelliJ has many supported features built into its system.
 \subsection{Visual Studio Code}
 
 \section{Organisation Technology}
 
-\subsection{Github}
+\subsection{GitHub}
+\includegraphics[scale=0.7]{img/github-logo.jpg}
+GitHub has a multitude of different features to vastly improve the development of a project of any level of difficulty. GitHub is an online framework that can be used to host a variety of different programming languages such as Java, C++ and Ruby. GitHub is a git repository hosting service and can be used for version control management. \newline
+GitHub also has many social network functionalities built into its framework. A user on GitHub can follow other users, view their repositories and their projects, search the entirety of public GitHub repositories and more. This was the main method of storing, updating and trading code with one another. If a compile error on one of our ends were to develop, we could always clone the most recent version of our project back onto our machines instead of spending hours trying to roll back to when our own versions last compiled properly. \newline
+Below we will list some basic commands that users can enter into a Command-Line Interface (cmd) to initialise and to push to a repository of their own.
+\subsubsection{Git commands}
+\begin{minted}{console}
+# to initialise a repository inside the current directory
+git init
+
+# to add all of the existing contents inside the directory to the repository
+git add .
+
+# a commit is when a user pushes to the repository. The message "first commit" can be changed to the user's preference allowing them to explain what the commit consists of
+git commit -m "first commit"
+
+# this contains the URL of the repository the user is pushing to
+git remote add origin https://github.com/username/FirstRepo.git 
+
+# command to finalise push
+git push -u origin master
+
+
+# push an existing repository from the command line
+git add .
+git commit -m "Another commit"
+git push
+
+\end{minted}
 
 \subsection{Jira}
 
 \subsection{Discord}
+\includegraphics[scale=0.15]{img/discord-logo.jpg} \newline
+The Discord application is an almost unbeatable means of communication between developers, especially in the world we live in today with the Covid-19 pandemic. Discord was essential in our development of this project, as when we were pair programming, refer to our methodology for more information on this, this was the platform we used to do so. Discord allows a user to share their screen, and all other members of the Discord call to view their screen in real time. Discord also has the feature of bots. These bots can do numerous functions. We created a Final Year Project Server on Discord for our development process. One of the bots included in this server was a bot called "Groovy". This bot allows users to enter commands into the text channels, requesting a song. The bot will automatically join the call and play the song in question. This was utilized a multitude of times to increase our moral and enthusiasm as we worked on the project. \newline
+\includegraphics[scale=0.5]{img/server.jpg}
+\newline
 
 \subsection{Facebook Messenger}
+\includegraphics[scale=0.3]{img/messenger.png} \newline
+Facebook messenger was utilised by us as a form of communication when both of us were away from our machines. Since first year, this has been our main platform for communicating with one another so it was a natural choice for us to continue to use the platform for our planning and development. When one was working on the project and needed to get in touch with the other developer, we could utilize messenger's built in call feature. This will ring the receiver's phone the same as a normal telephone call, but doesn't require any credit, as unemployed students this was a great method for instantly getting in touch with one another.
 
 \subsection{Microsoft Teams}
-
+\includegraphics[scale=0.5]{img/teams-728.jpg}\newline
+In 2020 when the Covid-19 restrictions first came into place in Ireland, Galway-Mayo Institute of Technology switched to the Microsoft Teams platform to continue to do live lectures and labs. As the college decided to keep our course at home for the 2 semesters of our final year, Microsoft Teams was used very often with our modules for live labs and lectures. \newline
+This is the platform we used to communicate with our supervisor and to meet for our weekly meetings. GMIT linked our GMIT accounts with the Microsoft office, meaning we didn't even need to create an account for ourselves, and we were already connected to all of our lecturers and fellow students, saving us some much needed time. It has vast number of different features for users. It allows the user to do most of the same functions as Discord, but we used it for a more professional manner. We had a private chat between ourselves and Martin in which we could message each other and send in photos. This was used to communicate ideas and problems we came across in the development phase. \newline
+\includegraphics[scale=0.4]{img/teams.PNG}\newline
+Another important feature of Microsoft Teams is the ability to schedule meetings between multiple users for a specific Date and Time. This notifies all users invited that they have a scheduled meeting for this Time and Date. This was important in keeping us on top of our weekly meetings. As i stated above with the GMIT accounts and the Microsoft accounts being linked, if we logged into Windows built in Mail application with our GMIT accounts, the scheduled meetings automatically appear on the Windows calendar, further notifying the user of a meeting and ensuring ease of use and punctuality for that user.\newline
+\includegraphics[scale=0.4]{img/Caledar.PNG} \newline
+In teams scheduled meetings \newline
+\includegraphics[scale=0.4]{img/TCalendar.PNG}\newline
 
 \chapter{System Design}
 Provide a detailed explanation of the overall system
