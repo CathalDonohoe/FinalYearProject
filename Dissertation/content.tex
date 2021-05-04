@@ -224,14 +224,14 @@ About seven to ten pages.///////
 
 \subsection{Java}
 \includegraphics[scale = 0.6]{img/java-logo-1.png}\newline
-The main coding language used on the Back End Development of the project is Java. Java was originally developed by James Gosling at Sun Micro systems (Later to be acquired by Oracle) and released in 1995 as a core component of Sun Micro systems' Java platform. Java is a general-purpose programming language intended to let application developers write once, run anywhere(WORA), meaning that compiled Java code can run on all platforms that support Java without the need of recompilation. \newline
+The main coding language used on the Back End Development of the project is Java. Java was originally developed by James Gosling at Sun Micro systems (Later to be acquired by Oracle) and released in 1995 as a core component of Sun Micro systems' Java platform. Java is a general-purpose programming language intended to let application developers write once, run anywhere(WORA), meaning that compiled Java code can run on all platforms that support Java without the need of recompilation. \par
 This was the main reason in our choosing of the language for an application in which we intended to deploy, allowing us to not have to worry about errors once the program executed locally without any compilation errors. This is also a language in which we both had many years of experience in allowing us to commit the time we had gained by already knowing the language for our development, into other technologies we hadn't used such as AWS or MongoDB.
 
 \subsection{Spring Boot}
 Spring Boot Auto Configuration automatically configures the Spring Boot Application based on the JAR dependencies added in the project. For example with this application when we are using the Mongo Database, we don't need to configure a database connection, the Spring Boot auto-configures an in-memory database. To do this though we must add the @EnableAutoConfiguration annotation to the main class file. Then the Spring Boot application will be automatically configured.\par
 Spring Boot application scans all the beans and package declarations when the application initializes. the @ComponsnentScan annotation must be added for the class file to scan the components added to the project. \par
 The class that contains the @SpringBootApplication and the main method is the entry point of the spring boot application. This class must have the main method to run the Spring Boot applicaton. The @SpringBootApplication annotation includes the Auto-configuration, Component Scan and the Spring Boot Configuaration. Since the @SpringBootApplication annotation has been added to the main class we do not need to add the @EnableAutoConfiguration, @ComponentScan and the @SpringBootConfiguration annotations. The @SpringBootApplication annotation includes all other annotations. \par
-See the following code for a better understanding -
+See the following code for a better understanding:
 \begin{minted}{java}
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -246,28 +246,73 @@ public class FyPprojectApplication {
 
 }
 \end{minted}
+Spring Boot's use of these Auto-configuration allowed us to streamline our development of the Back End Environment of the project. Simply by adding dependencies into our pom file of the Spring Boot application, our program will auto-configure it upon compile time. \par
+\begin{minted}{java}
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-data-mongodb</artifactId>
+</dependency
+\end{minted}
 
 \subsection{MongoDB}
+\includegraphics[scale=0.5]{img/MongoDB-logo.png} \newline
+MongoDB is the leading modern, general purpose database platform, designed to unleash the power of software and data for developers and the applications they build. Its built upon the document model, a fundamentally different model than traditional relational databases. \par
+In real world applications it is common place for the data for a single object, like a patient or a user, to spread out among dozens of tables. This adds a massive amount of complexity to the application. This can add a number of downsides to the application:
+\begin{itemize}
+\item It can make the maintenance of the application hard to understand
+\item Secondly it can make adding features harder as there is more to account for
+\item Lastly pulling data from so many areas is inefficient and the applications need to have code to deal with this
+\end{itemize}
+\par MongoDB takes an entirely different approach, data is stored in records called documents and just like real physical records, documents can house multiple phone numbers, addresses and more and can be right next to another document that only has one address and no phone number. Records aren't restricted to having the same number of columns. These documents allow us to store data in a way that is easy for the computer to process and natural for humans to read. This allowed us to no longer have to make our application to accommodate the needs database, MongoDB accommodates us to allow us to store our data in a more natural way. This allowed us to add new data to each collection without having to worry about breaking previous data. \par
 
 \subsection{Docker}
+\includegraphics[scale=0.2]{img/docker-logo.png} \newline
+Docker is a Software Development platform with aspects of a virtualisation technology that makes it easy for developers to develop and deploy applications inside neatly packaged virtual container environments. This means that Docker allows applications to run the same no matter where they are or what type of machine they are running on. Docker containers can be deployed to any machine without any compatibility issues so that our software stays system agnostic making the software simpler to use, less work to develop and easy to maintain and deploy. \par
+These containers running on the computer or server act as miniature micro heaters, each with their own specific job, operating system,isolated CPU processes, memory and network resources. Because of this these containers can be easily added, removed, stopped and started without affecting the run time machine. Containers usually run one specific task, in our case that is the Mongo Database, the React application and the Spring Boot application. These containers are then networked together and potentially scaled. A developer can access the Docker Hub and pull a pre-configured container designed for a specific task from the Hub and integrate it into their own environment. We deiced to make these containers ourselves to gain a better understanding and knowledge of our containers and to ensure that the containers were not executing any unneeded or redundant features.
 
 \subsection{Robo 3T}
-We used Robo 3T to check the Mongo database without having to use a Command Line. This allowed us to visualise our database in a more innovative way.
-\subsection{Postman}
-\subsection{AWS}
+\includegraphics[scale=0.6]{img/robo-logo.png}\newline
+Robo 3T is effectively a MongoDB manager. We used Robo 3T to check the Mongo database without having to use a Command Line. This allowed us to visualise our database in a more innovative way. It can be used on multiple OS's including Windows, Linux and MAC. Once Robo 3T has been loaded, it will open up a GUI asking for the user to connect to. \par
+\includegraphics[scale=0.3]{img/robo-connect.PNG}\par
+From here the user can select one of the connections, and providing that a MongoDB database is currently running on one of the machines ports, Robo 3T will connect to it displaying contents similar to the following: \par
+\includegraphics[]{img/robo-contents.PNG} \par
+The user can then select their MongoDB database, in this case it is test, and Robo 3T will display all of the collections within this database. \par
+\includegraphics[]{img/robo-collections.PNG} \par
+The user can then select these collections and execute various commands that would normally be entered into a command line interface. \par
+\includegraphics[scale=0.4]{img/robo-users.PNG} \newline
+As we can see above, Robo 3T executes these commands, this time it being: 
+\begin{minted}{console}
+db.getCollection('users').find({})
+\end{minted}
+This can save many users the much needed time that would otherwise be lost in a CMD window trying to configure the requests and ensuring that their syntax is correct.
 
+
+\subsection{Postman}
+\includegraphics[scale=0.5]{img/postman-inc-logo-vector.png}
+\subsection{AWS}
+\includegraphics[scale = 0.4]{img/aws_logo_smile_1200x630.png}\newline
+AWS, also known as Amazon Web Services, is one of the leaders in the cloud computer market. AWS was first introduced in 2002 as a means to provide tools and services to developers to incorporate features of Amazon.com into their website. Its first cloud servicing was introduced in 2006. Today, AWS offer a wide range of cloud services that span a wide array of domains. Due to this, the AWS service is now used by over 45\% of the global market. \par
+AWS is a secure cloud platform that provides computing power, database, networking, content storage and much more. The platform also works on a pay-as-you-go model, meaning you only pay as long as your service is running. Some of the other advantages of AWS are:
+\begin{itemize}
+    \item Security: AWS provides a secure and durable platform that offers end-to-end privacy and security.
+    \item Flexible: It allows users to select the OS, Language and Database and other services.
+    \item Scalable: Depending on user requirements, application can be scaled up or down.
+\end{itemize}
+In our project, we use AWS to host the Back End environment, the Front End Environment and the MongoDB Database off of the Docker containers we built. This allowed us to host our website with ease and to deploy it in a matter of days.
 \section{Development Technologies}
 
 \subsection{IntelliJ}
-This is the Integrated Development Environment that we used for our Back End Java Spring Boot API. IntelliJ has many supported features built into its system.
+This is the Integrated Development Environment that we used for our Back End Java Spring Boot API. IntelliJ has many supported features built into its system. This was the optimal IDE of choice for the Back End environment as, being wrote in Java, it is very Object Orientated based. IntelliJ analyzes the code, looking for connections between symbols across all project files and languages.\par
+Using this information, it provides in depth coding assistance, quick navigation, clever error analysis and refactoring. This allows IntelliJ to auto complete many lines of code as the developer works. This is an excellent IDE for Java developers, and can save some much needed time. The smart completion ensures less errors in ones code as oppose to developing on an IDE like Eclipse. IntelliJ isn't tasking on your machine allowing for developers of all levels to create great Java code.
+
 \subsection{Visual Studio Code}
 
 \section{Organisation Technology}
 
 \subsection{GitHub}
 \includegraphics[scale=0.7]{img/github-logo.jpg}
-GitHub has a multitude of different features to vastly improve the development of a project of any level of difficulty. GitHub is an online framework that can be used to host a variety of different programming languages such as Java, C++ and Ruby. GitHub is a git repository hosting service and can be used for version control management. \newline
-GitHub also has many social network functionalities built into its framework. A user on GitHub can follow other users, view their repositories and their projects, search the entirety of public GitHub repositories and more. This was the main method of storing, updating and trading code with one another. If a compile error on one of our ends were to develop, we could always clone the most recent version of our project back onto our machines instead of spending hours trying to roll back to when our own versions last compiled properly. \newline
+GitHub has a multitude of different features to vastly improve the development of a project of any level of difficulty. GitHub is an online framework that can be used to host a variety of different programming languages such as Java, C++ and Ruby. GitHub is a git repository hosting service and can be used for version control management. \par
+GitHub also has many social network functionalities built into its framework. A user on GitHub can follow other users, view their repositories and their projects, search the entirety of public GitHub repositories and more. This was the main method of storing, updating and trading code with one another. If a compile error on one of our ends were to develop, we could always clone the most recent version of our project back onto our machines instead of spending hours trying to roll back to when our own versions last compiled properly. \par
 Below we will list some basic commands that users can enter into a Command-Line Interface (cmd) to initialise and to push to a repository of their own.
 \subsubsection{Git commands}
 \begin{minted}{console}
@@ -308,8 +353,9 @@ Facebook messenger was utilised by us as a form of communication when both of us
 
 \subsection{Microsoft Teams}
 \includegraphics[scale=0.5]{img/teams-728.jpg}\newline
-In 2020 when the Covid-19 restrictions first came into place in Ireland, Galway-Mayo Institute of Technology switched to the Microsoft Teams platform to continue to do live lectures and labs. As the college decided to keep our course at home for the 2 semesters of our final year, Microsoft Teams was used very often with our modules for live labs and lectures. \newline
-This is the platform we used to communicate with our supervisor and to meet for our weekly meetings. GMIT linked our GMIT accounts with the Microsoft office, meaning we didn't even need to create an account for ourselves, and we were already connected to all of our lecturers and fellow students, saving us some much needed time. It has vast number of different features for users. It allows the user to do most of the same functions as Discord, but we used it for a more professional manner. We had a private chat between ourselves and Martin in which we could message each other and send in photos. This was used to communicate ideas and problems we came across in the development phase. \newline
+In 2020 when the Covid-19 restrictions first came into place in Ireland, Galway-Mayo Institute of Technology switched to the Microsoft Teams platform to continue to do live lectures and labs. As the college decided to keep our course at home for the 2 semesters of our final year, Microsoft Teams was used very often with our modules for live labs and lectures. \par
+This is the platform we used to communicate with our supervisor and to meet for our weekly meetings. GMIT linked our GMIT accounts with the Microsoft office, meaning we didn't even need to create an account for ourselves, and we were already connected to all of our lecturers and fellow students, saving us some much needed time. It has vast number of different features for users. It allows the user to do most of the same functions as Discord, but we used it for a more professional manner. We had a private chat between ourselves and Martin in which we could message each other and send in photos. This was used to communicate ideas and problems we came across in the development phase. \par
+
 \includegraphics[scale=0.4]{img/teams.PNG}\newline
 Another important feature of Microsoft Teams is the ability to schedule meetings between multiple users for a specific Date and Time. This notifies all users invited that they have a scheduled meeting for this Time and Date. This was important in keeping us on top of our weekly meetings. As i stated above with the GMIT accounts and the Microsoft accounts being linked, if we logged into Windows built in Mail application with our GMIT accounts, the scheduled meetings automatically appear on the Windows calendar, further notifying the user of a meeting and ensuring ease of use and punctuality for that user.\newline
 \includegraphics[scale=0.4]{img/Caledar.PNG} \newline
