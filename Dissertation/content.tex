@@ -145,6 +145,12 @@ GitHub was essential to us during the development phase of the project. The use 
 \subsection{React}
 React is an open-source, front end, JavaScript library for building user interfaces or UI components. It is maintained by Facebook and a community of individual developers and companies. We decided to use this for our Front End as it aesthetically pleasing and once saved, the page will update automatically allowing for a quicker and easier development process.
 
+\subsection{Node js}
+\cite{NodsJS}Node JS is an asynchronous event-driven platform built on Chrome's JavaScript runtime that allows easy building of efficient, scalable network applications. NPM, or Node Package Manager is the Node JavaScript platform's package manager. It puts modules in place so that node can find themand intelligently manages dependency conflicts. Hundreds of thousands of JavaScript developers use it every day because it's battle-tested and remarkably versatile.
+
+\subsection{Express}
+\cite{ExpressJS}Express is a Node.js web application framework that offers a comprehensive set of features for web applications. Express adds a thin layer of basic web application functionality without masking any of Node JS's known features. When utilized correctly, express offers data to be fetched from the server and displayed to the client with ease and offers high scalability as well as exemplary security. It is well constructed and documented, making implementation quite an easy and fast process.
+
 \subsection{Java}
 Java is a class-based, object-orientated programming language that is designed to have as few implementation dependencies as possible. This is the language that our Back End API, wrote in the Spring Boot framework, relies on. As we chose our API framework in Spring Boot first, we subsequently had to develop it in in Java. This language is one that Cathal has been programming for 6 years in, so as he focused on the Back End Development this was an ideal language to choose.
 
@@ -253,7 +259,48 @@ About seven to ten pages.///////
 
 \section{Front End Technology}
 \subsection{React}
+The front end for this website was coded up using the React framework. We had only used React once before, in 3rd year, when we created a MERN (MongoDB, Express, React, Node) web application. Although one module during semester wasn't too much time, it was evident during this period that as well as being well documented and relatively user friendly, react is a very advanced framework.
+\begin{center}
+    \includegraphics[width = 16cm, height = 8cm]{img/reactImage.jpeg}
+\end{center}
+    
+\subsubsection{Why React?}
+There was a wide range of technical problems which was faced in web development. \cite{IntroductionReact}A large number of these problems were solved when Facebook came out with react and it has been constantly improving since its release in May 2013. React was brought out to solve complex user interface problems and utilizes a philosophy first thought up by Eric Raymond in 2003.
 
+\begin{quote}
+\cite{ArtOfUnix}\emph{The only way to write complex software that won't fall on its face is to hold global complexity down - to build it out of simple parts connected by well defined interfaces - so that most problems are local and you can have some hope of upgrading a part without braking the whole - Eric S. Raymond}
+\end{quote}
+
+\cite{IntroductionReact}React allows data to be displayed on wide scale user interfaces with relative ease. While most frameworks adopt a model, view, controller architecture, it would not be entirely accurate to place React under this category as React focuses more on the "view" as opposed to the model and controller. \newline
+React has a range of libraries which can be imported to add functionality to the framework.\cite{Axios} An example of a library which was used is axios, which is a library that aids the sending of http requests to external resources. Axios, as well as many of the other React libraries is well documented and has plenty resources out there to aid development.
+
+\subsection{Nods.js}
+We used Node JS because it provides all of the benefits of \cite{fullStackJS}full stack JS development. These include
+
+\begin{itemize}
+    \item Improved overall efficiency and productivity
+    \item Better speed and performance
+    \item Wide range of free tools
+\end{itemize}
+
+Due to its asynchronous, single-threaded nature, it works very well with React's responsive web pages and this was very useful during development as it minimised the time to wait between adding a feature and seeing if that feature worked since the website updated in what was pretty much real time. \cite{PaypalNodeJS}Big companies such as PayPal use NodeJS as apposed to something like Java and it's known to allow faster serving of web pages as well as reducing the time it takes to develop server-side software.\newline
+Node makes it very easy to handle all the packages that are required to run the application. It performs a lot of processes with efficiency in the background and provides very user friendly error messages whenever any problems arise during the installation of packages or when running the server. Node removes a lot of the heavy work involved in getting a website to function correctly, and it works extremely well when coupled with React.
+
+\subsection{Express}
+Express has some \href{https://expressjs.com/en/5x/api.html}{good quality documentation}. And although we only coded a tiny portion of this website using express, it was well documented, making it easy to find what we were looking for and implement it correctly. As express state that they are a \cite{ExpressRM}\emph{"Fast, unopinionated, minimalist web framework for node."} Express provides robust routing, focuses on high performance, has great test coverage, provides HTTP helpers for things like caching and redirection. Express also provides an executable which provides simple and quick generation of applications. 
+
+\subsubsection{express.json} 
+Json is a built-in middleware function in Express. Express.json parses requests received with JSON payloads and it is based on body-parser, which parses incoming request bodies in a middleware. 
+
+\subsubsection{express.router}
+A router Object behaves like middleware in that its sole purpose is performing routing and middleware functions. The express router offers a wide range of methods which can be used to acquire all sorts of routing functionality that enable the top level express object to essential operate as a router. Express router can be used with Nodemailer to send emails with fast routing.
+
+\subsubsection{Nodemailer}
+Nodemailer is a NodeJS module that makes sending emails as quite easy. First released in in 2010, at a time where sending email messages was a difficult task, it has now evolved to be the preferred solution for the majority of NodeJS users.
+The Nodemailer team have a strong focus on security and integrity, which was the main reason why we saw it fit to be our email sending module of choice.
+
+\subsection{Other technologies considered}
+We also considered Angular for the back end framework since we also used Angular for a semester. However, along with Nathan's personal preference of React, its virtual DOM makes it perform much better than Angular. Also, React is the more popular framework and this wider community means more documentation and more activity on forums such as \underline{\href{https://stackoverflow.com}{StackOverflow}}. React goes well with Spring Boot and MongoDB, which was another leading factor in deciding what back end technology to use.  \newline
 
 \section{Back End Technology}
 
@@ -430,6 +477,7 @@ As many pages as needed.
   \caption{A table.}
   \label{table:mytable}
 \end{table}
+
 
 \chapter{System Evaluation}
 Evaluate your project against the objective set out in the
