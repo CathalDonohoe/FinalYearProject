@@ -5,7 +5,7 @@
 
        \textbf{Acknowledgements}
        \end{center}
-       We would like to take this part of the dissertation to acknowledge our supervisor Martin Kenirons and the GMIT staff for all of their support and help throughout our final year project and the past four years.
+       We would like to take this part of the dissertation to acknowledge our supervisor Martin Kenirons and the GMIT staff for all of their support and help throughout our final year project and over the past four years.
 \end{titlepage}
 
 \chapter*{About this project}
@@ -40,43 +40,66 @@ Explain here who the authors are. Nathan Garrihy and Cathal Donohoe.
 At the beginning of our final year, our year were given the opportunity to work as a team or individually to develop a project over the course of the year across two semesters. We worked together on the end of year project in year 3 semester 6 of the course in which we developed a first person shooter in Unity. We were both very happy with our results and our ability to work together so we decided to group up together along with a fellow student Anton Golubev. We knew that what we were to develop had to be up to standards for a level 8 final year project, had to use a multitude of languages, technologies and had to test our knowledge and kills to improve them as software developers. Our initial ideas mostly centered around a CRUD(Create-Read-Update-Delete) application focused on E-commerce or a social media platform. After much debate as to what our final year project would consist of, we agreed on an E-commerce website in users could upload, view and save products for buying and trading. The intention of the project was to improve our abilities and understanding of new technologies and create a better foundation of our skills in our field of work.
 
 \section{The Idea}
-Our final decision on an idea for the final year project was to develop a CRUD application developed for trade and exchange of items between multiple users. 
+Our final decision on an idea for the final year project was to develop a full stack CRUD application developed for trade and exchange of items between multiple users. The website is quite similar in style to DoneDeal, except our site promotes users to get in contact with each other to trade items with one another for a period which they see as appropriate.
 
 \section{Scope}
-Project scope is a detailed outline of all aspects of a project, including all related activities, resources, timelines, and deliveries, as well as the project's boundaries. 
+%Project scope is a detailed outline of all aspects of a project, including all related activities, %resources, timelines, and deliveries, as well as the project's boundaries. 
+%Who, What, When, Where, Why
+We both grew up in a close-knit community surrounded by friendly neighbours and oftentimes if our family required something like a ladder, or a drill for the day, our neighbours would allow us to borrow one for as long as necessary. After moving to Galway for college, we noticed that cities really lack that close-knit connection as many people don't even know their neighbours well enough to ask to borrow an item. This got us thinking and our solution was a website designed so that users can browse items and acquire contact details for the owner of the listed item, if desired. This website is a useful way of saving money by offering the ability to temporarily acquire items which are only required once. \newline
+The initial scope intended for this project to be completed by 3 students. However, we were struck with a slight roadblock as we had to re-define the scope in December as one of our team members was unable to continue with 4th Year due to personal reasons inflicted by the COVID-19 pandemic.
 
-
-
-
-\chapter{Context}
-(3-5 pages)
-Describe the way you went about your project. Was your
-approach to the problem valid?
-– Software development v/s Research methodology.
-q Agile / incremental and iterative approach to development.
-– Planning. Did you storyboard? How did you determine the
-requirements for the project?
-– Meetings. Frequency, structure, checks & balances, feedback.
-q What about validation and testing?
-– Junit or some other framework.
-q If team based, did you use GitHub during the development
-process? What about other development tools?
-– Selection criteria for algorithms, languages, platforms and
-technologies.
-q Was an empirical approach used? How were problems solved?
-– Was any research undertaken first?
+\subsection{Objectives}
+Targets we hoped to achieve with this project. The main functionality we wanted to achieve was:
 \begin{itemize}
-\item Provide a context for your project.
-\item Set out the objectives of the project
-\item Briefly list each chapter / section and provide a 1-2 line description of what each section contains.
-\item List the resource URL (GitHub address) for the project and provide a brief list of the main elements at the URL.
+    \item Users can register and browse items
+
+    \item Users can select to borrow items from other users
+
+    \item Users can view the owners of items and contact them
+
+    \item Users can add items to a Wishlist
 \end{itemize}
+We aimed for the website to allow users to register or login using an email and password which is stored in a database. We aimed to allow users to post items they want to borrow as well as items they have which they can loan out to a database and display these items on the website for all users to view. We were unsure about how we could allow users to contact owners of other items, but we wanted to leave it mostly the users responsibility to organise the borrowing of items since handling it ourselves could potentially lead to legal implications. i.e. if somebody gets robbed, we should not be held accountable.
+
+\subsubsection{Timelines}
+Upon starting the project, we aimed to have a working prototype with a login and sign up working to show for the presentation in late December. However, the loss of a team member on the run up to Christmas meant that we had to re-scope the project, scaling it down so that we would be finished with it by the due date in May. This delay made us unable to merge the working front end with the working back end code and we had to show the 2 separate prototypes for the presentation.
+We also set some milestones around this time which we used along with the guidance of our supervisor to ensure we didn't fall behind. These were:
+\begin{itemize}
+    \item January 31st - Get react and spring boot working together (talking).
+
+    \item February 28th - Users can add+view items for trade
+
+    \item March 31st - User can add+view wanted items
+
+    \item April 15th - Users can save ads to their saved-items for later
+    
+    \item April 30th - All unimplemented features added to the site, dissertation complete
+    
+    \item May 7th - All testing and bug fixes complete
+\end{itemize}
+
+\subsection{Deliverables}
+ Deliverables we need to produce in order to meet all requirements. 
+ 
+\subsubsection{Application}
+\begin{itemize}
+\item A link to \underline{\href{https://github.com/CathalDonohoe/FinalYearProject}{the GitHub repository}} containing the full source code for the website.
+\item A working version of the website deployed to AWS.
+\end{itemize}
+
+\subsubsection{Documentation}
+\begin{itemize}
+\item A PDF file containing this dissertation
+\item This dissertation in latex format
+\item README file with instructions of how to interact with the website
+\item A brief screencast of the working application
+\end{itemize}
+ 
+\subsection{Boundaries}
+The main things that were left out in this project were left out because of the loss of a group member. We had planned to do a review system where the borrower and lender provide each other with a small review and rating out of 10 after completing a transaction to show that those users are trustworthy. This would have been a nice feature as it's hard to trust anyone these days. However, we decided not to implement this feature when we scaled the project back a bit in December.  
 
 \section{Overview of chapters}
 This dissertation is divided into chapters, each of which contains information about a different aspect of the project. We'll list these chapters and provide a brief summary of each in this section. 
-
-\subsection{Context}
-In the context section of this dissertation we will describe the way we went about executing our project. We will discuss if out approach to the problem was valid or not. We will explain our context of the project, set out its objectives and list the resource to the project.
 
 \subsection{Methodology}
 The methods we used to build our project will be described in this section. The approach would delve into the basic processes and strategies used by the project at hand. It will describe our development process, as well as version control and testing.  
@@ -93,8 +116,8 @@ The performance, robustness, and scalability of the system will be discussed in 
 \subsection{Conclusion}
 The conclusion is a segment in which we summarize our observations, conclusions, and insights gained while developing and deploying this project. 
 
-
-
+\section{GitHub Info}
+The project can be found on \underline{\href{https://github.com/CathalDonohoe/FinalYearProject}{this GitHub repository}}, located at \url{https://github.com/CathalDonohoe/FinalYearProject}
 
 \chapter{Methodology}
 About one to two pages.
@@ -437,4 +460,3 @@ q Finish on an upbeat note.
 \item Briefly summarise your context and ob-jectives (a few lines).
 \item Highlight your findings from the evalua-tion section / chapter and any opportuni-ties identified.
 \end{itemize}
-
