@@ -5,7 +5,7 @@ import {
     CardTitle, CardSubtitle, Button
 } from 'reactstrap';
 
-export default class MySaved extends React.Component {
+export default class ViewAvailable extends React.Component {
     constructor(props) {
         super(props);
         this.saveItem = this.saveItem.bind(this);

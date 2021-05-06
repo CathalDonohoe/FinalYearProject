@@ -4,6 +4,7 @@ import {
     Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Button
 } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 export default class WantedItems extends Component {
     constructor() {
@@ -119,7 +120,8 @@ export default class WantedItems extends Component {
                                                     <CardText>{items.location}</CardText>
                                                     <CardSubtitle tag="h6" className="mb-2 text-muted">Wanted by</CardSubtitle>
                                                     <CardText>{items.username}</CardText>
-                                                    <Button>Details</Button>
+                                                    <Link to={'/wantedItems/' + items.id}
+                                                        className="btn btn-primary">See Item</Link>
                                                 </CardBody>
                                             </Card>
                                         )}
@@ -139,7 +141,8 @@ export default class WantedItems extends Component {
                                                 <CardText>{items.location}</CardText>
                                                 <CardSubtitle tag="h6" className="mb-2 text-muted">Wanted by</CardSubtitle>
                                                 <CardText>{items.username}</CardText>
-                                                <Button>Details</Button>
+                                                <Link to={'/wantedItems/' + items.id}
+                                                    className="btn btn-primary">See Item</Link>
                                             </CardBody>
                                         </Card>
                                     </div>
