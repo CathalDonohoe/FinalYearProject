@@ -1,7 +1,9 @@
 import axios from "axios";
 import React, { Component } from "react";
+import { Redirect } from 'react-router'
 
 export default class SignUp extends Component {
+    state = {};
 
     handleSubmit = e => {
         e.preventDefault();
@@ -15,7 +17,12 @@ export default class SignUp extends Component {
 
         axios.post('api/auth/signup', data).then(
             res => {
-                console.log(res);
+                console.log(res + 'signed up');
+                localStorage.setItem('token', data.token);
+                localStorage.setItem('user', data.username);
+                this.setState({
+                    loggedIn: true
+                });
             }
         ).catch(
             err => {
@@ -25,11 +32,18 @@ export default class SignUp extends Component {
     }
 
     render() {
+        if (this.state.loggedIn) {
+            return <Redirect to={'/'} />
+        }
         return (
             <form onSubmit={this.handleSubmit}>
                 <br /><br /><br /><br /><br /><br /><br />
                 <div className="auth-inner">
                     <div className="auth-wrapper">
+                        <div className="centered">
+                            <img width="50" src="https://i.ibb.co/qmLk76K/icons8-b-64.png" />
+                        </div>
+                        <br />
                         <h3>Sign Up</h3>
                         <div className="form-group">
                             <label>Username</label>

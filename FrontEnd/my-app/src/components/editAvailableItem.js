@@ -208,24 +208,3 @@ export default class EditAvailable extends Component {
     );
   }
 }
-
-{/* <>
-        <Button variant="primary" onClick={this.handleShow}>
-          Edit
-        </Button>
-
-        <Modal show={this.state.show} onHide={this.handleClose} animation={false}>
-          <Modal.Header closeButton>
-            <Modal.Title>Edit</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>items.title</Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={this.handleClose}>
-              Close
-            </Button>
-            <Button variant="primary" onClick={this.handleClose}>
-              Save Changes
-            </Button>
-          </Modal.Footer>
-        </Modal>
-      </> */}

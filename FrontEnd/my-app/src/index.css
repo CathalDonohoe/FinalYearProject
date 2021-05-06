@@ -99,3 +99,9 @@ body, html, .App, #root, .auth-wrapper {
   text-align: center;
   text-decoration-style: solid;
 }
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

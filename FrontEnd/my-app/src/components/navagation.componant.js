@@ -2,10 +2,6 @@ import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 
 export default class Navagation extends Component {
-    componentDidMount = () => {
-        localStorage.getItem('user');
-    }
-
     logout() {
         localStorage.clear();
         window.location.reload(false);
@@ -15,6 +11,10 @@ export default class Navagation extends Component {
         let isLoggedIn = false;
         let myUser = localStorage.getItem('user');
         let myToken = localStorage.getItem('token');
+
+        console.log("myUser ="+ localStorage.getItem('user'));
+
+        console.log("myToken ="+ localStorage.getItem('token'));
 
         if (myToken && myUser != null) {
             isLoggedIn = true;

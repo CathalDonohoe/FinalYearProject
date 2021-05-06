@@ -4,7 +4,6 @@ import {
     Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Button
 } from 'reactstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class MySaved extends React.Component {
     constructor(props) {

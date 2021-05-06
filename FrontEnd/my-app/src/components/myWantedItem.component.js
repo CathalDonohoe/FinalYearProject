@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { Component } from "react";
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
+import NotLoggedIn from "./notLoggedIn.component";
 
 export default class MyWantedItem extends Component {
     constructor(props) {
@@ -96,8 +97,17 @@ export default class MyWantedItem extends Component {
     }
 
     render() {
-        const textStyle = { color: 'white' };
+        let isLoggedIn = false;
+
         let myUser = localStorage.getItem('user');
+        let myToken = localStorage.getItem('token');
+
+        const textStyle = { color: 'white' };
+
+        if (myToken && myUser != null) {
+            isLoggedIn = true;
+        }
+        if (isLoggedIn) {
 
         return (
             <div className="container">
@@ -232,4 +242,9 @@ export default class MyWantedItem extends Component {
             </div>
         )
     }
+    else if(!isLoggedIn)
+    {
+        <NotLoggedIn/>
+    }
+}
 }

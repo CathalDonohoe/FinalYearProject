@@ -5,6 +5,10 @@ export default class HomeNavBar extends Component {
     render() {
         return (
             <nav className="navbar navbar-inverse">
+                <div className="centered">
+                    <img width="50" src="https://i.ibb.co/qmLk76K/icons8-b-64.png" />
+                </div>
+                <br />
                 <div className="container-fluid">
                     <div className="navbar-header">
                         <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">

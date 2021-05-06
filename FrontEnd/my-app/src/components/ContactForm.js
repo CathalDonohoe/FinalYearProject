@@ -27,7 +27,11 @@ const ContactForm = () => {
       <br /><br /><br /><br /><br /><br />
       <form onSubmit={handleSubmit}>
         <div className="auth-inner">
+          <div className="centered">
+            <img width="50" src="https://i.ibb.co/qmLk76K/icons8-b-64.png" />
+          </div>
           <h3>Contact Us</h3>
+          <br />
           <div className="my-1 p-1 bg-light rounded box-shadow">
             <label htmlFor="name">Name:</label>
             <input type="text" id="name" required />

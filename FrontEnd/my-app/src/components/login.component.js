@@ -4,7 +4,7 @@ import { Router } from "react-router-dom";
 import { Redirect } from 'react-router'
 
 export default class Login extends Component {
-    state = {}
+    state = {};
 
     handleSubmit = e => {
         e.preventDefault();
@@ -38,6 +38,10 @@ export default class Login extends Component {
                 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
                 <div className="auth-inner">
                     <div className="auth-wrapper">
+                        <div className="centered">
+                            <img width="50" src="https://i.ibb.co/qmLk76K/icons8-b-64.png" />
+                        </div>
+                        <br />
                         <h3>Login</h3>
                         <div className="form-group">
                             <label>Username</label>

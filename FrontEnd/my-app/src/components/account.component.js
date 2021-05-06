@@ -51,8 +51,6 @@ export default class Account extends Component {
                             </div>
                         </div>
                     </div>
-
-
                 )}
                 {!isLoggedIn && (
                     <NotLoggedIn />

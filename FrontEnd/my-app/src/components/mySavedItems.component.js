@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { Component } from "react";
 import Button from 'react-bootstrap/Button'
+import NotLoggedIn from "./notLoggedIn.component";
 
 
 export default class MySavedItems extends Component {
@@ -41,9 +42,18 @@ export default class MySavedItems extends Component {
     render() {
         const textStyle = { color: 'white' };
         let myUser = localStorage.getItem('user');
+        let myToken = localStorage.getItem('token');
+
         let itemHref= 'availableItems/'.concat(this.state.id)
         localStorage.setItem('itemToLoad', this.state.id);
+        let isLoggedIn = false;
 
+
+        if (myToken && myUser != null) {
+            isLoggedIn = true;
+        }
+        
+        if (isLoggedIn) {
         return (
             <div className="container">
                 <ul>
@@ -59,4 +69,9 @@ export default class MySavedItems extends Component {
             </div >
         )
     }
+    else if (!isLoggedIn)
+    {
+        <NotLoggedIn/>
+    }
+}
 }

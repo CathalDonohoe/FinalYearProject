@@ -82,9 +82,13 @@ export default class AddWantedItem extends Component {
             <div>
                 {isLoggedIn && (
                     <form onSubmit={this.handleSubmit}>
-                        <br /><br /><br /><br /><br /><br /><br />
+                        <br /><br /><br /><br />
                         <div className="auth-inner">
                             <div className="auth-wrapper">
+                                <div className="centered">
+                                    <img width="50" src="https://i.ibb.co/qmLk76K/icons8-b-64.png" />
+                                </div>
+                                <br />
                                 <h2>Add New Wanted Item</h2>
                                 <br />
                                 <div className="form-group">
