@@ -247,8 +247,6 @@ Microsoft Teams is a proprietary business communication platform developed by Mi
 
 
 \chapter{Technology Review}
-
-About seven to ten pages.///////
  When we decided that we would be developing a CRUD application our first step was to decide upon what technologies we would be using to develop and test the application. This section will be split into four main focus points; The technology used in the Front End of the application, the technology used in the Back End of the application, the technology used for development, and the technology that is used to organise the development process of the application.
 \begin{itemize}
 \item Describe each of the technologies you used at a conceptual level. Standards, Database Model (e.g. MongoDB, CouchDB), XMl, WSDL, JSON, JAXP."break in". The Front End: the technologies that were used in the Front End development were React...
@@ -445,25 +443,78 @@ In teams scheduled meetings \newline
 \includegraphics[scale=0.4]{img/TCalendar.PNG}\newline
 
 \chapter{System Design}
-Provide a detailed explanation of the overall system
-architecture. The HOW of the project.
-– System designed should be informed by the technology review, i.e.
-you applied the knowledge that you learned doing the research…
-– Standards-based where possible. How are components coupled?
-– Cloud hosted – IaaS / PaaS / SaaS.
-q Use diagrams to augment an explanation of the architecture
-used.
-– Provide a comprehensive overview of the different components of
-the system and how they work together.
-– UML class, sequence and interaction diagrams.
-– Course and fine grain.
-– Use screen shots of forms or other UI components.
-q Page count range difficult to state as varies significantly
-between projects.
-As many pages as needed.
-\begin{itemize}
-\item Architecture, UML etc. An overview of the different components of the system. Diagrams etc… Screen shots etc.
-\end{itemize}
+%Provide a detailed explanation of the overall system
+%architecture. The HOW of the project.
+%– System designed should be informed by the technology review, i.e.
+%you applied the knowledge that you learned doing the research…
+%– Standards-based where possible. How are components coupled?
+% – Cloud hosted – IaaS / PaaS / Sa.
+% Use diagrams to augment an explanation of the architecture
+%used.
+%– Provide a comprehensive overview of the different components of
+%the system and how they work together.
+%– UML class, sequence and interaction diagrams.
+%– Course and fine grain.
+%– Use screen shots of forms or other UI components.
+%q Page count range difficult to state as varies significantly
+%between projects.
+%As many pages as needed.
+The front end of this website is set up with React so that it is a single page application. These kind of websites offer a nice boost in performance, as all of the HTML, CSS and JavaScript is loaded as soon as the website is loaded. Single page applications perform efficient data caching which reduces loading times. SPA's also provide a much better overall experience for the user.
+
+\section{Overview of components}
+\subsection{Front End}
+\subsubsection{Starting out}
+The \underline{\href{https://react-bootstrap.github.io/getting-started/introduction/}{ReactJS documentation}} explains how to use node and npm to build a new single-page application with the default template, which was an excellent starting point.
+\begin{minted}[bgcolor=black,formatcom=\color{yellow}]{bash}
+npx create-react-app my-app
+cd my-app
+\end{minted}
+
+After building the app, which only took a few minutes, it is easy to to a point where it is accessible by running a node package manager command which runs a series of commands that enables the app to be viewed at the default url of \emph{localhost:3000}
+\begin{minted}[bgcolor=black,formatcom=\color{yellow}]{bash}
+npm start
+\end{minted}
+
+The next task was consuming the react-bootstrap package by following the \underline{\href{https://react-bootstrap.github.io/getting-started/introduction/}{React-bootstrap documentation}}. The node package manager was used to install the vanilla react-bootstrap package which allows us to customize the bootstrap Sass files. The package also removes the need to use a content delivery network for the stylesheet.
+\begin{minted}[bgcolor=black,formatcom=\color{yellow}]{bash}
+npm install react-bootstrap bootstrap
+\end{minted}
+
+\subsubsection{Sign Up}
+Since the first semester was rather challenging for a number of reasons, our main goal was to have working login and register functionality prepared in time for the Christmas presentations. For this reason, sign up was the first front end component which was worked on. 
+
+\subsubsection{Login}
+
+*state change
+
+
+
+\subsubsection{Homepage}
+
+
+\subsubsection{Add Item}
+Wanted and available
+*must be logged in
+
+\subsubsection{View Items}
+Wanted and available
+
+
+\subsubsection{Contact form}
+
+
+\subsubsection{My Account}
+
+
+
+
+
+\subsection{Back End}
+
+\subsection{Database}
+
+\section{How they work together}
+This section outlines how we intertwined the React, Spring Boot and MongoDB.
 
 \begin{table}[h]
   \centering
