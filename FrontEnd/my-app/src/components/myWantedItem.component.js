@@ -74,7 +74,7 @@ export default class MyWantedItem extends Component {
         e.preventDefault();
         console.log('Item: ' + this.state.title + ' '
             + this.state.category + ' ' + this.state.description + ' '
-            + /*this.state.imageurl + ' ' +*/ this.state.location);
+            + this.state.location);
 
         const newItem = {
             title: this.state.title,

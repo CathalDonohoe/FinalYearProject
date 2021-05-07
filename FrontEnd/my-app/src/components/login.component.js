@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { Component } from "react";
-import { Router } from "react-router-dom";
 import { Redirect } from 'react-router'
 
 export default class Login extends Component {
@@ -30,6 +29,13 @@ export default class Login extends Component {
     }
 
     render() {
+        // makes sure user cant navigate to login page by typing /login
+        if (localStorage.getItem('token')!= null) {
+            this.setState({
+                loggedIn: true
+            });
+        }
+
         if (this.state.loggedIn) {
             return <Redirect to={'/'} />
         }
@@ -64,7 +70,7 @@ export default class Login extends Component {
 
                         <button type="submit" className="btn btn-dark btn-block">Login</button>
                         <p className="forgot-password text-right">
-                            Forgot <a href="#">password?</a>
+                            Forgot <a href="/contact" style={{ color: 'black', fontWeight: 'bold' }}>password?</a>
                         </p>
                     </div>
                 </div>

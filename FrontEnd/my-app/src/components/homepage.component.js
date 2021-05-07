@@ -3,7 +3,6 @@ import mensImg from "../images/manInSuit.jpg";
 import womensImg from "../images/womanSuit.jpg";
 import childsImg from "../images/childClothes.jpg";
 import ballImg from "../images/ball.jpg"
-import sportsImg from "../images/sports.jpg";
 import golfClubImg from "../images/golfClubs.jpg";
 import otherEquipmentImg from "../images/sportMisc.jpg"
 import electronicsImg from "../images/electronics.jpg";
@@ -16,8 +15,7 @@ import gardeningTools from "../images/gardeningTools.jpg"
 import paintingTools from "../images/paintingTools.jpg"
 import fastenerTools from "../images/fastenerTools.jpg"
 import otherItems from "../images/otherItems.jpg"
-// import booksImg from "../images/books.jpg";
-// import toolsImg from "../images/tools.png";
+
 import '../App.css';
 import axios from "axios";
 import HomeNavBar from "./homeNavBar.component"
@@ -229,7 +227,7 @@ export default class Homepage extends Component {
                     </div>
                   </div>
                   <footer className="container-fluid text-center">
-                    <h5 style={{color: "white"}}>Online Store Copyright ©</h5>
+                    <h5 style={{ color: "white" }}>Online Store Copyright ©</h5>
                   </footer>
                 </div>
               </div>

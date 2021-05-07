@@ -37,7 +37,6 @@ function App() {
           <Route exact path="/availableItems" component={AvailableItems}/>
           <Route path='/availableItems/:id' component={ViewAvailable}></Route>
           <Route path='/wantedItems/:id' component={ViewWanted}></Route>
-          {/* <Route path='/wantedItems/:id' component={Edit}></Route> */}
           <Route exact path="/wantedItems" component={WantedItems}/>
           <Route exact path="/contact" component={ContactForm}/>
           <Route exact path="/account" component={Account}/>

@@ -7,7 +7,6 @@ export default class Account extends Component {
         localStorage.getItem('user');
     }
 
-
     render() {
         const textStyle = { color: 'white' };
         let isLoggedIn = false;
@@ -17,6 +16,7 @@ export default class Account extends Component {
         if (myToken && myUser != null) {
             isLoggedIn = true;
         }
+
         return (
             <div className="container">
                 {isLoggedIn && (
@@ -55,8 +55,6 @@ export default class Account extends Component {
                 {!isLoggedIn && (
                     <NotLoggedIn />
                 )}
-
-
             </div>
         )
     }

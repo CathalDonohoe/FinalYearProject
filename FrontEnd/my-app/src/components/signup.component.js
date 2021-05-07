@@ -11,18 +11,18 @@ export default class SignUp extends Component {
         const data = {
             username: this.username,
             email: this.email,
-            password: this.password,
-            // confirmPassword: this.confirmPassword
+            password: this.password
         }
 
         axios.post('api/auth/signup', data).then(
             res => {
                 console.log(res + 'signed up');
+                localStorage.setItem('SignUp', "true");
                 localStorage.setItem('token', data.token);
                 localStorage.setItem('user', data.username);
-                this.setState({
-                    loggedIn: true
-                });
+                localStorage.getItem('SignUp');
+                this.setState({ loggedIn: true });
+                window.location.reload(false);
             }
         ).catch(
             err => {
@@ -33,7 +33,8 @@ export default class SignUp extends Component {
 
     render() {
         if (this.state.loggedIn) {
-            return <Redirect to={'/'} />
+
+            return <Redirect to={'/login'} />
         }
         return (
             <form onSubmit={this.handleSubmit}>
@@ -63,15 +64,9 @@ export default class SignUp extends Component {
                                 onChange={e => this.password = e.target.value} />
                         </div>
 
-                        {/* <div className="form-group">
-                    <label>Confirm Password</label>
-                    <input type="password" className="form-control" placeholder="Confirm password" 
-                        onChange = {e => this.confirmPassword = e.target.value}/>
-                </div> */}
-
                         <button type="submit" className="btn btn-dark btn-block">Sign Up</button>
                         <p className="forgot-password text-right">
-                            Already registered? <a href="#">Sign in</a>
+                            Already registered? <a href="#" style={{ color: 'black', fontWeight: 'bold' }}>Sign in</a>
                         </p>
                     </div>
                 </div>

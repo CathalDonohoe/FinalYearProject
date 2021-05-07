@@ -1,6 +1,4 @@
-import React, { useState, Component } from 'react';
-// import Modal from 'react-bootstrap/Modal'
-// import Button from 'react-bootstrap/Button'
+import React, { Component } from 'react';
 import axios from 'axios';
 
 export default class EditAvailable extends Component {

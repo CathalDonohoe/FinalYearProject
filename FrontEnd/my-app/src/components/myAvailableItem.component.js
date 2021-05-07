@@ -71,9 +71,6 @@ export default class MyAvailableItem extends Component {
 
     onSubmit(e) {
         e.preventDefault();
-        console.log('Item: ' + this.state.title + ' '
-            + this.state.category + ' ' + this.state.description + ' '
-            + /*this.state.imageurl + ' ' +*/ this.state.location);
 
         const newItem = {
             title: this.state.title,
@@ -114,7 +111,7 @@ export default class MyAvailableItem extends Component {
                                 Edit
                             </Button>
 
-                             {/* EDIT ITEM //
+                            {/* EDIT ITEM //
                              This Modal is only shown when show state is true */}
                             <Modal show={this.state.show} onHide={this.handleClose} animation={false}>
                                 <Modal.Header closeButton>

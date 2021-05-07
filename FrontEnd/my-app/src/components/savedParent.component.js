@@ -31,7 +31,9 @@ export default class SavedParent extends Component {
             })
         }
         else if (!isLoggedIn) {
-            <NotLoggedIn />
+            return (
+                <NotLoggedIn />
+            )
         }
 
     }

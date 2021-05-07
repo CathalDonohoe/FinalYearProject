@@ -7,14 +7,21 @@ export default class Navagation extends Component {
         window.location.reload(false);
     }
 
+    componentDidMount() {
+        // refreshes on sign up so that page registers
+        // that player is signed up
+        console.log(localStorage.getItem('SignUp'));
+        if (localStorage.getItem('SignUp') == 'true') {
+            if (localStorage.getItem('token') && localStorage.getItem('user') == null) {
+                window.location.reload(false);
+            }
+        }
+    }
+
     render() {
         let isLoggedIn = false;
         let myUser = localStorage.getItem('user');
         let myToken = localStorage.getItem('token');
-
-        console.log("myUser ="+ localStorage.getItem('user'));
-
-        console.log("myToken ="+ localStorage.getItem('token'));
 
         if (myToken && myUser != null) {
             isLoggedIn = true;
@@ -49,10 +56,6 @@ export default class Navagation extends Component {
 
                     <div className="collapse navbar-collapse" id="rightNavbar">
                         <ul className="navbar-nav ml-auto">
-                            {/* <form className="form-inline">
-                                <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                                <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                            </form> */}
                             {isLoggedIn && (
                                 <li className="nav-item">
                                     <Link className="nav-link" to={"/account"}>{myUser}</Link>

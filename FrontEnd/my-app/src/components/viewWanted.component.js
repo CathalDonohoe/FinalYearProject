@@ -72,7 +72,7 @@ export default class MyWanted extends React.Component {
                                     <CardText>{this.state.location}</CardText>
                                     <CardSubtitle tag="h6" className="mb-2 text-muted">Posted by</CardSubtitle>
                                     <CardText>{this.state.username}</CardText>
-                                    <Link to="/wantedItems/" className="btn-primary">Go back</Link>
+                                    <Link to="/wantedItems/" className="btn btn-dark">Go back</Link>
                                 </CardBody>
                             </Card>
                         </div>

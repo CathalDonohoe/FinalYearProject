@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 
 export default class NotLoggedIn extends Component {
     render() {
@@ -9,9 +10,10 @@ export default class NotLoggedIn extends Component {
                 </div>
                 <br />
                 <h1>You must be logged in to access this page!</h1>
-                <button className="btn btn-dark"><a href="/login">Log in</a></button>
+                
+                <Link to="/login" className="btn btn-dark">Log in</Link>
                 <br /><br />
-                <button className="btn btn-dark"><a href="/signup">Sign up</a></button>
+                <Link to="/signup" className="btn btn-dark">Sign up</Link>
             </div>
         );
     }
