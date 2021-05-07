@@ -132,15 +132,28 @@ After these decisions we decided we should utilize an incremental and iterative 
     \item Incremental: Iterative software development refers to the process of repeating software development tasks in loops known as iterations. For each iteration, a new version of the program is created before the best product is found. 
 \end{itemize}
 
+This method of development was the main approach that we followed for the first semester of the year. We would meet weekly, discuss what needed to be done, and try to achieve it before the next meeting. On the 1st of December, our teammate, Anton Golubev, informed us that he would be leaving the course and deferring the year. This was a shock to both of us and meant that our workforce dropped by a third. \par
+This drastic change in our design and development led us to try another approach to our development method. We decided to use Pair Programming, as we were now strictly Front End and Back End developers. As Cathal had more knowledge of the Back End internals, with less knowledge of the Front End, and Nathan being Vice Versa, this method allowed us to work more efficiently together with each others helping hand. \par
+\begin{itemize}
+    \item Pair Programming: This is an agile software development method that involves two programmers working at the same station. One developer writes the code while the other coaches the programmer, and reviews and assists in the writing of the code.
+\end{itemize}
+\par Our creation process and individual comprehension of the programs improved dramatically after we switched to pair programming.
+It reduced the amount of time wasted due to small errors and sped up the production process on both ends. It helped each end of the application to understand what the other required in order to work properly.  \par
+We returned to using the Iterative and Incremental development approach to correct individual bugs and features within the different development environments until the bulk of the development was completed. 
+
 \section{Validation testing}
 This part of the methodology will be dedicated to the Validation testing of our project. This is the method of testing software during the development process or at the end of the development process to see whether it meets those specifications. \par
 Validation testing guarantees that the product meets the client's, or in our case, our project's, requirements. It can also be described as demonstrating that the product performs as expected when used in the designated environment. In short it is designed to answer if the product meets the requirements specified.\par
-Testing is an integral aspect of a software project's life cycle, and it contributes to the overall consistency and reliability of the code in the project. 
-
-TO BE CONCLUDED- Cathal
+Testing is an integral aspect of a software project's life cycle, and it contributes to the overall consistency and reliability of the code in the project. The main form of testing that we incorporated into the project was white box testing. 
+\begin{itemize}
+    \item White Box Testing: In this form of testing, the tester has complete knowledge of the software's architecture, implementation, and internal structure. 
+\end{itemize}
+\par We used this method of testing by means of Postman and Robo 3T. We would send GET/POST/DELETE requests from Postman, while our Spring Boot application and Docker was running, and check for the exact out puts in Robo 3T by checking the MongoDB.
 
 \section{Use of GitHub}
-GitHub was essential to us during the development phase of the project. The use of GitHub in our development not only allowed us to save and exchange code with ease, but it can also double as a version control manager. We had all used GitHub for personal and academic projects, so we were all very familiar with the hosting service already. 
+GitHub was essential to us during the development phase of the project. The use of GitHub in our development not only allowed us to save and exchange code with ease, but it can also double as a version control manager. We had all used GitHub for personal and academic projects, so we were all very familiar with the hosting service already. \par
+Creating a GitHub repository was the first step in our development. Cathal created it and later added Nathan, Anton and Martin as collaborators to the repository. We tried to ensure that we never committed broken code to the repository so that there was always a working version of the application stored there. This method became essential to us at numerous times during the development. There were occasions when each of us had broken our own code beyond repair, and it was much more effective to simply clone the repo to the last working version than to try to reverse the code. 
+
 \section{Criteria}
 \subsection{React}
 React is an open-source, front end, JavaScript library for building user interfaces or UI components. It is maintained by Facebook and a community of individual developers and companies. We decided to use this for our Front End as it aesthetically pleasing and once saved, the page will update automatically allowing for a quicker and easier development process.
@@ -249,10 +262,10 @@ Microsoft Teams is a proprietary business communication platform developed by Mi
 \chapter{Technology Review}
  When we decided that we would be developing a CRUD application our first step was to decide upon what technologies we would be using to develop and test the application. This section will be split into four main focus points; The technology used in the Front End of the application, the technology used in the Back End of the application, the technology used for development, and the technology that is used to organise the development process of the application.
 \begin{itemize}
-\item Describe each of the technologies you used at a conceptual level. Standards, Database Model (e.g. MongoDB, CouchDB), XMl, WSDL, JSON, JAXP."break in". The Front End: the technologies that were used in the Front End development were React...
-\item Use references (IEEE format, e.g. [1]), Books, Papers, URLs (timestamp) – sources should be authoritative. "break in". The Back End: the technologies that were used in the Back End development were Spring Boot, MongoDB, Docker, Robo 3T, Postman and AWS.
+\item The Front End: the technologies that were used in the Front End development were React, Node.js and Express.
+\item The Back End: the technologies that were used in the Back End development were Spring Boot, MongoDB, Docker, Robo 3T, Postman and AWS.
 \item This section will cover the technology used for the development process, mainly the Integrated Development Environments, IntelliJ and Visual Studio Code.
-\item Lastly is the technology used in the organisation of the project development: Github, Jira, Discord and Microsoft Teams.
+\item Lastly is the technology used in the organisation of the project development: GitHub, Jira, Discord and Microsoft Teams.
 \end{itemize}
 
 \section{Front End Technology}
@@ -368,7 +381,14 @@ This can save many users the much needed time that would otherwise be lost in a 
 
 
 \subsection{Postman}
-\includegraphics[scale=0.5]{img/postman-inc-logo-vector.png}
+\includegraphics[scale=0.4]{img/postman-inc-logo-vector.png} \newline
+Postman is a modular API testing tool that integrates seamlessly into your CI/CD pipeline.Before connecting the API to the Front End React environment, we used Postman to send API requests to the Spring Boot application while it was live. Cathal was able to function and test his environment without the need for Nathan to attach it to the Front End as a result of this. \par
+Postman is incredibly easy to set up on ones machine. Simply download the application from the website and its ready to go. Postman is a tab based application, meaning that every time you want to test a new request function, we recommend you open a new tab. From here you're presented with something similar to this: \newline
+\includegraphics[scale=0.4]{img/postman-tab.PNG}\newline
+\par As you can see, the user can then select the type of request they mean to specify eg. GET/POST/PUT/DELETE. Then when they enter the specified URL, http://localhost:8081 for example, they can then select the body. This part of Postman is where the user decides what to enter. As MongoDB is a document based database structure, we send raw JSON data with our requests. \newline
+\includegraphics[scale = 0.8]{img/postman-JSON.PNG} \newline
+Then when the user clicks the "send" button, they will get a response specifying if the request was successful of if there was an error in the request. This was an excellent method of testing and confirming that the API calls were functioning before ever having to connect it to the Front End Environment.
+
 \subsection{AWS}
 \includegraphics[scale = 0.4]{img/aws_logo_smile_1200x630.png}\newline
 AWS, also known as Amazon Web Services, is one of the leaders in the cloud computer market. AWS was first introduced in 2002 as a means to provide tools and services to developers to incorporate features of Amazon.com into their website. Its first cloud servicing was introduced in 2006. Today, AWS offer a wide range of cloud services that span a wide array of domains. Due to this, the AWS service is now used by over 45\% of the global market. \par
@@ -379,6 +399,10 @@ AWS is a secure cloud platform that provides computing power, database, networki
     \item Scalable: Depending on user requirements, application can be scaled up or down.
 \end{itemize}
 In our project, we use AWS to host the Back End environment, the Front End Environment and the MongoDB Database off of the Docker containers we built. This allowed us to host our website with ease and to deploy it in a matter of days.
+
+\subsection{Other Technologies considered}
+Our initial idea for the back end was to use a python based Flask framework for the Back End. However, after many failed attempts at getting a functional Flask application working, we decided to move onto a Spring Boot application instead. This was mostly due to another module we were doing at the time, Emerging Technology. This module involves the use of coding in python with the Anaconda. Anaconda is a free and open-source scientific computing distribution for the Python and R programming languages that aims to make package management and deployment easier. But with the installation of Anaconda, the commands set by Flask, to create and run a new Flask application, cannot be executed properly. To avoid breaking our Anaconda for that module, we opted to use Spring Boot instead. 
+
 \section{Development Technologies}
 
 \subsection{IntelliJ}
@@ -420,6 +444,10 @@ git push
 \end{minted}
 
 \subsection{Jira}
+\includegraphics[scale=0.4]{img/jira.png}\newline
+Jira is an online web application that allows users to create and set sprints. Jira can also allow you to inform your team of the latest bugs and problem, and also of new features of what has been done. These bugs, tasks or features can be documented deeply allowing for everyone on the team to be in the know and completely aware of these updates to their project. \par
+Jira was mostly used by us in creating sprints for us to work on for the week or weeks ahead. We would set up our tasks and set up the goals, and as they are completed, they can be moved over to the "done" section allowing everyone on the team to be aware of this development in the project. \par
+\includegraphics[scale=0.7]{img/jira-sprint.PNG}\newline
 
 \subsection{Discord}
 \includegraphics[scale=0.15]{img/discord-logo.jpg} \newline
@@ -458,8 +486,12 @@ In teams scheduled meetings \newline
 %– Use screen shots of forms or other UI components.
 %q Page count range difficult to state as varies significantly
 %between projects.
-%As many pages as needed.
-The front end of this website is set up with React so that it is a single page application. These kind of websites offer a nice boost in performance, as all of the HTML, CSS and JavaScript is loaded as soon as the website is loaded. Single page applications perform efficient data caching which reduces loading times. SPA's also provide a much better overall experience for the user.
+%As many pages as needed
+This application is a React application that uses a Spring Boot API to communicate fetch and get requests from a MongoDB. The front end of this website is set up with React so that it is a single page application. These kind of websites offer a nice boost in performance, as all of the HTML, CSS and JavaScript is loaded as soon as the website is loaded. Single page applications perform efficient data caching which reduces loading times. SPA's also provide a much better overall experience for the user. \par
+The Back End of this website is set up with Spring Boot. Spring Boot is a Spring module that provides the RAD (Rapid Application Development) feature to the Spring framework \cite{Javapoint}. Spring Boot is a project that uses the Spring Framework as its foundation.
+It makes setting up, configuring, and running both easy and web-based applications simpler and quicker. This provides an overall much easier development time for the programmer. \par
+Spring Boot communicates with the MongoDB Database through the Mongo Repositories set up within the Spring Boot API. The below image may provide more context for the reader: \newline
+\includegraphics[scale=0.5]{img/architecture.png}
 
 \section{Overview of components}
 \subsection{Front End}
@@ -511,24 +543,88 @@ Wanted and available
 
 
 \subsection{Back End}
+\subsubsection{Starting up}
+There's no prerequisites to setting up a Spring Boot Application other than having a version of Java installed (We would recommend 8 or above) and an Integrated Development Environment (We would recommend IntelliJ). Inside your IDE, create a new Spring web tool to create the Spring Boot project. This will automatically create most of the files you need for your Spring Boot Application to work. \par
+The next step is to open the pom.XML file. This file should be located in the main directory of your project, not within a package. Here is the location of all of the dependencies that the Spring Boot Application will install. The one needed for Mongo and the JWT authentication are as follows: \par
+\begin{minted}[]{java}
+<dependency>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-data-mongodb</artifactId>
+</dependency>
+
+<dependency>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-security</artifactId>
+</dependency>
+
+<dependency>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-web</artifactId>
+</dependency>
+
+<dependency>
+  <groupId>io.jsonwebtoken</groupId>
+  <artifactId>jjwt</artifactId>
+  <version>0.9.1</version>
+</dependency>
+\end{minted}
+
+\subsubsection{Sign up}
+From the beginning of the first semester, the main goal of the project was to achieve a working sign up and login. Naturally it made more sense to begin with a Sign up functionality, to be able to send data to our database through our API. To explain how this will work in lament terms:
+\begin{itemize}
+    \item POST: an API POST request will be sent to the Spring Boot API.
+    \item Check: The Server will check is the current user exists in the database
+    \item Return: A Return message of either "Registered successfully" or "Username is already taken" will be sent back.
+\end{itemize}
+\par The signup request is a POST request. Firstly the function checks id the signUpRequest's username is already in use, and then checks if the email is in use. If neither of these are in use it moves to the next step, creating a user: \par
+\begin{minted}[]{java}
+ User user = new User(signUpRequest.getUsername(),
+                signUpRequest.getEmail(),
+                encoder.encode(signUpRequest.getPassword()));
+
+        Set<String> strRoles = signUpRequest.getRoles();
+        Set<Role> roles = new HashSet<>();
+\end{minted}
+\par This code sets the username, the email, password and the role(user by default) to local variables for now. The code then executes some checks to ensure that the role sent with the signup request exist, and then finally we save the new user to a MongoDB userRepository: \par
+\begin{minted}{java}
+  userRepository.save(user);
+
+  return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
+\end{minted}
+
+
+\subsubsection{Login}
+After we tested our new API request, by using Postman and Robo 3T, the next step was to make a login feature, to ensure we could retrieve data from our MongoDB Database as well. This API also has numerous steps that we will explain below: \par
+\begin{itemize}
+    \item POST: The username and the password are sent to the Spring Boot API.
+    \item Authenticate: The username and password are checked if accurate within the database and sends back a JWT string with a secret.
+    \item Return: The API sends back a JWT response to the requester if the username and password are correct.
+\end{itemize}
+The signin is also a POST request, as the username and password are getting sent to the API. To start, the username and the password are sent to an instance of the AuthenticationManager class. If the principal of the input authentication is valid and verified, AuthenticationManager#authenticate returns an Authentication instance with the authenticated flag set to true. Otherwise, if the principal is not valid, it will throw an AuthenticationException. For the last case, it returns null if it can't decide \cite{Baeldung}. \par
+\begin{minted}{java}
+ Authentication authentication = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword())); 
+\end{minted}
+\par After this the method generates a JWTToken. The method checks the user's role and grants them authority dependant on this. We dont utilize this as all users of the website are simply "User" as oppose to giving some admin and moderator. We did need this but its a built in function in JWT, so it doesnt cause any overloading or unneccessary code, it could be implemented at a later date. Lastly the method returns a response with the JWT, the user id, username and the email.\par
+\begin{minted}{java}
+ return ResponseEntity.ok(new JwtResponse(jwt,
+                userDetails.getId(),
+                userDetails.getUsername(),
+                userDetails.getEmail(),
+                roles));
+\end{minted}
+
+\subsubsection{Add Item}
+
+\subsubsection{Wanted Item}
+
+\subsubsection{Saved Item}
 
 \subsection{Database}
 
 \section{How they work together}
 This section outlines how we intertwined the React, Spring Boot and MongoDB.
 
-\begin{table}[h]
-  \centering
-  \begin{tabular}{x{2cm}p{3cm}}
-    \toprule \\
-    Column 1 & Column 2 \\
-    \midrule \\
-    Rows 2.1 & Row 2.2 \\
-    \bottomrule
-  \end{tabular}
-  \caption{A table.}
-  \label{table:mytable}
-\end{table}
 
 
 \chapter{System Evaluation}
