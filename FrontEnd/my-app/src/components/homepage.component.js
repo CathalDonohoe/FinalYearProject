@@ -17,32 +17,9 @@ import fastenerTools from "../images/fastenerTools.jpg"
 import otherItems from "../images/otherItems.jpg"
 
 import '../App.css';
-import axios from "axios";
-import HomeNavBar from "./homeNavBar.component"
-
+import HomeNavBar from "./homeNavBar.component";
 
 export default class Homepage extends Component {
-
-  componentDidMount() {
-    const config = {
-      headers: {
-        Authorization: 'Bearer ' + localStorage.getItem('token')
-      }
-    };
-
-    axios.get('/api/auth/user', config).then(
-      res => {
-        console.log(res);
-        this.setState({
-          user: res.data
-        });
-      },
-      err => {
-        console.log(err);
-      }
-    );
-  }
-
   processChoice(filter) {
     localStorage.setItem('filter', filter);
   }

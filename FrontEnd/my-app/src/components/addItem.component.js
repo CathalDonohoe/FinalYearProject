@@ -23,6 +23,7 @@ export default class AddItem extends Component {
             description: this.itemdescription,
             imageurl: this.image,
             location: this.location,
+            email: localStorage.getItem("email"),
             username: this.username
         }
 

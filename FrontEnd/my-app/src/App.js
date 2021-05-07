@@ -20,6 +20,7 @@ import EditAvailable from './components/editAvailableItem';
 import ViewAvailable from './components/viewAvailable.component';
 import ViewWanted from './components/viewWanted.component';
 import SavedParent from './components/savedParent.component';
+import EmailOut from './components/emailOut.component';
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
           <Route path='/wantedItems/:id' component={ViewWanted}></Route>
           <Route exact path="/wantedItems" component={WantedItems}/>
           <Route exact path="/contact" component={ContactForm}/>
+          <Route exact path="/send" component={EmailOut}/>
           <Route exact path="/account" component={Account}/>
           <Route exact path="/myAvailable" component={MyAvailable}/>
           <Route exact path="/myWanted" component={MyWanted}/>

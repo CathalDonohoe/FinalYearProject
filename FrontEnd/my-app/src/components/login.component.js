@@ -18,6 +18,7 @@ export default class Login extends Component {
                 console.log(res);
                 localStorage.setItem('token', res.data.token);
                 localStorage.setItem('user', res.data.username);
+                localStorage.setItem('email', res.data.email);
                 this.setState({
                     loggedIn: true
                 });

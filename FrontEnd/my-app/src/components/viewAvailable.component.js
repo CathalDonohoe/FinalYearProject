@@ -4,6 +4,8 @@ import {
     Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Button
 } from 'reactstrap';
+import EmailOut from './emailOut.component';
+import { Redirect } from 'react-router'
 
 export default class ViewAvailable extends React.Component {
     constructor(props) {
@@ -18,6 +20,7 @@ export default class ViewAvailable extends React.Component {
             category: '',
             description: '',
             imageurl: '',
+            email: '',
             itemSaved: false
         }
     }
@@ -31,8 +34,13 @@ export default class ViewAvailable extends React.Component {
                     location: response.data.location,
                     category: response.data.category,
                     imageurl: response.data.imageurl,
+                    email: response.data.email,
                     description: response.data.description
                 });
+                // sets items for sending email
+                localStorage.setItem("NameOfUser", this.state.username);
+                localStorage.setItem("ItemOfUser", this.state.title);
+                localStorage.setItem("EmailOfSender", this.state.email)
             })
             .catch((err) => {
                 "Item not in database"
@@ -53,8 +61,11 @@ export default class ViewAvailable extends React.Component {
                 })
                 console.log(err);
             });
-    }
 
+        const data = {
+            email: this.email
+        }
+    }
 
     saveItem() {
         // puts item data to database for loading later
@@ -76,11 +87,20 @@ export default class ViewAvailable extends React.Component {
     }
 
     render() {
+        console.log("DEBUGLOGMESSAGE"+localStorage.getItem("EmailSent"))
+        if (localStorage.getItem("EmailSent") === 'true') {
+            console.log("in")
+            localStorage.setItem("EmailSent", false);
+            console.log("out")
+            return <Redirect to={'/homepage'} />
+        }
+
         return (
             <div className='App' >
                 <ul className="grid_list">
                     <div>
                         <div>
+                            {/* Displays the item's details */}
                             <Card>
                                 <CardImg top width="100%" src={this.state.imageurl} alt="Card image cap" />
                                 <CardBody>
@@ -99,6 +119,13 @@ export default class ViewAvailable extends React.Component {
                                     {this.state.itemSaved == true && (
                                         <Button variant="outline-danger" className="btn-outline-danger" disabled>Item Already Saved</Button>
                                     )}
+                                </CardBody>
+                            </Card>
+                            {/* Allows user to contact item owner */}
+                            <Card>
+                                <CardBody>
+                                    <CardTitle tag="h4">Contact <b>{this.state.username}</b></CardTitle>
+                                    <EmailOut />
                                 </CardBody>
                             </Card>
                         </div>

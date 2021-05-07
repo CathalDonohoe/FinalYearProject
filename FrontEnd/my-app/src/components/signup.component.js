@@ -16,11 +16,9 @@ export default class SignUp extends Component {
 
         axios.post('api/auth/signup', data).then(
             res => {
-                console.log(res + 'signed up');
-                localStorage.setItem('SignUp', "true");
                 localStorage.setItem('token', data.token);
                 localStorage.setItem('user', data.username);
-                localStorage.getItem('SignUp');
+                localStorage.setItem('email', res.data.email);
                 this.setState({ loggedIn: true });
                 window.location.reload(false);
             }
@@ -33,7 +31,6 @@ export default class SignUp extends Component {
 
     render() {
         if (this.state.loggedIn) {
-
             return <Redirect to={'/login'} />
         }
         return (
