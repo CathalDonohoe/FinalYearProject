@@ -16,6 +16,7 @@ public class WantedItem {
     private boolean published;
     private String category;
     private String username;
+    private String email;
     private String imageurl;
 
 
@@ -30,12 +31,13 @@ public class WantedItem {
 
     }
 
-    public WantedItem(String title, String description, boolean published, String category, String username, String imageurl, String location) {
+    public WantedItem(String title, String description, boolean published, String category, String username, String email, String imageurl, String location) {
         this.title = title;
         this.description = description;
         this.published = published;
         this.category = category;
         this.username = username;
+        this.email = email;
         this.imageurl = imageurl;
         this.location = location;
     }
@@ -84,6 +86,14 @@ public class WantedItem {
         this.username = username;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getImageurl() {
         return imageurl;
     }
@@ -102,6 +112,6 @@ public class WantedItem {
 
     @Override
     public String toString() {
-        return "Tutorial [id=" + id + ", title=" + title + ", desc=" + description + ", published=" + published + ", category=" + category+ ", username=" + username + ", imagerurl=" + imageurl+ ", location=" + location+ "]";
+        return "Tutorial [id=" + id + ", title=" + title + ", desc=" + description + ", published=" + published + ", category=" + category+ ", username=" + username + ", email=" + email +", imagerurl=" + imageurl+ ", location=" + location+ "]";
     }
 }
