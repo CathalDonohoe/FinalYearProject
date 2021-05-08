@@ -615,39 +615,89 @@ The signin is also a POST request, as the username and password are getting sent
 \end{minted}
 
 \subsubsection{Add Item}
+The Sign up and the Login component were completed development before the December presentation in the first semester. We each took a few weeks off after that to allow for holidays, work on other individual projects and for some personal time. When we began development again in late January. The main focus of the Back End development was to allow the users of the website the ability to add items to the database and to be able to retrieve this information. The classes associated to this are as follows: \par
+\begin{itemize}
+    \item Model: This class is a document collection, that comprises of the variables needed for the item (name, category, location etc), the getters and setters for variables and a constructor.
+    \item Repository: This class is an interface that comprises of two lists, a list of the items sorted by their title(name) and sorted by if they're published or not.
+    \item Controller: This class is where all of the MongoDB database API calls are declared.
+\end{itemize}
+\par The Model has a toString method that we use to set the variables in a String format to allow it to be stored in the MongoDB database. This is essential as with MongoDB being a Document based database, the information has to be in a JSON format for it to be saved and stored correctly. \par
+\begin{minted}{java}
+@Override
+    public String toString() {
+        return "Tutorial [id=" + id + ", title=" + title + 
+        ", desc=" + description + ", published=" + published +
+        ", category=" + category+ ", username=" + username+ 
+        ", email=" + email +", imagerurl=" + imageurl+ 
+        ", location=" + location+ "]";
+    }
+\end{minted}
+The Repository is essential for the storage of the items in the database. Its also thanks to this interface, that allows us to search and retrieve specific items from the database. \par
+\begin{minted}{java}
+List<Tutorial> findByTitleContaining(String title);
+\end{minted}
+The main class in the addition of items is the controller. This Class allows for the API calls, similar to the AuthController in the signup-login components. We have a function that calls all of the items from the database, this is used for the Available items page in the front end. There are also functions for the addition and the update of items within the database. This is also where the delete function is declared.
+\begin{minted}{java}
+@GetMapping("/tutorials")
+    public ResponseEntity<List<Tutorial>> getAllTutorials(@RequestParam
+    (required = false) String title) {
+        try {
+            List<Tutorial> tutorials = new ArrayList<Tutorial>();
+
+            if (title == null)
+                tutorialRepository.findAll().forEach(tutorials::add);
+            else
+                tutorialRepository.findByTitleContaining(title).forEach
+                (tutorials::add);
+
+            if (tutorials.isEmpty()) {
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            }
+
+            return new ResponseEntity<>(tutorials, HttpStatus.OK);
+        } catch (Exception e) {
+          return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+\end{minted}
+The code from these parts of the Back End Environment were adapted from this cite \cite{zKoder}.
 
 \subsubsection{Wanted Item}
+When the development of the add items was complete, the next objective we turned our focus to was the Wanted Items page. This if for when a user is looking to buy or purchase and item, they can post to this page to advertise their want for this item. \par
+The overall design of the Wanted Item's Back End classes are similar to the Add Items. As both items are structurally the same (the need for item name, category, location etc), we felt this was the best method of moving along with its development. Due to this, the Wanted Items is functionally the same as Add Items, therefore we wont repeat ourselves by showing the model, controller and repository for these classes, as the code is very similar to the code explained above in the Add Item section. \par 
 
 \subsubsection{Saved Item}
+The development of the Wanted Item was completed in early March. After this this was a lull in the Back End environment as we were working on other modules and Cathal was attempting to get the AWS for the website functional. In early April we created the Saved Items function. This was to allow users to add items from the available items, to another page of their own displaying the items they intended on purchasing or trading for in the future. \par
+The structure behind this is similar to the Add Item and the Wanted Item. They contain a Model, a Controller and a Repository that work very similarly to the classes in the other components mentioned above. There are small difference however, as we only needed to store an ID, a username and a title in the Saved Item. We use these variables to search through the available items, and to display only the items with the same ID as the ones stored in this repository. This is done through a method in the controllers: \par
+\begin{minted}{java}
+@GetMapping("/wanted/{id}")
+    public ResponseEntity<WantedItem> getWantedItemById(@PathVariable("id")
+    String id) {
+     Optional<WantedItem> WantedItemData = wantedItemRepository.findById(id);
 
-\subsection{Database}
+        if (WantedItemData.isPresent()) {
+            return new ResponseEntity<>(WantedItemData.get(), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
 
+    }
+\end{minted}
 \section{How they work together}
 This section outlines how we intertwined the React, Spring Boot and MongoDB.
 
 
 
 \chapter{System Evaluation}
-Evaluate your project against the objective set out in the
-introduction.
-– Prove that your software is robust. How?
-• Unit / acceptance testing for robustness / behaviour.
-• Stability metrics for structure.
-– Any tables / graphs of results belong here.
-• Provide an accompanying discussion.
-– Use performance benchmarks (space and time) if algorithmic.
-– Measure the outcomes / outputs of your system / software against
-the objectives from the Introduction.
-q Highlight any limitations or opportunities in your approach or
-technologies used.
-– Identifying limitations is not a sign of weakness. It is proof of
-insight.
-As many pages as needed.
+To begin the System Evaluation we will begin by reiterating over our objectives set in the introduction. The main functionality we wanted to achieve was:
 \begin{itemize}
-\item Prove that your software is robust. How? Testing etc. 
-\item Use performance benchmarks (space and time) if algorithmic.
-\item Measure the outcomes / outputs of your system / software against the objectives from the Introduction.
-\item Highlight any limitations or opportuni-ties in your approach or technologies used.
+    \item Users can register and browse items
+
+    \item Users can select to borrow items from other users
+
+    \item Users can view the owners of items and contact them
+
+    \item Users can add items to a Wishlist
 \end{itemize}
 
 \chapter{Conclusion}
