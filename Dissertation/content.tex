@@ -802,20 +802,12 @@ In mid October however, we were required to install Anaconda onto our machines f
 When it came to the MongoDB Database we chose for storing our information, there were very few limitations to speak of. The main hurdle we encountered was that everything that was to be stored in the MongoDB Database must be first declared as a document and must be in a JSON format to be stored properly.
 
 \chapter{Conclusion}
-About three pages.
+We are both extremely happy with the final result of our hard months of work for this Final Year Project. It was both challenging and rewarding in its own way. We enjoyed our own free reign to make requirements and the ability to challenge them in any method we found fit to. We found that choosing our own technologies and having to overcome their short ends and their limitations resulted in a learning curve that couldn't have been accomplished by any other means. After seven months of designing, researching, planning, development and deployment we are happy to confirm that we have completed the project. \par
+To reevaluate again, the goal of our project was to develop a full stack CRUD application developed for trade and exchange of items between multiple users. The Back End data storage was wrote in Java with a Spring Boot framework, and the Front End was wrote in JavaScript as a React application. We will now re-summarise our objectives of this project. \par
 
-\begin{itemize}
-Briefly summarise your context and objectives.
-– Remind the reader about the overall rationale and goals of the
-project.
-q Highlight your findings from the System Evaluation chapter.
-– List out the outcomes of the project in a bulleted list.
-– Serendipity – did you gain any tangential or even unrelated insights
-by happenchance during the project?
-• Lots of discoveries have been made this way, e.g. Flemming
-and antibiotics.
-– State any opportunities identified for future investigation.
-q Finish on an upbeat note.
-\item Briefly summarise your context and ob-jectives (a few lines).
-\item Highlight your findings from the evalua-tion section / chapter and any opportuni-ties identified.
-\end{itemize}
+\section{Objectives}
+The first objective of the project was to ensure that a new user to the website could firstly access the website, could then register and sign in with the credentials entered in the registry, and lastly could then browse and view items that are available for trade on the website. This was achieved as early as mid-February. We were extremely pleased with this project so early in the development process. \par
+The next object we will bring to light is to allow users to select the items from other users. This was mostly implemented in early April, as Nathan added an entirely new page that would display the details associated with the item the user was to click on. This was implemented late in the development, this was due to it not being a major priority of the project at the time. \par
+The objective after this was for users to be able to view the owner of the item and to have the ability to contact them. This was the most recent objective to be reached, as there were many complications with the server communicating with our react application. We pondered on how implement this function for some time, without exposing any private information of the users of the application. This was a focus of ours to ensure that we get their private data secure. We finally opted to have the gmail we created for this project, to send an automated email to the owner with the interested buyers email. The follow up of this contact is up to the owner entirely, relieving us of any legal issues. \par
+Lastly, the objective for users to be able to add items to their wish list. This was achieved before the third objective as we seen implementing it to be a much more straight forward process. We simply saved the id of an item to anew container containing a username and an id. This allowed us to retrieve the data quickly and efficiently with little complication. \par
+
