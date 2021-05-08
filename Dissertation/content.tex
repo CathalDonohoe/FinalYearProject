@@ -325,7 +325,7 @@ Spring Boot Auto Configuration automatically configures the Spring Boot Applicat
 Spring Boot application scans all the beans and package declarations when the application initializes. the @ComponsnentScan annotation must be added for the class file to scan the components added to the project. \par
 The class that contains the @SpringBootApplication and the main method is the entry point of the spring boot application. This class must have the main method to run the Spring Boot applicaton. The @SpringBootApplication annotation includes the Auto-configuration, Component Scan and the Spring Boot Configuaration. Since the @SpringBootApplication annotation has been added to the main class we do not need to add the @EnableAutoConfiguration, @ComponentScan and the @SpringBootConfiguration annotations. The @SpringBootApplication annotation includes all other annotations. \par
 See the following code for a better understanding:
-\begin{minted}{java}
+\begin{minted}[fontsize=\footnotesize]{java}
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -340,7 +340,7 @@ public class FyPprojectApplication {
 }
 \end{minted}
 Spring Boot's use of these Auto-configuration allowed us to streamline our development of the Back End Environment of the project. Simply by adding dependencies into our pom file of the Spring Boot application, our program will auto-configure it upon compile time. \par
-\begin{minted}{java}
+\begin{minted}[fontsize=\footnotesize]{java}
 <dependency>
 	<groupId>org.springframework.boot</groupId>
 	<artifactId>spring-boot-starter-data-mongodb</artifactId>
@@ -374,7 +374,7 @@ The user can then select their MongoDB database, in this case it is test, and Ro
 The user can then select these collections and execute various commands that would normally be entered into a command line interface. \par
 \includegraphics[scale=0.4]{img/robo-users.PNG} \newline
 As we can see above, Robo 3T executes these commands, this time it being: 
-\begin{minted}{console}
+\begin{minted}[fontsize=\footnotesize]{console}
 db.getCollection('users').find({})
 \end{minted}
 This can save many users the much needed time that would otherwise be lost in a CMD window trying to configure the requests and ensuring that their syntax is correct.
@@ -420,7 +420,7 @@ GitHub has a multitude of different features to vastly improve the development o
 GitHub also has many social network functionalities built into its framework. A user on GitHub can follow other users, view their repositories and their projects, search the entirety of public GitHub repositories and more. This was the main method of storing, updating and trading code with one another. If a compile error on one of our ends were to develop, we could always clone the most recent version of our project back onto our machines instead of spending hours trying to roll back to when our own versions last compiled properly. \par
 Below we will list some basic commands that users can enter into a Command-Line Interface (cmd) to initialise and to push to a repository of their own.
 \subsubsection{Git commands}
-\begin{minted}{console}
+\begin{minted}[fontsize=\footnotesize]{console}
 # to initialise a repository inside the current directory
 git init
 
@@ -553,14 +553,12 @@ Once logged in, there is a state change in the top navigation bar which changes 
     </li>
 )}
 \end{minted}
-
 \subsubsection{Homepage}
 Coupled with the top nav bar, which is static and stays there no matter what page the user navigates to, the homepage also has a navigation bar on the side with links to the different pages they can access.
 \newline
 \includegraphics[scale=0.3]{img/fe_homepage.PNG}
 \newline
 The homepage also has a number of images which can be clicked to find available items which are filtered by the selected category.The homepage is quite intuitive and user friendly, making it easy for client's to find their way around the site.  
-
 \subsubsection{View Items}
 Users are able to view both the available and the wanted items which other users have listed on the website i.e. stored in the database. For the available items, the items are filtered only if the user accesses the available items by clicking on one of the categories on the homepage. Otherwise, all items will be displayed. The page that displays wanted items has a section at the top that allows the user to display all counties or filter by County.
 \begin{minted}[fontsize=\footnotesize]{js}
@@ -587,7 +585,6 @@ Users are able to view both the available and the wanted items which other users
     </div>
 )}
 \end{minted}
-
 \includegraphics[width=\textwidth]{img/fe_wanteditems.PNG}
 \newline
 Each item has a button which can be clicked to display more information about that item. Once the user is signed in, they are able to send an email to the owner of the item if they wish. All they have to do is type their message to the user into the input box and once they click send, an email is sent to the owner of the item. The email is sent from our 'barter4tradenc' email address and informs the item's owner of the name of the user interested in their item, the name of the item they're interested in and the user's message. There is also a button that allows the user to add an item to their list of saved items.
@@ -596,7 +593,6 @@ Each item has a button which can be clicked to display more information about th
 Users can add items for trade and wanted items to the database which is used to display the items. The user must be logged in to use the add item pages and once they're their they must input a name, category, description and location. They must also choose an image to represent the item.
 \newline
 \includegraphics[scale=.6]{img/fe_additem.PNG}
-
 \subsubsection{My Account}
 The account page has 3 options for users:
 \begin{enumerate}
@@ -621,7 +617,7 @@ The contact form is a simple page which contains a small box which prompts the u
 \subsubsection{Starting up}
 There's no prerequisites to setting up a Spring Boot Application other than having a version of Java installed (We would recommend 8 or above) and an Integrated Development Environment (We would recommend IntelliJ). Inside your IDE, create a new Spring web tool to create the Spring Boot project. This will automatically create most of the files you need for your Spring Boot Application to work. \par
 The next step is to open the pom.XML file. This file should be located in the main directory of your project, not within a package. Here is the location of all of the dependencies that the Spring Boot Application will install. The one needed for Mongo and the JWT authentication are as follows: \par
-\begin{minted}[]{java}
+\begin{minted}[fontsize=\footnotesize]{java}
 <dependency>
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-starter-data-mongodb</artifactId>
@@ -652,7 +648,7 @@ From the beginning of the first semester, the main goal of the project was to ac
     \item Return: A Return message of either "Registered successfully" or "Username is already taken" will be sent back.
 \end{itemize}
 \par The signup request is a POST request. Firstly the function checks id the signUpRequest's username is already in use, and then checks if the email is in use. If neither of these are in use it moves to the next step, creating a user: \par
-\begin{minted}[]{java}
+\begin{minted}[fontsize=\footnotesize]{java}
  User user = new User(signUpRequest.getUsername(),
                 signUpRequest.getEmail(),
                 encoder.encode(signUpRequest.getPassword()));
@@ -661,7 +657,7 @@ From the beginning of the first semester, the main goal of the project was to ac
         Set<Role> roles = new HashSet<>();
 \end{minted}
 \par This code sets the username, the email, password and the role(user by default) to local variables for now. The code then executes some checks to ensure that the role sent with the signup request exist, and then finally we save the new user to a MongoDB userRepository: \par
-\begin{minted}{java}
+\begin{minted}[fontsize=\footnotesize]{java}
   userRepository.save(user);
 
   return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
@@ -676,12 +672,13 @@ After we tested our new API request, by using Postman and Robo 3T, the next step
     \item Return: The API sends back a JWT response to the requester if the username and password are correct.
 \end{itemize}
 The signin is also a POST request, as the username and password are getting sent to the API. To start, the username and the password are sent to an instance of the AuthenticationManager class. If the principal of the input authentication is valid and verified, AuthenticationManager#authenticate returns an Authentication instance with the authenticated flag set to true. Otherwise, if the principal is not valid, it will throw an AuthenticationException. For the last case, it returns null if it can't decide \cite{Baeldung}. \par
-\begin{minted}{java}
+\begin{minted}[fontsize=\footnotesize]{java}
  Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword())); 
+            new UsernamePasswordAuthenticationToken(loginRequest.getUsername(),
+            loginRequest.getPassword())); 
 \end{minted}
 \par After this the method generates a JWTToken. The method checks the user's role and grants them authority dependant on this. We dont utilize this as all users of the website are simply "User" as oppose to giving some admin and moderator. We did need this but its a built in function in JWT, so it doesnt cause any overloading or unneccessary code, it could be implemented at a later date. Lastly the method returns a response with the JWT, the user id, username and the email.\par
-\begin{minted}{java}
+\begin{minted}[fontsize=\footnotesize]{java}
  return ResponseEntity.ok(new JwtResponse(jwt,
                 userDetails.getId(),
                 userDetails.getUsername(),
@@ -697,7 +694,7 @@ The Sign up and the Login component were completed development before the Decemb
     \item Controller: This class is where all of the MongoDB database API calls are declared.
 \end{itemize}
 \par The Model has a toString method that we use to set the variables in a String format to allow it to be stored in the MongoDB database. This is essential as with MongoDB being a Document based database, the information has to be in a JSON format for it to be saved and stored correctly. \par
-\begin{minted}{java}
+\begin{minted}[fontsize=\footnotesize]{java}
 @Override
     public String toString() {
         return "Tutorial [id=" + id + ", title=" + title + 
@@ -708,11 +705,11 @@ The Sign up and the Login component were completed development before the Decemb
     }
 \end{minted}
 The Repository is essential for the storage of the items in the database. Its also thanks to this interface, that allows us to search and retrieve specific items from the database. \par
-\begin{minted}{java}
+\begin{minted}[fontsize=\footnotesize]{java}
 List<Tutorial> findByTitleContaining(String title);
 \end{minted}
 The main class in the addition of items is the controller. This Class allows for the API calls, similar to the AuthController in the signup-login components. We have a function that calls all of the items from the database, this is used for the Available items page in the front end. There are also functions for the addition and the update of items within the database. This is also where the delete function is declared.
-\begin{minted}{java}
+\begin{minted}[fontsize=\footnotesize]{java}
 @GetMapping("/tutorials")
     public ResponseEntity<List<Tutorial>> getAllTutorials(@RequestParam
     (required = false) String title) {
@@ -744,7 +741,7 @@ The overall design of the Wanted Item's Back End classes are similar to the Add 
 \subsubsection{Saved Item}
 The development of the Wanted Item was completed in early March. After this this was a lull in the Back End environment as we were working on other modules and Cathal was attempting to get the AWS for the website functional. In early April we created the Saved Items function. This was to allow users to add items from the available items, to another page of their own displaying the items they intended on purchasing or trading for in the future. \par
 The structure behind this is similar to the Add Item and the Wanted Item. They contain a Model, a Controller and a Repository that work very similarly to the classes in the other components mentioned above. There are small difference however, as we only needed to store an ID, a username and a title in the Saved Item. We use these variables to search through the available items, and to display only the items with the same ID as the ones stored in this repository. This is done through a method in the controllers: \par
-\begin{minted}{java}
+\begin{minted}[fontsize=\footnotesize]{java}
 @GetMapping("/wanted/{id}")
     public ResponseEntity<WantedItem> getWantedItemById(@PathVariable("id")
     String id) {
@@ -764,6 +761,9 @@ This section outlines how we intertwined the React, Spring Boot and MongoDB.
 
 
 \chapter{System Evaluation}
+This part of the dissertation will be dedicated to the testing and evaluation of the project. We will compare our objectives of the dissertation to the functionality of the application. This section will also cover the comparison of the timeline that we set out to follow in the development process and the timeline in which those objectives were reached. We will then move onto the testing process and conclude this chapter by listing our limitations of the project.\par
+
+\subsection{Objectives}
 To begin the System Evaluation we will begin by reiterating over our objectives set in the introduction. The main functionality we wanted to achieve was:
 \begin{itemize}
     \item Users can register and browse items
@@ -772,8 +772,34 @@ To begin the System Evaluation we will begin by reiterating over our objectives 
 
     \item Users can view the owners of items and contact them
 
-    \item Users can add items to a Wishlist
+    \item Users can add items to a Wish list
 \end{itemize}
+\par Upon our evaluation of the objectives listed above, we feel that we did achieve them all. Users can register through the sign up option on the NavBar. Users can browse the available items, whether they are currently signed in or not, allowing completion of objective one. These available items are able to be published by anyone, and can be viewed by everyone, completing our second objective. The third objective listed above has also been completed once the user has been logged in, where they can send an email to the owner of the item. Lastly, the users can add items to their wish list page through the SavedItems component. With this recap of our objectives and the functionality of the application, we believe that all of the tasks we lined out in our objective section have been achieved completely. \par
+
+\subsection{Timeline and Scope}
+\includegraphics[scale=0.4]{img/timeline.png}
+This graph lays out the timeline that we set for ourselves after the completion of the 1st semester. As we lost Anton just before the Christmas period, this led us to have to reevaluate our entire process and the scope of the project. 
+\begin{itemize}
+    \item January 31st - This date was the goal to achieve the login and the sign up functioning in the react Front End i.e. making it possible to sign up and login with the spring boot through the app. This goal was achieved on this date exactly.
+    \item February 28th - This was the date in which we wanted it to be possible to add and view the items added to the database. This goal was achieved before this date, on the 16th of February leaving us ahead of our scope.
+    \item March 31st - By this date we had planned on having the wanted items functionality working. This goal was reached on the 4th of March, almost a month ahead of what we had planned.
+    \item April 15th - The goal for this date was to have the users being able to save items to their wish list. This goal was achieved on the 13th of April.
+    \item April 30th - We had aimed to have all features of the website functioning and to have the dissertation completed by this deadline. Due to circumstances relating to other modules, this goal was not reached. By this date we had achieved all functionality, other than contacting other users and the dissertation was not complete.
+    \item May 7th - This date was dedicated to having all testing and bug fixes implemented by. By this date, as the deadline for the project had changed, we still hadn't completed the dissertation. most bug fixes had been achieved, but not completely.
+\end{itemize}
+\subsubsection{Evaluating our Timeline}
+When the development of our project had begun properly, we made good use of the timeline and achieving the deadlines that we had set for ourselves. But as the timeline moved on, and other module's assignment dates grew closer, we started to miss our deadlines. There were also personal reasons behind such complications, mostly due to COVID-19 and our own mental health. These goals were still reached, none the less, but just late. We are still very pleased with our completion of our objectives, despite the missing of goals, when we consider that our three man project became a two man project.
+\subsection{Testing}
+Our testing was executed as the goals that we had set for ourselves were achieved. We did this to ensure that we were happy with each individual component of the application before we started the development of another. As we used an Iterative and Incremental development process, we commenced the testing of these components as soon as we felt that we had achieved a new iteration in the design.\par
+This was done through white box testing, where the tester has knowledge as to the components and the functionality of the software in question. This was essential in our development as it allowed us to confirm that our programs were executing as designed. This method however, led to some of our bugs being discovered later in the development, where if we had implement black box testing, these may have been discovered earlier in the development. \par 
+When we were pair programming, as soon as a new commit was made by one of us to either the Front End or the Back End, we immediately pulled the new commit and tested the new function to ensure that they were working on both machines. This method of testing allowed us to always have a working version of the application on GitHub and to also allow us to confirm that the code could be cloned and work on another station.\par
+We conclude that this endeavor resulted in a more robust framework overall, and we were able to move on with the project after completing these tests. We are confident with the method that we used to test, and to confirm our code was executing properly, that the system we have designed now is robust due to its ability to cope with errors on compile time.
+
+\subsection{Limitations}
+There were many complications that were met along the way of this project. They range vastly in terms of small issues with JSON data formatting, all the way to having to change the structure of the design completely. The first issue we will be discussing is the change of Back End environment that we made in the 1st semester. \par
+As we already explained, we had originally planned on using a flask application coded through Python for the Back End environment. This was planned from the very beginning of the development cycle. Cathal and Anton were the ones in charge of this implementation. They researched into Flask together and attempted to get a functioning sign up and login in working in Flask. \par
+In mid October however, we were required to install Anaconda onto our machines for another module, Emerging Technology. This module was a Python focused module and used Anaconda to execute most of the commands. When Anaconda was installed on our machines however, it blocked some of the Python functions on our drives, namely where the .py executable is called from. Since we couldn't uninstall Anaconda as we needed it for the module, we opted to change the Back End Environment entirely and switched to Spring Boot in Java. Other than this change in the Back End environment, there weren't many other limitations we came across. \par
+When it came to the MongoDB Database we chose for storing our information, there were very few limitations to speak of. The main hurdle we encountered was that everything that was to be stored in the MongoDB Database must be first declared as a document and must be in a JSON format to be stored properly.
 
 \chapter{Conclusion}
 About three pages.
