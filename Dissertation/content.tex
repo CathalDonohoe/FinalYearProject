@@ -553,14 +553,12 @@ Once logged in, there is a state change in the top navigation bar which changes 
     </li>
 )}
 \end{minted}
-
 \subsubsection{Homepage}
 Coupled with the top nav bar, which is static and stays there no matter what page the user navigates to, the homepage also has a navigation bar on the side with links to the different pages they can access.
 \par
 \includegraphics[scale=0.3]{img/fe_homepage.PNG}
 \par
 The homepage also has a number of images which can be clicked to find available items which are filtered by the selected category.The homepage is quite intuitive and user friendly, making it easy for client's to find their way around the site.  
-
 \subsubsection{View Items}
 Users are able to view both the available and the wanted items which other users have listed on the website i.e. stored in the database. For the available items, the items are filtered only if the user accesses the available items by clicking on one of the categories on the homepage. Otherwise, all items will be displayed. The page that displays wanted items has a section at the top that allows the user to display all counties or filter by County.
 \begin{minted}[fontsize=\footnotesize]{js}
@@ -587,7 +585,6 @@ Users are able to view both the available and the wanted items which other users
     </div>
 )}
 \end{minted}
-
 \includegraphics[width=\textwidth]{img/fe_wanteditems.PNG}
 \par
 Each item has a button which can be clicked to display more information about that item. Once the user is signed in, they are able to send an email to the owner of the item if they wish. All they have to do is type their message to the user into the input box and once they click send, an email is sent to the owner of the item. The email is sent from our 'barter4tradenc' email address and informs the item's owner of the name of the user interested in their item, the name of the item they're interested in and the user's message. There is also a button that allows the user to add an item to their list of saved items.
@@ -596,7 +593,6 @@ Each item has a button which can be clicked to display more information about th
 Users can add items for trade and wanted items to the database which is used to display the items. The user must be logged in to use the add item pages and once they're their they must input a name, category, description and location. They must also choose an image to represent the item.
 \par
 \includegraphics[scale=.6]{img/fe_additem.PNG}
-
 \subsubsection{My Account}
 The account page has 3 options for users:
 \begin{enumerate}
@@ -613,10 +609,6 @@ They can also view the items belonging to other users which they have saved. The
 The contact form is a simple page which contains a small box which prompts the user to input their name, email and message. Once they have filled out the form, they can send it to the 'barter4tradenc' email address by clicking on the 'Submit' button.
 \par
 \includegraphics{img/fe_contact.PNG}
-
-
-
-
 \subsection{Back End}
 \subsubsection{Starting up}
 There's no prerequisites to setting up a Spring Boot Application other than having a version of Java installed (We would recommend 8 or above) and an Integrated Development Environment (We would recommend IntelliJ). Inside your IDE, create a new Spring web tool to create the Spring Boot project. This will automatically create most of the files you need for your Spring Boot Application to work. \par
@@ -626,24 +618,20 @@ The next step is to open the pom.XML file. This file should be located in the ma
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-starter-data-mongodb</artifactId>
 </dependency>
-
 <dependency>
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-starter-security</artifactId>
 </dependency>
-
 <dependency>
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-starter-web</artifactId>
 </dependency>
-
 <dependency>
   <groupId>io.jsonwebtoken</groupId>
   <artifactId>jjwt</artifactId>
   <version>0.9.1</version>
 </dependency>
 \end{minted}
-
 \subsubsection{Sign up}
 From the beginning of the first semester, the main goal of the project was to achieve a working sign up and login. Naturally it made more sense to begin with a Sign up functionality, to be able to send data to our database through our API. To explain how this will work in lament terms:
 \begin{itemize}
@@ -656,18 +644,14 @@ From the beginning of the first semester, the main goal of the project was to ac
  User user = new User(signUpRequest.getUsername(),
                 signUpRequest.getEmail(),
                 encoder.encode(signUpRequest.getPassword()));
-
         Set<String> strRoles = signUpRequest.getRoles();
         Set<Role> roles = new HashSet<>();
 \end{minted}
 \par This code sets the username, the email, password and the role(user by default) to local variables for now. The code then executes some checks to ensure that the role sent with the signup request exist, and then finally we save the new user to a MongoDB userRepository: \par
 \begin{minted}{java}
   userRepository.save(user);
-
   return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
 \end{minted}
-
-
 \subsubsection{Login}
 After we tested our new API request, by using Postman and Robo 3T, the next step was to make a login feature, to ensure we could retrieve data from our MongoDB Database as well. This API also has numerous steps that we will explain below: \par
 \begin{itemize}
@@ -688,7 +672,6 @@ The signin is also a POST request, as the username and password are getting sent
                 userDetails.getEmail(),
                 roles));
 \end{minted}
-
 \subsubsection{Add Item}
 The Sign up and the Login component were completed development before the December presentation in the first semester. We each took a few weeks off after that to allow for holidays, work on other individual projects and for some personal time. When we began development again in late January. The main focus of the Back End development was to allow the users of the website the ability to add items to the database and to be able to retrieve this information. The classes associated to this are as follows: \par
 \begin{itemize}
@@ -718,17 +701,14 @@ The main class in the addition of items is the controller. This Class allows for
     (required = false) String title) {
         try {
             List<Tutorial> tutorials = new ArrayList<Tutorial>();
-
             if (title == null)
                 tutorialRepository.findAll().forEach(tutorials::add);
             else
                 tutorialRepository.findByTitleContaining(title).forEach
                 (tutorials::add);
-
             if (tutorials.isEmpty()) {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             }
-
             return new ResponseEntity<>(tutorials, HttpStatus.OK);
         } catch (Exception e) {
           return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
@@ -736,11 +716,9 @@ The main class in the addition of items is the controller. This Class allows for
     }
 \end{minted}
 The code from these parts of the Back End Environment were adapted from this cite \cite{zKoder}.
-
 \subsubsection{Wanted Item}
 When the development of the add items was complete, the next objective we turned our focus to was the Wanted Items page. This if for when a user is looking to buy or purchase and item, they can post to this page to advertise their want for this item. \par
 The overall design of the Wanted Item's Back End classes are similar to the Add Items. As both items are structurally the same (the need for item name, category, location etc), we felt this was the best method of moving along with its development. Due to this, the Wanted Items is functionally the same as Add Items, therefore we wont repeat ourselves by showing the model, controller and repository for these classes, as the code is very similar to the code explained above in the Add Item section. \par 
-
 \subsubsection{Saved Item}
 The development of the Wanted Item was completed in early March. After this this was a lull in the Back End environment as we were working on other modules and Cathal was attempting to get the AWS for the website functional. In early April we created the Saved Items function. This was to allow users to add items from the available items, to another page of their own displaying the items they intended on purchasing or trading for in the future. \par
 The structure behind this is similar to the Add Item and the Wanted Item. They contain a Model, a Controller and a Repository that work very similarly to the classes in the other components mentioned above. There are small difference however, as we only needed to store an ID, a username and a title in the Saved Item. We use these variables to search through the available items, and to display only the items with the same ID as the ones stored in this repository. This is done through a method in the controllers: \par
@@ -749,16 +727,13 @@ The structure behind this is similar to the Add Item and the Wanted Item. They c
     public ResponseEntity<WantedItem> getWantedItemById(@PathVariable("id")
     String id) {
      Optional<WantedItem> WantedItemData = wantedItemRepository.findById(id);
-
         if (WantedItemData.isPresent()) {
             return new ResponseEntity<>(WantedItemData.get(), HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-
     }
 \end{minted}
-
 \section{How they work together}
 This section outlines how we intertwined the React with Spring Boot and MongoDB. This was mainly done through pair programming as Cathal understood all of the back end elements, while Nathan understood all of the Front End elements. Upon completion of the back end elements, we scheduled a meeting between us whereby Cathal showed how all of the back end elements worked through the use of discord, robo, postman and docker. This methodology allowed us both to gain a better understanding on how each environment of the project worked. \par
 The first task was installing Axios, which is a Node.js library that allows us to make HTTP requests to external sources. Axios was the best choice as we had both used it before as part of a 3rd Year project and it is not too difficult to configure, offers a lot of good documentation and a wide community due to its popularity and offers really good error handling that makes debugging problems a lot easier. \par
@@ -785,7 +760,6 @@ The other HTTP methods which we use to send and retrieve data are 'put' and 'get
 state = {
         items: []
     }
-
     componentDidMount() {
         axios.get(`api/test/tutorials`)
             .then(res => {
@@ -795,7 +769,6 @@ state = {
     }
 \end{minted}
 In the above code, we perform a http get request to return the information about all available items from 'http://localhost:8081/api/test/tutorials'. With this data, we are able to show the user all of the current available items by displaying a card containing all of the item details, for every item that is returned.
-
 \begin{minted}{js}
 axios.post('api/test/tutorials', data).then(
             res => {
@@ -817,7 +790,6 @@ getBase64(file, cb) {
             console.log('Error: ', error);
         };
     }
-
     handleImageChange(e) {
         alert(e.target.files[0]);
         this.getBase64(e.target.files[0], (base64) => {
@@ -826,7 +798,6 @@ getBase64(file, cb) {
         })
     }
 \end{minted}
-
 To edit items, we first get the data a certain item has stored by performing a HTTP get request that returns the data of a chosen item. This data is then used to popular the placeholders of the item details, which can be changed or left the same to the users desire. Once the user is happy with the changes and they click the confirmation button, the new data will be send to the same url using a put method. The put method replaces the data that is currently stored in the database rather than overwriting it which is perfect for editing items.
 \begin{minted}{js}
 axios.get(`api/test/tutorials` + this.props.match.params.id)
@@ -845,9 +816,7 @@ onSubmit(){
         });
 }
 \end{minted}
-
 The final HTTP method which is used to connect the Front end with the back end was the delete method, which is only used when a user deletes one of their available or wanted items.
-
 \begin{minted}{js}
 // replace (dollarsign) with a dollar symbol
 deleteItem(id, e) {
@@ -861,7 +830,6 @@ deleteItem(id, e) {
             })
     }
 \end{minted}
-
 \chapter{System Evaluation}
 This part of the dissertation will be dedicated to the testing and evaluation of the project. We will compare our objectives of the dissertation to the functionality of the application. This section will also cover the comparison of the timeline that we set out to follow in the development process and the timeline in which those objectives were reached. We will then move onto the testing process and conclude this chapter by listing our limitations of the project.\par
 \subsection{Objectives}
@@ -904,3 +872,24 @@ The first objective of the project was to ensure that a new user to the website 
 The next object we will bring to light is to allow users to select the items from other users. This was mostly implemented in early April, as Nathan added an entirely new page that would display the details associated with the item the user was to click on. This was implemented late in the development, this was due to it not being a major priority of the project at the time. \par
 The objective after this was for users to be able to view the owner of the item and to have the ability to contact them. This was the most recent objective to be reached, as there were many complications with the server communicating with our react application. We pondered on how implement this function for some time, without exposing any private information of the users of the application. This was a focus of ours to ensure that we get their private data secure. We finally opted to have the gmail we created for this project, to send an automated email to the owner with the interested buyers email. The follow up of this contact is up to the owner entirely, relieving us of any legal issues. \par
 Lastly, the objective for users to be able to add items to their wish list. This was achieved before the third objective as we seen implementing it to be a much more straight forward process. We simply saved the id of an item to anew container containing a username and an id. This allowed us to retrieve the data quickly and efficiently with little complication. \par
+
+\section{Findings from the System Evaluation}
+When we completed the System Evaluation section of the dissertation we were surprised to find how many objectives we completed with ease. The biggest surprise of these findings was how well we kept to the scope. We managed to pull ahead of the original deadlines we had set out in early January. We didn't make the later deadlines as we ran into numerous complications with getting users to communicate and with deploying the application to AWS. \par
+We are ecstatic to be able to say that we feel that we accomplished all of the goals that we set out when we started the project. These are:
+\begin{itemize}
+    \item To create a CRUD application in an environment we didn't have much experience in.
+    \item To work with new technologies and to improve our understandings of said technology.
+    \item To challenge ourselves to build a full stack application and to deploy it
+    \item Improving our team working abilities and to simulate a work style environment.
+\end{itemize}
+
+\section{Future Improvement}
+After analyzing our progress thus far, and evaluating the elements of our development process that has led us to the current version of the application we have found a number of areas that we could've improved on and changed entirely.\par
+To start Nathan would've liked to have add more categories for the users to choose from to improve user satisfaction and to make the application even more diverse. There are a lot more possible item categories and placing the majority of items into the miscellaneous category doesn't really provide the adequate user experience. More possible item categories makes it easier for the user to browse items which interest them more and even locate specific items. \par
+Cathal feels that the Back End could've also done with some key improvements. The retrieval of user info requires a Bearer Key for the API call to be authorized, this possibly could've been edited to allow the front end to access the information without saving it to local storage. \par
+We both feel that if we had more time, that a chat feature of the application could've been implemented instead of an automated email. The bug fixes and the AWS took longer to fix than we had envisioned and we ran out of time to implement this. \par
+Another feature that we would've like to have added would have been a search feature. Technically the items can be searched through for a specific id, but if there was more time we would have had this to be done by the title(name) of the item as well to allow for a search bar function.\par
+To conclude we are both still very happy with the outcome of this project and feel that our skills have really developed from the complications and difficulties we encountered. We are very proud to announce that despite loosing a member of our team after our planning and designing of the application, that we didn't loose and features or functionality that we had set out on doing before hand.
+
+\section{Thanks}
+We would like to thank our lecturer and supervisor Martin Kenirons again for all the help and support he provided us with. His guidance and counsel was a vital contribution to us achieving our goals.
