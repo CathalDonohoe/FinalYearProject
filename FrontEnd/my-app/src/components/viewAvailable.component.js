@@ -6,6 +6,7 @@ import {
 } from 'reactstrap';
 import EmailOut from './emailOut.component';
 import { Redirect } from 'react-router'
+import NotLoggedIn from './notLoggedIn.component';
 
 export default class ViewAvailable extends React.Component {
     constructor(props) {
@@ -87,18 +88,15 @@ export default class ViewAvailable extends React.Component {
     }
 
     render() {
-        console.log("DEBUGLOGMESSAGE"+localStorage.getItem("EmailSent"))
         if (localStorage.getItem("EmailSent") === 'true') {
-            console.log("in")
             localStorage.setItem("EmailSent", false);
-            console.log("out")
             return <Redirect to={'/homepage'} />
         }
 
         return (
             <div className='App' >
-                <ul className="grid_list">
-                    <div>
+                <ul>
+                    <div className="centered"> 
                         <div>
                             {/* Displays the item's details */}
                             <Card>
@@ -121,13 +119,18 @@ export default class ViewAvailable extends React.Component {
                                     )}
                                 </CardBody>
                             </Card>
-                            {/* Allows user to contact item owner */}
-                            <Card>
-                                <CardBody>
-                                    <CardTitle tag="h4">Contact <b>{this.state.username}</b></CardTitle>
-                                    <EmailOut />
-                                </CardBody>
-                            </Card>
+                            {/* Allows user to contact item owner, if signed in*/}
+                            {localStorage.getItem('user') != null &&
+                                <Card>
+                                    <CardBody>
+                                        <CardTitle tag="h4">Contact <b>{this.state.username}</b></CardTitle>
+                                        <EmailOut />
+                                    </CardBody>
+                                </Card>
+                            }
+                            {localStorage.getItem('user') == null &&
+                                <NotLoggedIn/>
+                            }
                         </div>
                     </div>
                 </ul>

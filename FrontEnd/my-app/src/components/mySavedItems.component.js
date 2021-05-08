@@ -1,8 +1,6 @@
 import axios from "axios";
 import React, { Component } from "react";
 import Button from 'react-bootstrap/Button'
-import NotLoggedIn from "./notLoggedIn.component";
-
 
 export default class MySavedItems extends Component {
     constructor(props) {
@@ -12,13 +10,9 @@ export default class MySavedItems extends Component {
         this.state = {
             id: props.item.id,
             title: props.item.title,
-            saverUsername: props.item.username
+            saverUsername: props.item.username,
+            itemCount: 0
         };
-    }
-    componentDidMount() {
-        console.log(this.state.id)
-        console.log(this.state.title)
-        console.log(this.state.saverUsername)
     }
 
     deleteItem(id, e) {
@@ -41,6 +35,7 @@ export default class MySavedItems extends Component {
         localStorage.setItem('itemToLoad', this.state.id);
 
         if (this.state.saverUsername == myUser) {
+            this.state.itemCount++
             return (
                 <div className="container">
                     <ul>
@@ -52,6 +47,11 @@ export default class MySavedItems extends Component {
                         </div>
                     </ul>
                 </div >
+            )
+        }
+        if(this.state.itemCount === 0) {
+            return(
+                <p></p>
             )
         }
     }

@@ -27,8 +27,6 @@ export default class EditAvailable extends Component {
   }
 
   componentDidMount() {
-    console.log("load " + this.props.match.params.id);
-
     axios.get(`api/test/tutorials` + this.props.match.params.id)
       .then((res) => {
         this.setState({
@@ -68,9 +66,6 @@ export default class EditAvailable extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    console.log('Item: ' + this.state.title + ' '
-      + this.state.category + ' ' + this.state.description + ' '
-      + this.state.imageurl + ' ' + this.state.location);
 
     const newItem = {
       title: this.state.title,

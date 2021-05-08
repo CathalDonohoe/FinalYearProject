@@ -14,7 +14,6 @@ export default class MyAvailable extends Component {
                 const items = res.data;
                 this.setState({ items });
             })
-        localStorage.getItem('user');
     }
 
     render() {

@@ -114,8 +114,6 @@ export default class WantedItems extends Component {
                                                     <CardTitle tag="h4"><b>{items.title}</b></CardTitle>
                                                     <CardSubtitle tag="h6" className="mb-2 text-muted">Category</CardSubtitle>
                                                     <CardText>{items.category}</CardText>
-                                                    <CardSubtitle tag="h6" className="mb-2 text-muted">Description</CardSubtitle>
-                                                    <CardText>{items.description}.</CardText>
                                                     <CardSubtitle tag="h6" className="mb-2 text-muted">Location</CardSubtitle>
                                                     <CardText>{items.location}</CardText>
                                                     <CardSubtitle tag="h6" className="mb-2 text-muted">Wanted by</CardSubtitle>
@@ -135,8 +133,6 @@ export default class WantedItems extends Component {
                                                 <CardTitle tag="h4"><b>{items.title}</b></CardTitle>
                                                 <CardSubtitle tag="h6" className="mb-2 text-muted">Category</CardSubtitle>
                                                 <CardText>{items.category}</CardText>
-                                                <CardSubtitle tag="h6" className="mb-2 text-muted">Description</CardSubtitle>
-                                                <CardText>{items.description}.</CardText>
                                                 <CardSubtitle tag="h6" className="mb-2 text-muted">Location</CardSubtitle>
                                                 <CardText>{items.location}</CardText>
                                                 <CardSubtitle tag="h6" className="mb-2 text-muted">Wanted by</CardSubtitle>

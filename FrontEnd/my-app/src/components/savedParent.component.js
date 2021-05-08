@@ -14,6 +14,9 @@ export default class SavedParent extends Component {
                 const items = res.data;
                 this.setState({ items });
             })
+            .catch(err => {
+                console.log(err)
+            })
     }
 
     render() {

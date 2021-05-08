@@ -25,7 +25,7 @@ export default class Login extends Component {
                 window.location.reload(false);
             })
             .catch(err => {
-                console.log(err);
+                console.log(err +" Invalid user");
             });
     }
 

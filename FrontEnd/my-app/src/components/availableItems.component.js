@@ -20,7 +20,6 @@ export default class AvailableItems extends Component {
             })
     }
 
-
     render() {
         let isFiltered = false;
         let filter = localStorage.getItem('filter')
@@ -55,8 +54,6 @@ export default class AvailableItems extends Component {
                                                     <CardTitle tag="h4"><b>{items.title}</b></CardTitle>
                                                     <CardSubtitle tag="h6" className="mb-2 text-muted">Category</CardSubtitle>
                                                     <CardText>{items.category}</CardText>
-                                                    <CardSubtitle tag="h6" className="mb-2 text-muted">Description</CardSubtitle>
-                                                    <CardText>{items.description}.</CardText>
                                                     <CardSubtitle tag="h6" className="mb-2 text-muted">Location</CardSubtitle>
                                                     <CardText>{items.location}</CardText>
                                                     <CardSubtitle tag="h6" className="mb-2 text-muted">Posted by</CardSubtitle>
@@ -76,14 +73,12 @@ export default class AvailableItems extends Component {
                                                 <CardTitle tag="h4"><b>{items.title}</b></CardTitle>
                                                 <CardSubtitle tag="h6" className="mb-2 text-muted">Category</CardSubtitle>
                                                 <CardText>{items.category}</CardText>
-                                                <CardSubtitle tag="h6" className="mb-2 text-muted">Description</CardSubtitle>
-                                                <CardText>{items.description}.</CardText>
                                                 <CardSubtitle tag="h6" className="mb-2 text-muted">Location</CardSubtitle>
                                                 <CardText>{items.location}</CardText>
                                                 <CardSubtitle tag="h6" className="mb-2 text-muted">Posted by</CardSubtitle>
                                                 <CardText>{items.username}</CardText>
                                                 <Link to={'/availableItems/' + items.id}
-                                                        className="btn btn-primary">See Item</Link>
+                                                    className="btn btn-primary">See Item</Link>
                                             </CardBody>
                                         </Card>
                                     </div>

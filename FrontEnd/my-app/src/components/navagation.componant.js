@@ -7,17 +7,6 @@ export default class Navagation extends Component {
         window.location.reload(false);
     }
 
-    componentDidMount() {
-        // refreshes on sign up so that page registers
-        // that player is signed up
-        console.log(localStorage.getItem('SignUp'));
-        if (localStorage.getItem('SignUp') == 'true') {
-            if (localStorage.getItem('token') && localStorage.getItem('user') == null) {
-                window.location.reload(false);
-            }
-        }
-    }
-
     render() {
         let isLoggedIn = false;
         let myUser = localStorage.getItem('user');
@@ -61,14 +50,14 @@ export default class Navagation extends Component {
                                     <Link className="nav-link" to={"/account"}>{myUser}</Link>
                                 </li>
                             )}
-                            {!isLoggedIn && (
-                                <li className="nav-item">
-                                    <Link className="nav-link" to={"/login"}>Login</Link>
-                                </li>
-                            )}
                             {isLoggedIn && (
                                 <li className="nav-item">
                                     <Link className="nav-link" onClick={() => this.logout()}>{'Logout'}</Link>
+                                </li>
+                            )}
+                            {!isLoggedIn && (
+                                <li className="nav-item">
+                                    <Link className="nav-link" to={"/login"}>Login</Link>
                                 </li>
                             )}
                             {!isLoggedIn && (
