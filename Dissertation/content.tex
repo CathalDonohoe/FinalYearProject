@@ -410,6 +410,7 @@ This is the Integrated Development Environment that we used for our Back End Jav
 Using this information, it provides in depth coding assistance, quick navigation, clever error analysis and refactoring. This allows IntelliJ to auto complete many lines of code as the developer works. This is an excellent IDE for Java developers, and can save some much needed time. The smart completion ensures less errors in ones code as oppose to developing on an IDE like Eclipse. IntelliJ isn't tasking on your machine allowing for developers of all levels to create great Java code.
 
 \subsection{Visual Studio Code}
+Visual studio code was the IDE which we used to help us create all of the front end code. VS code offers really good IntelliSense code completion as well as intuitive code refactoring and some quality debugging tools. Visual studio code is the leading choice of freeware source-code editor for the majority of React developers as the layout and IntelliSense works works better with typescript files than any other open source IDE.
 
 \section{Organisation Technology}
 
@@ -514,30 +515,104 @@ npm install react-bootstrap bootstrap
 
 \subsubsection{Sign Up}
 Since the first semester was rather challenging for a number of reasons, our main goal was to have an example homepage along with working login and register pages prepared in time for our Christmas presentation. For this reason, sign up was the first front end component which was worked on. \newline
-The user can navigate to the sign up page by clicking on sign up in the navigation bar or by alternatively adding /signup to end of the URL. To sign up, users must provide a username, password and email address.
+The user can navigate to the sign up page by clicking on sign up in the navigation bar or by alternatively adding /signup to end of the URL. To sign up, users must provide a username, password and email address. 
+\newline
+\includegraphics{img/fe_signup.png}
+\newline
+Once signed up, the user is automatically logged in and redirected to the home. Since they're signed in, they're now permitted to access a number of additional features of the website such as adding an item or saving an item.  
 
 \subsubsection{Login}
+The login component is similar to the sign up component, except it only requires the user's username and password to be correct in order to log in and access the features which are blocked to anonymous users. 
 
-*state change
+Once logged in, there is a state change in the top navigation bar which changes the 'login' and 'sign up' options to the name of the user, which brings the user to their account page on click, as well as a logout option, which does exactly what it says on the tin.
 
-
+\begin{minted}[fontsize=\footnotesize]{js}
+ logout() {
+        localStorage.clear();
+        window.location.reload(false);
+    }
+{isLoggedIn && (
+    <li className="nav-item">
+    <Link className="nav-link" to={"/account"}>{myUser}</Link>
+    </li>
+)}
+{isLoggedIn && (
+    <li className="nav-item">
+        <Link className="nav-link" onClick={() => 
+        this.logout()}>{'Logout'}</Link>
+    </li>
+)}
+{!isLoggedIn && (
+    <li className="nav-item">
+        <Link className="nav-link" to={"/login"}>Login</Link>
+    </li>
+)}
+{!isLoggedIn && (
+    <li className="nav-item">
+        <Link className="nav-link" to={"/signup"}>Sign up</Link>
+    </li>
+)}
+\end{minted}
 
 \subsubsection{Homepage}
-
-
-\subsubsection{Add Item}
-Wanted and available
-*must be logged in
+Coupled with the top nav bar, which is static and stays there no matter what page the user navigates to, the homepage also has a navigation bar on the side with links to the different pages they can access.
+\newline
+\includegraphics[scale=0.3]{img/fe_homepage.PNG}
+\newline
+The homepage also has a number of images which can be clicked to find available items which are filtered by the selected category.The homepage is quite intuitive and user friendly, making it easy for client's to find their way around the site.  
 
 \subsubsection{View Items}
-Wanted and available
+Users are able to view both the available and the wanted items which other users have listed on the website i.e. stored in the database. For the available items, the items are filtered only if the user accesses the available items by clicking on one of the categories on the homepage. Otherwise, all items will be displayed. The page that displays wanted items has a section at the top that allows the user to display all counties or filter by County.
+\begin{minted}[fontsize=\footnotesize]{js}
+{isFiltered == true && (
+    <div key={index}>
+        {items.category == filter && (
+        <Card>
+            <CardImg top width="100%" src={items.imageurl} alt="Card image cap" />
+            <CardBody>
+            <CardTitle tag="h4"><b>{items.title}</b></CardTitle>
+            <CardSubtitle tag="h6" className="mb-2 text-muted">Category</CardSubtitle>
+            <CardText>{items.category}</CardText>
+            <CardSubtitle tag="h6" className="mb-2 text-muted">Description</CardSubtitle>
+            <CardText>{items.description}.</CardText>
+            <CardSubtitle tag="h6" className="mb-2 text-muted">Location</CardSubtitle>
+            <CardText>{items.location}</CardText>
+            <CardSubtitle tag="h6" className="mb-2 text-muted">Posted by</CardSubtitle>
+            <CardText>{items.username}</CardText>
+            <Link to={'/availableItems/' + items.id}
+            className="btn btn-primary">See Item</Link>
+            </CardBody>
+        </Card>
+        )}
+    </div>
+)}
+\end{minted}
 
-
-\subsubsection{Contact form}
-
+\includegraphics[width=\textwidth]{img/fe_wanteditems.PNG}
+\newline
+Each item has a button which can be clicked to display more information about that item. Once the user is signed in, they are able to send an email to the owner of the item if they wish. All they have to do is type their message to the user into the input box and once they click send, an email is sent to the owner of the item. The email is sent from our 'barter4tradenc' email address and informs the item's owner of the name of the user interested in their item, the name of the item they're interested in and the user's message. There is also a button that allows the user to add an item to their list of saved items.
+\includegraphics[width=\textwidth]{img/fe_itemcontact.PNG}
+\subsubsection{Add Items}
+Users can add items for trade and wanted items to the database which is used to display the items. The user must be logged in to use the add item pages and once they're their they must input a name, category, description and location. They must also choose an image to represent the item.
+\newline
+\includegraphics[scale=.6]{img/fe_additem.PNG}
 
 \subsubsection{My Account}
-
+The account page has 3 options for users:
+\begin{enumerate}
+  \item My Available Items
+  \item My Wanted Items
+  \item My Saved Items
+\end{enumerate}
+By selecting "My Available Items" or "My Wanted Items", the user will be brought to a page that displays the available/wanted items which they have posted themselves. From here, they are able to delete these items or edit the details of the items by clicking the designated buttons.
+\newline
+\includegraphics{img/fe_editdelete.PNG}
+\newline
+They can also view the items belonging to other users which they have saved. The user is able to view information about any of these saved items by simply clicking on them. 
+\subsubsection{Contact form}
+The contact form is a simple page which contains a small box which prompts the user to input their name, email and message. Once they have filled out the form, they can send it to the 'barter4tradenc' email address by clicking on the 'Submit' button.
+\newline
+\includegraphics{img/fe_contact.PNG}
 
 
 
