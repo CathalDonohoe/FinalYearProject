@@ -5,6 +5,9 @@ import {
     CardTitle, CardSubtitle, Button
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import EmailOut from './emailOut.component';
+import { Redirect } from 'react-router'
+import NotLoggedIn from './notLoggedIn.component';
 
 export default class MyWanted extends React.Component {
     constructor(props) {
@@ -32,6 +35,9 @@ export default class MyWanted extends React.Component {
                     imageurl: response.data.imageurl,
                     description: response.data.description
                 });
+                // sets items for sending email
+                localStorage.setItem("NameOfUser", this.state.username);
+                localStorage.setItem("ItemOfUser", this.state.title);
             })
             .catch((err) => {
                 "Item not in database"
@@ -55,6 +61,10 @@ export default class MyWanted extends React.Component {
     }
 
     render() {
+        if (localStorage.getItem("EmailSent") === 'true') {
+            localStorage.setItem("EmailSent", false);
+            return <Redirect to={'/homepage'} />
+        }
         return (
             <div className='App' >
                 <ul className="grid_list">
@@ -75,6 +85,18 @@ export default class MyWanted extends React.Component {
                                     <Link to="/wantedItems/" className="btn btn-dark">Go back</Link>
                                 </CardBody>
                             </Card>
+                            {/* Allows user to contact item owner, if signed in*/}
+                            {localStorage.getItem('user') != null &&
+                                <Card>
+                                    <CardBody>
+                                        <CardTitle tag="h4">Contact <b>{this.state.username}</b></CardTitle>
+                                        <EmailOut />
+                                    </CardBody>
+                                </Card>
+                            }
+                            {localStorage.getItem('user') == null &&
+                                <NotLoggedIn/>
+                            }
                         </div>
                     </div>
                 </ul>

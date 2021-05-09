@@ -19,7 +19,7 @@ export default class Navagation extends Component {
         return (
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
                 <div className="container">
-                    <img src="https://i.ibb.co/qmLk76K/icons8-b-64.png" />
+                    <img src="https://i.ibb.co/qmLk76K/icons8-b-64.png" alt="logo"/>
                     <Link className="navbar-brand" to={"/homepage"}>BorrowNearME</Link>
                     <div className="collapse navbar-collapse" id="middleNavbar">
                         <Link className="nav-link" to={"/homepage"}>Home</Link>

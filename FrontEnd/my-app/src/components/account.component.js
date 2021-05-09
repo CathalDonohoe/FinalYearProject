@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Button from 'react-bootstrap/Button'
 import NotLoggedIn from "./notLoggedIn.component"
 
+// Class for user's account page
 export default class Account extends Component {
     componentDidMount = () => {
         localStorage.getItem('user');
@@ -12,7 +13,7 @@ export default class Account extends Component {
         let isLoggedIn = false;
         let myUser = localStorage.getItem('user');
         let myToken = localStorage.getItem('token');
-
+        
         if (myToken && myUser != null) {
             isLoggedIn = true;
         }

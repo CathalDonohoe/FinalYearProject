@@ -41,10 +41,9 @@ export default class ViewAvailable extends React.Component {
                 // sets items for sending email
                 localStorage.setItem("NameOfUser", this.state.username);
                 localStorage.setItem("ItemOfUser", this.state.title);
-                localStorage.setItem("EmailOfSender", this.state.email)
             })
             .catch((err) => {
-                "Item not in database"
+                // Item not in database
                 console.log(err);
             });
 
@@ -56,16 +55,12 @@ export default class ViewAvailable extends React.Component {
                 })
             }
             ).catch((err) => {
-                "Item not in database"
+                // Item not in database
                 this.setState({
                     itemSaved: false
                 })
                 console.log(err);
             });
-
-        const data = {
-            email: this.email
-        }
     }
 
     saveItem() {

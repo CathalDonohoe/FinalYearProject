@@ -6,7 +6,7 @@ export default class NotLoggedIn extends Component {
         return (
             <div className="auth-inner">
                 <div className="centered">
-                    <img width="50" src="https://i.ibb.co/qmLk76K/icons8-b-64.png" />
+                    <img width="50" src="https://i.ibb.co/qmLk76K/icons8-b-64.png" alt="logo"/>
                 </div>
                 <br />
                 <h1>You must be logged in to use this feature!</h1>

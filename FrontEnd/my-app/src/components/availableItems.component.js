@@ -6,8 +6,8 @@ import {
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
+// Class used to display available items
 export default class AvailableItems extends Component {
-
     state = {
         items: []
     }

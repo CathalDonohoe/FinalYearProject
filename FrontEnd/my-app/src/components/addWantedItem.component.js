@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import NotLoggedIn from "./notLoggedIn.component"
 import { Redirect } from 'react-router'
 
+// Class for user to add a wanted item
 export default class AddWantedItem extends Component {
     constructor(props) {
         super(props);
@@ -40,6 +41,7 @@ export default class AddWantedItem extends Component {
         )
     }
 
+    // Takes in a file from the system explorer
     getBase64(file, cb) {
         let reader = new FileReader();
         reader.readAsDataURL(file);
@@ -51,16 +53,13 @@ export default class AddWantedItem extends Component {
         };
     }
 
+    // Converts the image file to a base64 string
     handleImageChange(e) {
         alert(e.target.files[0]);
         this.getBase64(e.target.files[0], (base64) => {
             this.setState({ Base64Image: base64 });
             this.image = base64;
         })
-    }
-
-    componentDidMount = () => {
-        localStorage.getItem('user');
     }
 
     render() {
@@ -86,7 +85,7 @@ export default class AddWantedItem extends Component {
                         <div className="auth-inner">
                             <div className="auth-wrapper">
                                 <div className="centered">
-                                    <img width="50" src="https://i.ibb.co/qmLk76K/icons8-b-64.png" />
+                                    <img width="50" src="https://i.ibb.co/qmLk76K/icons8-b-64.png" alt="logo"/>
                                 </div>
                                 <br />
                                 <h2>Add New Wanted Item</h2>

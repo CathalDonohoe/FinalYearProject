@@ -46,7 +46,7 @@ export default class Login extends Component {
                 <div className="auth-inner">
                     <div className="auth-wrapper">
                         <div className="centered">
-                            <img width="50" src="https://i.ibb.co/qmLk76K/icons8-b-64.png" />
+                            <img width="50" src="https://i.ibb.co/qmLk76K/icons8-b-64.png" alt="logo"/>
                         </div>
                         <br />
                         <h3>Login</h3>

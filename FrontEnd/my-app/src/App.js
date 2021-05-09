@@ -40,7 +40,7 @@ function App() {
           <Route path='/wantedItems/:id' component={ViewWanted}></Route>
           <Route exact path="/wantedItems" component={WantedItems}/>
           <Route exact path="/contact" component={ContactForm}/>
-          <Route exact path="/send" component={EmailOut}/>
+          {/* <Route exact path="/send" component={EmailOut}/> */}
           <Route exact path="/account" component={Account}/>
           <Route exact path="/myAvailable" component={MyAvailable}/>
           <Route exact path="/myWanted" component={MyWanted}/>

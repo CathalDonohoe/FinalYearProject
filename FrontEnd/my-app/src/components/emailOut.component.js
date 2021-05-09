@@ -5,12 +5,12 @@ const EmailOut = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setStatus("Sending...");
-        const { name, email, message, item, sendersEmail} = e.target.elements;
+        const { message } = e.target.elements;
+        console.log(message.value);
         let details = {
             name: localStorage.getItem('user'),
-            email: localStorage.getItem("EmailOfSender"),
+            email: localStorage.getItem("email"),
             message: message.value,
-            sendersEmail: localStorage.getItem("email"),
             item: localStorage.getItem("ItemOfUser")
         };
         let response = await fetch("http://localhost:4949/send", {
@@ -35,7 +35,7 @@ const EmailOut = () => {
             <form onSubmit={handleSubmit}>
                 <div className="auth-inner">
                     <div className="centered">
-                        <img width="50" src="https://i.ibb.co/qmLk76K/icons8-b-64.png" />
+                        <img width="50" src="https://i.ibb.co/qmLk76K/icons8-b-64.png" alt="logo"/>
                     </div>
                     <h3>Send email</h3>
                     <br />

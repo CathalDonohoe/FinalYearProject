@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 
+// Class for displaying user's posted available items
+// Allows users to edit and delete items
 export default class MyAvailableItem extends Component {
     constructor(props) {
         super(props);
@@ -103,7 +105,7 @@ export default class MyAvailableItem extends Component {
                         <div className="my-1 p-1 bg-dark rounded box-shadow">
                             <h4 style={textStyle} className="border-bottom border-gray pb-2 mb-0">{this.props.item.title}</h4>
                             <br />
-                            <img width="200px" height="200px" src={this.props.item.imageurl} alt="Item image not found!" />
+                            <img width="200px" height="200px" src={this.props.item.imageurl} alt="Item Pic not found!" />
                             <p style={textStyle}>{this.props.item.description}</p>
                             <Button variant="danger" onClick={() => this.deleteItem(this.props.item.id)}>Delete</Button>
                             <br />

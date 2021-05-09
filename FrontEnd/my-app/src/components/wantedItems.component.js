@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { Component } from "react";
 import {
     Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button
+    CardTitle, CardSubtitle
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
@@ -24,7 +24,6 @@ export default class WantedItems extends Component {
     }
 
     onChangeValue(event) {
-        console.log(event.target.value);
         localStorage.setItem('county', event.target.value);
         window.location.reload(false);
     }
@@ -53,7 +52,7 @@ export default class WantedItems extends Component {
                 <div className="auth-inner" onChange={this.onChangeValue}>
                     <b>Select Preferred County</b>
                     <br />
-                    <input type="radio" value="null" name="county" checked={filter === 'null'} />All Counties
+                    <input type="radio" value="null" name="county" checked={filter === 'null'||filter === null} />All Counties
                     <input type="radio" value="Antrim" name="county" checked={filter === 'Antrim'} /> Antrim
                     <input type="radio" value="Armagh" name="county" checked={filter === 'Armagh'} /> Armagh
                     <input type="radio" value="Carlow" name="county" checked={filter === 'Carlow'} /> Carlow

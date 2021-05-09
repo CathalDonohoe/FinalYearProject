@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { Component } from "react";
 import Button from 'react-bootstrap/Button'
 
+// Class for displaying user's saved items
 export default class MySavedItems extends Component {
     constructor(props) {
         super(props);
@@ -15,6 +16,7 @@ export default class MySavedItems extends Component {
         };
     }
 
+    // removes item from saved items
     deleteItem(id, e) {
         axios.delete(`api/test/savedItems/${id}`)
             .then(res => {
@@ -49,6 +51,7 @@ export default class MySavedItems extends Component {
                 </div >
             )
         }
+        // Fixes error that is thrown when no items are saved
         if(this.state.itemCount === 0) {
             return(
                 <p></p>

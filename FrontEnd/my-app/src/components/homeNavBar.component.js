@@ -6,7 +6,7 @@ export default class HomeNavBar extends Component {
         return (
             <nav className="navbar navbar-inverse">
                 <div className="centered">
-                    <img width="100" src="https://i.ibb.co/qmLk76K/icons8-b-64.png" />
+                    <img width="100" src="https://i.ibb.co/qmLk76K/icons8-b-64.png" alt="logo"/>
                 </div>
                 <br />
                 <div className="container-fluid">

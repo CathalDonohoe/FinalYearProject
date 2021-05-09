@@ -28,7 +28,7 @@ const ContactForm = () => {
       <form onSubmit={handleSubmit}>
         <div className="auth-inner">
           <div className="centered">
-            <img width="50" src="https://i.ibb.co/qmLk76K/icons8-b-64.png" />
+            <img width="50" src="https://i.ibb.co/qmLk76K/icons8-b-64.png" alt="logo"/>
           </div>
           <h3>Contact Us</h3>
           <br />

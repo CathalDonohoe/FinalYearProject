@@ -116,7 +116,7 @@ export default class MyWantedItem extends Component {
                         <div className="my-1 p-1 bg-dark rounded box-shadow">
                             <h4 style={textStyle} className="border-bottom border-gray pb-2 mb-0">{this.props.item.title}</h4>
                             <br />
-                            <img width="200px" height="200px" src={this.props.item.imageurl} alt="Item image not found!" />
+                            <img width="200px" height="200px" src={this.props.item.imageurl} alt="Item Pic not found!" />
                             <p style={textStyle}>{this.props.item.description}</p>
                             <Button variant="danger" onClick={() => this.deleteItem(this.props.item.id)}>Delete</Button>
                             <br />

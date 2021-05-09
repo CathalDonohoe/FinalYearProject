@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import NotLoggedIn from "./notLoggedIn.component"
 import { Redirect } from 'react-router'
 
+// Class for user to add an available item
 export default class AddItem extends Component {
     constructor(props) {
         super(props);
@@ -41,6 +42,7 @@ export default class AddItem extends Component {
         )
     }
 
+    // Takes in a file from the system explorer
     getBase64(file, cb) {
         let reader = new FileReader();
         reader.readAsDataURL(file);
@@ -52,6 +54,7 @@ export default class AddItem extends Component {
         };
     }
 
+    // Converts the image file to a base64 string
     handleImageChange(e) {
         alert(e.target.files[0]);
         this.getBase64(e.target.files[0], (base64) => {
@@ -87,7 +90,7 @@ export default class AddItem extends Component {
                         <div className="auth-inner">
                             <div className="auth-wrapper">
                                 <div className="centered">
-                                    <img width="50" src="https://i.ibb.co/qmLk76K/icons8-b-64.png" />
+                                    <img width="50" src="https://i.ibb.co/qmLk76K/icons8-b-64.png" alt="logo"/>
                                 </div>
                                 <br />
                                 <h2>Add New Item For Trade</h2>
