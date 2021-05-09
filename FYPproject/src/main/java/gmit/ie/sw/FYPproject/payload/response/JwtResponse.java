@@ -3,6 +3,7 @@ package gmit.ie.sw.FYPproject.payload.response;
 import java.util.List;
 
 public class JwtResponse {
+    //declaration of variables
     private String token;
     private String type = "Bearer";
     private String id;
@@ -10,6 +11,7 @@ public class JwtResponse {
     private String email;
     private List<String> roles;
 
+    //constructor
     public JwtResponse(String accessToken, String id, String username, String email, List<String> roles) {
         this.token = accessToken;
         this.id = id;
@@ -21,6 +23,7 @@ public class JwtResponse {
     public JwtResponse(String jwt, String id, String username, String email) {
     }
 
+    //getters and setters
     public String getAccessToken() {
         return token;
     }

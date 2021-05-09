@@ -26,9 +26,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/test")
 public class WantedItemController {
 
+    //Instance
     @Autowired
     WantedItemRepository wantedItemRepository;
 
+    //call to get all wanted items
     @GetMapping("/wanted")
     public ResponseEntity<List<WantedItem>> getAllWantedItem(@RequestParam(required = false) String title) {
         try {
@@ -49,6 +51,7 @@ public class WantedItemController {
         }
     }
 
+    //get specific wanted item by id
     @GetMapping("/wanted/{id}")
     public ResponseEntity<WantedItem> getWantedItemById(@PathVariable("id") String id) {
         Optional<WantedItem> WantedItemData = wantedItemRepository.findById(id);
@@ -61,6 +64,7 @@ public class WantedItemController {
 
     }
 
+    //to create a new wanted item
     @PostMapping("/wanted")
     public ResponseEntity<WantedItem> createWantedItem(@RequestBody WantedItem wantedItem) {
         try {
@@ -72,6 +76,7 @@ public class WantedItemController {
 
     }
 
+    //update a wanted item by id
     @PutMapping("/wanted/{id}")
     public ResponseEntity<WantedItem> updateWantedItem(@PathVariable("id") String id, @RequestBody WantedItem wantedItem) {
         Optional<WantedItem> wantedItemData = wantedItemRepository.findById(id);
@@ -93,6 +98,7 @@ public class WantedItemController {
 
     }
 
+    //delete wanted item by id
     @DeleteMapping("/wanted/{id}")
     public ResponseEntity<HttpStatus> deleteWantedItem(@PathVariable("id") String id) {
         try {
@@ -104,6 +110,7 @@ public class WantedItemController {
 
     }
 
+    //delete all wanted items
     @DeleteMapping("/wanted")
     public ResponseEntity<HttpStatus> deleteAllWantedItems() {
         try {
@@ -115,6 +122,7 @@ public class WantedItemController {
 
     }
 
+    //find item by published bool
     @GetMapping("/wanted/published")
     public ResponseEntity<List<WantedItem>> findByPublished() {
         try {

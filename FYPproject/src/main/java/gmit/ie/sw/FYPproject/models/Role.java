@@ -5,6 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "roles")
 public class Role {
+    //Declaration of variables
     @Id
     private String id;
 
@@ -14,6 +15,7 @@ public class Role {
 
     }
 
+    //getters and setters
     public Role(ERole name) {
         this.name = name;
     }

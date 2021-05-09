@@ -18,9 +18,11 @@ import java.util.Optional;
 
 public class SavedItemController {
 
+    //Instance
     @Autowired
     SavedItemRepository savedItemRepository;
 
+    //get all saved items
     @GetMapping("/savedItems")
     public ResponseEntity<List<SavedItem>> getAllSavedItems(@RequestParam(required = false) String title) {
         try {
@@ -41,6 +43,7 @@ public class SavedItemController {
         }
     }
 
+    //get specific item by id
     @GetMapping("/savedItems/{id}")
     public ResponseEntity<SavedItem> getSavedItemById(@PathVariable("id") String id) {
         Optional<SavedItem> savedItemData = savedItemRepository.findById(id);
@@ -53,6 +56,7 @@ public class SavedItemController {
 
     }
 
+    //create a new saved item
     @PostMapping("/savedItems")
     public ResponseEntity<SavedItem> createSavedItem(@RequestBody SavedItem savedItem) {
         try {
@@ -64,6 +68,7 @@ public class SavedItemController {
 
     }
 
+    //update an item by id
     @PutMapping("/savedItems/{id}")
     public ResponseEntity<SavedItem> updateSavedItem(@PathVariable("id") String id, @RequestBody SavedItem savedItem) {
         Optional<SavedItem> savedItemData = savedItemRepository.findById(id);
@@ -80,6 +85,7 @@ public class SavedItemController {
 
     }
 
+    //delete specific saved item by id
     @DeleteMapping("/savedItems/{id}")
     public ResponseEntity<HttpStatus> deleteSavedItem(@PathVariable("id") String id) {
         try {
@@ -91,6 +97,7 @@ public class SavedItemController {
 
     }
 
+    //delete all saved items
     @DeleteMapping("/savedItems")
     public ResponseEntity<HttpStatus> deleteAllSavedItems() {
         try {
@@ -102,6 +109,7 @@ public class SavedItemController {
 
     }
 
+    //find items by published bool
     @GetMapping("/savedItems/published")
     public ResponseEntity<List<SavedItem>> findByPublished() {
         try {

@@ -27,9 +27,11 @@ import gmit.ie.sw.FYPproject.repository.ItemMongoRepository;
 @RequestMapping("/api")
 public class ItemController {
 
+    //instance
     @Autowired
     ItemMongoRepository itemRepository;
 
+    //get all items
     @GetMapping("/items")
     public  List<Item> getAllItems(){
         System.out.println("Get all items");
@@ -37,6 +39,7 @@ public class ItemController {
         return itemRepository.findAll();
     }
 
+    //create an item
     @PostMapping("/items/{id}")
     public Item createItem(@Valid @RequestBody Item item){
         System.out.println("Create Item: " + item.getName() + "...");
@@ -45,6 +48,7 @@ public class ItemController {
 
     }
 
+    //get item by id
     @GetMapping("/items/{id}")
     public ResponseEntity<Item> getItem(@PathVariable("id") String id){
         System.out.println("Update Item with ID = " + id + "...");;
@@ -56,6 +60,7 @@ public class ItemController {
         }
     }
 
+    //update an item by id
     @PutMapping("/items/{id}")
     public ResponseEntity<Item> updateItem(@PathVariable("id") String id, @RequestBody Item item){
         System.out.println("Update Item with ID = " + id + "...");
@@ -75,6 +80,7 @@ public class ItemController {
     }
 
 
+    //delete item
     @DeleteMapping("/items/{id}")
     public ResponseEntity<String> deleteItem(@PathVariable("id") String id) {
         System.out.println("Delete Item with ID = " + id + "...");
@@ -88,6 +94,7 @@ public class ItemController {
         return new ResponseEntity<>("Book has been deleted!", HttpStatus.OK);
     }
 
+    //delete all items
     @DeleteMapping("/items/delete")
     public ResponseEntity<String> deleteAllItems() {
         System.out.println("Delete All Items...");

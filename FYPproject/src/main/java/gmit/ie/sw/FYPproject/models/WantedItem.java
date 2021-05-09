@@ -8,6 +8,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "wanteditems")
 public class WantedItem {
+
+    //Declaration of variables
     @Id
     private String id;
 
@@ -31,6 +33,7 @@ public class WantedItem {
 
     }
 
+    //constructor
     public WantedItem(String title, String description, boolean published, String category, String username, String email, String imageurl, String location) {
         this.title = title;
         this.description = description;
@@ -42,6 +45,7 @@ public class WantedItem {
         this.location = location;
     }
 
+    //getters and setters
     public String getId() {
         return id;
     }
@@ -110,6 +114,7 @@ public class WantedItem {
         this.location = location;
     }
 
+    //toString method
     @Override
     public String toString() {
         return "Tutorial [id=" + id + ", title=" + title + ", desc=" + description + ", published=" + published + ", category=" + category+ ", username=" + username + ", email=" + email +", imagerurl=" + imageurl+ ", location=" + location+ "]";

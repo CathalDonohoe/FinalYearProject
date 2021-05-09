@@ -12,9 +12,11 @@ import gmit.ie.sw.FYPproject.repository.UserRepository;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
+    //instance
     @Autowired
     UserRepository userRepository;
 
+    //retrieves a user from the repo
     @Override
     @Transactional
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

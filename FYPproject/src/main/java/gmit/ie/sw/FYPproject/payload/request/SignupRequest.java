@@ -5,6 +5,7 @@ import java.util.Set;
 import javax.validation.constraints.*;
 
 public class SignupRequest {
+    //declaration of variables
     @NotBlank
     @Size(min = 3, max = 20)
     private String username;
@@ -20,6 +21,7 @@ public class SignupRequest {
     @Size(min = 6, max = 40)
     private String password;
 
+    //getters and setters
     public String getUsername() {
         return username;
     }

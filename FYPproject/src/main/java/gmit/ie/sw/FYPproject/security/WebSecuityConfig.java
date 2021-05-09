@@ -25,6 +25,7 @@ import gmit.ie.sw.FYPproject.security.services.UserDetailsServiceImpl;
         // jsr250Enabled = true,
         prePostEnabled = true)
 class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+    //Instances
     @Autowired
     UserDetailsServiceImpl userDetailsService;
 

@@ -1,6 +1,8 @@
 package gmit.ie.sw.FYPproject.models;
 
 public class SavedItem {
+
+    //Declaration of variables
     private String id;
     private String title;
     private String username;
@@ -10,6 +12,7 @@ public class SavedItem {
 
     }
 
+    //constructor
     public SavedItem(String id,String title, String username, boolean published){
         this.id = id;
         this.title=title;
@@ -18,6 +21,7 @@ public class SavedItem {
     }
 
 
+    //getters and setters
     public String getId() {
         return id;
     }
@@ -50,6 +54,7 @@ public class SavedItem {
         this.title = title;
     }
 
+    //toString method
     @Override
     public String toString() {
         return "Tutorial [id=" + id + ", title=" + title + ", published=" + published + ", username=" + username+ "]";

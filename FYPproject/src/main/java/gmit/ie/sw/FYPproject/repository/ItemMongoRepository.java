@@ -4,4 +4,5 @@ import gmit.ie.sw.FYPproject.models.Item;
 
 
 public interface ItemMongoRepository extends MongoRepository<Item, String>{
+    //Lists
 }

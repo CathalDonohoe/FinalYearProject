@@ -26,9 +26,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/test")
 public class TutorialController {
 
+    //Instance
     @Autowired
     TutorialRepository tutorialRepository;
 
+    //to get all items
     @GetMapping("/tutorials")
     public ResponseEntity<List<Tutorial>> getAllTutorials(@RequestParam(required = false) String title) {
         try {
@@ -49,6 +51,7 @@ public class TutorialController {
         }
     }
 
+    //get specific item by id
     @GetMapping("/tutorials/{id}")
     public ResponseEntity<Tutorial> getTutorialById(@PathVariable("id") String id) {
         Optional<Tutorial> tutorialData = tutorialRepository.findById(id);
@@ -61,6 +64,7 @@ public class TutorialController {
 
     }
 
+    //create a new item
     @PostMapping("/tutorials")
     public ResponseEntity<Tutorial> createTutorial(@RequestBody Tutorial tutorial) {
         try {
@@ -72,6 +76,7 @@ public class TutorialController {
 
     }
 
+    //update specific item by id
     @PutMapping("/tutorials/{id}")
     public ResponseEntity<Tutorial> updateTutorial(@PathVariable("id") String id, @RequestBody Tutorial tutorial) {
         Optional<Tutorial> tutorialData = tutorialRepository.findById(id);
@@ -93,6 +98,7 @@ public class TutorialController {
 
     }
 
+    //delete item by id
     @DeleteMapping("/tutorials/{id}")
     public ResponseEntity<HttpStatus> deleteTutorial(@PathVariable("id") String id) {
         try {
@@ -104,6 +110,7 @@ public class TutorialController {
 
     }
 
+    //delete all items
     @DeleteMapping("/tutorials")
     public ResponseEntity<HttpStatus> deleteAllTutorials() {
         try {
@@ -115,6 +122,7 @@ public class TutorialController {
 
     }
 
+    //find item by published
     @GetMapping("/tutorials/published")
     public ResponseEntity<List<Tutorial>> findByPublished() {
         try {
