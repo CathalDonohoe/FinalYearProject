@@ -27,6 +27,7 @@ export default class EditAvailable extends Component {
   }
 
   componentDidMount() {
+    // retreives wanted item data from database for editing
     axios.get(`api/test/tutorials` + this.props.match.params.id)
       .then((res) => {
         this.setState({
@@ -75,6 +76,7 @@ export default class EditAvailable extends Component {
       location: this.state.location
     };
 
+    // puts new data to database
     axios.put(`api/test/tutorials/` + this.state.id, newItem)
       .then((y) => {
         console.log(y);

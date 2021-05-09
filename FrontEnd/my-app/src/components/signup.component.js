@@ -30,6 +30,13 @@ export default class SignUp extends Component {
     }
 
     render() {
+         // Prevents user from accessing signup page when already signed up
+         if (localStorage.getItem('token')!= null) {
+            this.setState({
+                loggedIn: true
+            });
+        }
+
         if (this.state.loggedIn) {
             return <Redirect to={'/login'} />
         }

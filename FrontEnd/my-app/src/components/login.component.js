@@ -12,7 +12,9 @@ export default class Login extends Component {
             username: this.username,
             password: this.password
         }
-
+        
+        // Creates a post request to the database, only responds
+        // When login cradentials are correct
         axios.post('api/auth/signin', data)
             .then(res => {
                 console.log(res);

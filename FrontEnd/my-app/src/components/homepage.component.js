@@ -19,14 +19,16 @@ import otherItems from "../images/otherItems.jpg"
 import '../App.css';
 import HomeNavBar from "./homeNavBar.component";
 
+// Home page
 export default class Homepage extends Component {
   processChoice(filter) {
+    // Filter used for filtering available items
     localStorage.setItem('filter', filter);
   }
 
   render() {
     return (
-      <html>
+      <div>
         <head>
           <title>HomePage</title>
           <meta charSet="utf-8" />
@@ -213,7 +215,7 @@ export default class Homepage extends Component {
           </div>
           <br />
         </body>
-      </html>
+      </div>
     )
   }
 }

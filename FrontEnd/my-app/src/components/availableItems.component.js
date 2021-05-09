@@ -13,6 +13,7 @@ export default class AvailableItems extends Component {
     }
 
     componentDidMount() {
+        // retreives available item data from database
         axios.get(`api/test/tutorials`)
             .then(res => {
                 const items = res.data;

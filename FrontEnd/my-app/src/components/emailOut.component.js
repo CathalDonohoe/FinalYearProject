@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 
+// Function used to get the message a user wants
+// to send and pass it on to the server to be
+// sent as an email
 const EmailOut = () => {
     const [status, setStatus] = useState("Submit");
     const handleSubmit = async (e) => {

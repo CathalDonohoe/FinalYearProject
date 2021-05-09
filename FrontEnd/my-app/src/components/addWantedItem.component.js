@@ -26,7 +26,7 @@ export default class AddWantedItem extends Component {
             username: this.username,
             location: this.location
         }
-
+        // posts wanted item data to database
         axios.post('api/test/wanted', data).then(
             res => {
                 console.log(res);

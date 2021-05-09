@@ -1,3 +1,5 @@
+// Express/node server that is used to send emails
+// When a user is interested in an item
 const express = require("express");
 const router = express.Router();
 const cors = require("cors");
