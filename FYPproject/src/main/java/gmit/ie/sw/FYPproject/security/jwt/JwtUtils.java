@@ -13,6 +13,7 @@ import io.jsonwebtoken.*;
 
 @Component
 public class JwtUtils {
+    //declaration of variables
     private static final Logger logger = LoggerFactory.getLogger(JwtUtils.class);
 
     @Value("${bezkoder.app.jwtSecret}")
@@ -21,6 +22,7 @@ public class JwtUtils {
     @Value("${bezkoder.app.jwtExpirationMs}")
     private int jwtExpirationMs;
 
+    //generates a JWT token
     public String generateJwtToken(Authentication authentication) {
 
         UserDetailsImpl userPrincipal = (UserDetailsImpl) authentication.getPrincipal();

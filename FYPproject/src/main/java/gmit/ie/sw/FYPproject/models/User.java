@@ -14,6 +14,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "users")
 public class User {
+
+    //Declaration of variables
     @Id
     private String id;
 
@@ -36,12 +38,14 @@ public class User {
     public User() {
     }
 
+    //constructor
     public User(String username, String email, String password) {
         this.username = username;
         this.email = email;
         this.password = password;
     }
 
+    //getters and setters
     public String getId() {
         return id;
     }

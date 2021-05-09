@@ -34,6 +34,7 @@ import gmit.ie.sw.FYPproject.security.services.UserDetailsImpl;
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
+    //Instances
     @Autowired
     AuthenticationManager authenticationManager;
 
@@ -49,6 +50,7 @@ public class AuthController {
     @Autowired
     JwtUtils jwtUtils;
 
+    //used for sign in
     @PostMapping("/signin")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
 
@@ -70,6 +72,7 @@ public class AuthController {
                 roles));
     }
 
+    //retrieves a specific user details for login
     @GetMapping("/user")
     public ResponseEntity<?> retrieveuser(@Valid @RequestBody LoginRequest loginRequest){
         Authentication authentication = authenticationManager.authenticate(
@@ -88,6 +91,7 @@ public class AuthController {
                 roles));
     }
 
+    //used for register
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
         if (userRepository.existsByUsername(signUpRequest.getUsername())) {

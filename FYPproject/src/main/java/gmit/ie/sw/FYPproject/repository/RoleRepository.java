@@ -10,5 +10,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface RoleRepository extends MongoRepository<Role, String> {
+    //Lists
     Optional<Role> findByName(ERole name);
 }

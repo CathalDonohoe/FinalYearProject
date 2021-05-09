@@ -13,6 +13,7 @@ import gmit.ie.sw.FYPproject.models.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class UserDetailsImpl implements UserDetails {
+    //declaration of variables
     private static final long serialVersionUID = 1L;
 
     private String id;
@@ -26,6 +27,7 @@ public class UserDetailsImpl implements UserDetails {
 
     private Collection<? extends GrantedAuthority> authorities;
 
+    //constructor
     public UserDetailsImpl(String id, String username, String email, String password,
                            Collection<? extends GrantedAuthority> authorities) {
         this.id = id;
@@ -53,6 +55,7 @@ public class UserDetailsImpl implements UserDetails {
         return authorities;
     }
 
+    //getters and setters
     public String getId() {
         return id;
     }

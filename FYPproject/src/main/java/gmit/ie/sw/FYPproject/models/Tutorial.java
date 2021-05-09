@@ -28,6 +28,7 @@ public class Tutorial {
 
     }
 
+    //constructor
     public Tutorial(String title, String description, boolean published, String category, String username, String email, String imageurl, String location) {
         this.title = title;
         this.description = description;
@@ -39,6 +40,7 @@ public class Tutorial {
         this.location = location;
     }
 
+    //getters and setters
     public String getId() {
         return id;
     }
@@ -107,6 +109,7 @@ public class Tutorial {
         this.location = location;
     }
 
+    //toString method
     @Override
     public String toString() {
         return "Tutorial [id=" + id + ", title=" + title + ", desc=" + description + ", published=" + published + ", category=" + category+ ", username=" + username+ ", email=" + email +", imagerurl=" + imageurl+ ", location=" + location+ "]";

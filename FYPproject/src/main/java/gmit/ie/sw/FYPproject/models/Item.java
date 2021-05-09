@@ -6,6 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection  = "items")
 public class Item {
 
+    //Declaration of variables
     @Id
     private String id;
 
@@ -19,6 +20,7 @@ public class Item {
 
     }
 
+    //getters and setters
     public String getId() {
         return id;
     }
@@ -60,6 +62,7 @@ public class Item {
     }
 
 
+    //toString method
     @Override
     public String toString() {
         return "Item [id=" + id + ", name=" + name + ", description=" + description + ", owner=" + owner + "]";

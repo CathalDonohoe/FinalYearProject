@@ -4,12 +4,14 @@ package gmit.ie.sw.FYPproject.payload.request;
 import javax.validation.constraints.NotBlank;
 
 public class LoginRequest {
+    //declaration of variables
     @NotBlank
     private static String username;
 
     @NotBlank
     private String password;
 
+    //getters and setters
     public static String getUsername() {
         return username;
     }

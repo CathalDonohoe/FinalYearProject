@@ -21,6 +21,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import gmit.ie.sw.FYPproject.security.services.UserDetailsServiceImpl;
 
 public class AuthTokenFilter extends OncePerRequestFilter {
+    //declaration of variables
     @Autowired
     private JwtUtils jwtUtils;
 
