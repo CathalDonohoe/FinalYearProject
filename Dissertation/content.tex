@@ -10,32 +10,34 @@
 
 \chapter*{About this project}
 \paragraph{Abstract}
-People often buy items that they only intend to use once, and just throw it in the corner for eternity. Even aside from the one-off purchases, many of people's belongings are barely used by them and are left idle for most of the time. BarterNearMe is a website which offers a solution to this problem in the form of a 21st century barter system. This website provides users with the ability to login, register and browse or add available items and wanted items. The user may also save an available item for later viewing. 
+People often buy items that they only intend to use once, and just throw it in the corner for eternity. Even aside from the one-off purchases, many of people's belongings are barely used by them and are left idle most of the time. BarterNearMe is a website which offers a solution to this problem in the form of a 21st century barter system. This website offers full CRUD functionality, providing users with the ability to login, register and browse or add available items and wanted items. The user may also save an available item for later viewing. \par
+This website was created as the main component of our Final Year Project for B.Sc.(Hons) in Software Development, GMIT in which we both took the chance to both learn how to use new software and to improve our skills with some of the technologies we have learned over the past few years. \par
+Aside from the website itself and frameworks we used to create it, this project provided the opportunity to develop our project management skills through methods such as planning and trying to stick to a timeline. This, coupled with version control was essential since we were unable to meet in person due to restrictions, so it was important that we communicated well to stay on track. \par
+Since we used some new technologies such as Spring Boot, Jira and Postman, this project also allowed us to showcase our independent learning skills as well as improving on those skills as we progressed through the project.
 
+\newpage
 \paragraph{Authors}
-Explain here who the authors are. Nathan Garrihy and Cathal Donohoe.
+Cathal Donohoe and Nathan Garrihy are 2 Final Year students studying Software Development in Galway-Mayo Institute of Technology. Cathal is a Legan, County Longford native and his main focus for this project was the back end and databases. Nathan hails from Ennistymon, County Clare and he emphasised on the front end development of the website. Both are motivated students in pursuit of a successful career in the software industry.
+
+\begin{figure}[bh]
+\renewcommand\thefigure{1.1}
+\centering
+\includegraphics[scale=.45]{img/CathalDonohoe.jpeg}
+\caption{Cathal Donohoe}
+\label{Cathal}
+\end{figure}
+
+\begin{figure}[th]
+\renewcommand\thefigure{1.2}
+\centering
+\includegraphics[scale=.14]{img/NathanGarrihy.jpg}
+\caption{Nathan Garrihy}
+\label{Nathan}
+\end{figure}
 
 
-
+\newpage
 \chapter{Introduction}
-
-% The introduction should be about three to five pages long. (5 recommended)
-% Provide a clear context for your project.
-% – What is it about? Is it at the right level (8)?
-% – Is the scope correct?
-% – Do not assume that the reader knows anything about the domain.
-% – Why should a reader care or be interested?
-% q Set out the objectives of the project clearly.
-% – You will have to address each of these in the evaluation /
-% conclusion.
-% – The metrics by which success or failure is measured.
-% q Briefly list each chapter / section and provide a brief description
-% of what each section contains.
-% – List the resource URL (GitHub address) for the project and provide
-% a brief list and description of the main elements at the URL.
-% q After reading the introduction, a reader should be 100% certain
-% of what the project is all about and why it is relevant.
-% Make sure you use references~\cite{einstein}
 
 At the beginning of our final year, our year were given the opportunity to work as a team or individually to develop a project over the course of the year across two semesters. We worked together on the end of year project in year 3 semester 6 of the course in which we developed a first person shooter in Unity. We were both very happy with our results and our ability to work together so we decided to group up together along with a fellow student Anton Golubev. We knew that what we were to develop had to be up to standards for a level 8 final year project, had to use a multitude of languages, technologies and had to test our knowledge and kills to improve them as software developers. Our initial ideas mostly centered around a CRUD(Create-Read-Update-Delete) application focused on E-commerce or a social media platform. After much debate as to what our final year project would consist of, we agreed on an E-commerce website in which users could upload, view and save products for buying and trading. The intention of the project was to improve our abilities and understanding of new technologies and create a better foundation of our skills in our field of work.
 
@@ -43,9 +45,7 @@ At the beginning of our final year, our year were given the opportunity to work 
 Our final decision on an idea for the final year project was to develop a full stack CRUD application developed for trade and exchange of items between multiple users. The website is quite similar in style to DoneDeal, except our site promotes users to get in contact with each other to trade items with one another for a period which they see as appropriate.
 
 \section{Scope}
-%Project scope is a detailed outline of all aspects of a project, including all related activities, %resources, timelines, and deliveries, as well as the project's boundaries. 
-%Who, What, When, Where, Why
-We both grew up in a close-knit community surrounded by friendly neighbours and oftentimes if our family required something like a ladder, or a drill for the day, our neighbours would allow us to borrow one for as long as necessary. After moving to Galway for college, we noticed that cities really lack that close-knit connection as many people don't even know their neighbours well enough to ask to borrow an item. This got us thinking and our solution was a website designed so that users can browse items and acquire contact details for the owner of the listed item, if desired. This website is a useful way of saving money by offering the ability to temporarily acquire items which are only required once. \par
+We both grew up in a close-knit community surrounded by friendly neighbours and oftentimes if our family required something like a ladder, or a drill for the day, our neighbours would allow us to borrow one for as long as necessary. After moving to Galway for college, we noticed that cities, unlike our home towns, lack a close-knit community. Most people don't know their neighbors well enough to ask them to borrow an item. This got us thinking and our solution was a website designed so that users can browse items and contact the owner of the listed item, if desired. This website is a useful way of saving money by offering the ability to temporarily acquire items which are only required once. \par
 The initial scope intended for this project was to be completed by 3 students. However, we were struck with a slight roadblock as we had to re-define the scope in December as one of our team members was unable to continue with 4th Year due to personal reasons inflicted by the COVID-19 pandemic.
 
 \subsection{Objectives}
@@ -96,7 +96,7 @@ We also set some milestones around this time which we used along with the guidan
 \end{itemize}
  
 \subsection{Boundaries}
-The main things that were left out in this project were left out because of the loss of a group member. We had planned to do a review system where the borrower and lender provide each other with a small review and rating out of 10 after completing a transaction to show that those users are trustworthy. This would have been a nice feature as it's hard to trust anyone these days. However, we decided not to implement this feature when we scaled the project back a bit in December.  
+The main elements which were not achieved in this project were a result of the loss of a group member. We had planned to do a review system where the borrower and lender provide each other with a small review and rating out of 10 after completing a transaction to show that those users are trustworthy. This would have been a nice feature as it's hard to trust anyone these days. However, we decided not to implement this feature when we scaled the project back a bit in December.  
 
 \section{Overview of chapters}
 This dissertation is divided into chapters, each of which contains information about a different aspect of the project. We'll list these chapters and provide a brief summary of each in this section. 
@@ -156,7 +156,7 @@ Testing is an integral aspect of a software project's life cycle, and it contrib
 \begin{itemize}
     \item White Box Testing: In this form of testing, the tester has complete knowledge of the software's architecture, implementation, and internal structure. 
 \end{itemize}
-\par We used this method of testing by means of Postman and Robo 3T. We would send GET/POST/DELETE requests from Postman, while our Spring Boot application and Docker was running, and check for the exact out puts in Robo 3T by checking the MongoDB.
+\par We used this method of testing by means of Postman and Robo 3T. We would send GET/POST/DELETE requests from Postman, while our Spring Boot application and Docker was running, and check for the exact outputs in Robo 3T by checking the MongoDB.
 
 \section{Use of GitHub}
 GitHub was essential to us during the development phase of the project. The use of GitHub in our development not only allowed us to save and exchange code with ease, but it can also double as a version control manager. We had all used GitHub for personal and academic projects, so we were all very familiar with the hosting service already. \par
@@ -167,7 +167,7 @@ Creating a GitHub repository was the first step in our development. Cathal creat
 React is an open-source, front end, JavaScript library for building user interfaces or UI components. It is maintained by Facebook and a community of individual developers and companies \cite{React}. We decided to use this for our Front End as it aesthetically pleasing and once saved, the page will update automatically allowing for a quicker and easier development process.
 
 \subsection{Node js}
-Node JS is an asynchronous event-driven platform built on Chrome's JavaScript runtime that allows easy building of efficient, scalable network applications. NPM, or Node Package Manager is the Node JavaScript platform's package manager. It puts modules in place so that node can find them and intelligently manages dependency conflicts \cite{NodsJS}. Hundreds of thousands of JavaScript developers use it every day because it's battle-tested and remarkably versatile.
+Node JS is an asynchronous event-driven platform built on Chrome's JavaScript runtime that allows easy building of efficient, scalable network applications. NPM, or Node Package Manager is the Node JavaScript platform's package manager. It puts modules in place so that node can find them and intelligently manages dependency conflicts \cite{NodsJS}. A large portion of JavaScript developers use it every day because it's battle-tested and remarkably versatile.
 
 \subsection{Express}
 Express is a Node.js web application framework that offers a comprehensive set of features for web applications. Express adds a thin layer of basic web application functionality without masking any of Node JS's known features \cite{ExpressJS}. When utilized correctly, express offers data to be fetched from the server and displayed to the client with ease and offers high scalability as well as exemplary security. It is well constructed and documented, making implementation quite an easy and fast process.
@@ -198,10 +198,10 @@ Amazon Web Services (AWS) is a secure cloud service platform, offering compute p
 IntelliJ IDEA is an integrated development environment written in Java for developing computer software. It is developed by JetBrains, and is available as a community licensed edition and as a commercial edition. This is the IDE we chose for developing our Java code as it is a visually pleasing and organised IDE \cite{IntelliJ}. Most of our Java modules required us to use Eclipse, so this was also a nice method of keeping our Final Year Project separate from our other Java code.
 
 \subsection{Visual Studio Code}
-Visual Studio Code is a freeware source-code editor made by Microsoft for Windows, Linux and mac OS. It has supported features for debugging, syntax highlighting, intelligent code completion, snippets, code refactoring and embedded GIT. This IDE is ideal for development of JavaScript as it provides a clear and concise UI for the developer.
+Visual Studio Code is a code editor which has been optimized and redefined for building modern web and cloud applications. It has supported features for debugging, syntax highlighting, intelligent code completion, snippets, code refactoring and embedded GIT.\cite{vscode} This IDE is ideal for development of JavaScript as it provides a clear and concise UI for the developer.
 
 \subsection{GitHub}
-GitHub Inc is an internet hosting company that specializes in Git-based software creation and version control. It includes git's distributed version control and source code management features as well as its own.  We have been using this platform to store our projects since second year of college, so it was an ideal platform for us to use again, while ensuring we both had the most up to date version of our code.
+GitHub Inc is an internet hosting company that specializes in Git-based software creation and version control. It includes git's distributed version control and source code management features as well as its own.\cite{git}  We have been using this platform to store our projects since second year of college, so it was an ideal platform for us to use again, while ensuring we both had the most up to date version of our code.
 
 \subsection{Jira}
 Jira is a proprietary issue tracking product developed by Atlassian that allows bug tracking and agile project management. This software allows users to create weekly sprints with goals and deadlines to be achieved \cite{Jira}. We found this to be an ideal methodology for keeping us both knowledgeable of what is to be accomplished next and what needs to be completed.
@@ -214,59 +214,7 @@ In private conversations, users communicate using voice calls, video calls, text
 Facebook Messenger is an American messaging app and platform developed by Facebook inc. This is another service that allows for instant massaging between users. This was our main source of communicating with each other for organisation as it has been our main form of communicating since we were in first year.
 
 \subsection{Microsoft Teams}
-Microsoft Teams is a proprietary business communication platform developed by Microsoft. Teams offers work space chat and videoconferencing, file storage and application integration. When Covid-19 first affected us, GMIT switched to using Microsoft Teams for their main form of lecturing and live meetings. We used this platform weekly to have meeting with our supervisor and to communicate with them for advice.
-
-% Check out the nice graphs in Figure \ref{tikz:graphs}, and the nice diagram in Figure \ref{tikz:mydiagram}.
-
-% \begin{figure}
-%   \centering
-%   \begin{tikzpicture}
-%   \begin{scope}[every node/.style={circle,thick,draw}]
-%   \node (a) at (0,2) {a};
-%   \node (b) at (2,2) {b};
-%   \node (c) at (2,0) {c};
-%   \node (d) at (0,0) {d};
-%   \end{scope}
-%   \begin{scope}[every edge/.style={draw=black,thick}]
-%   \path (a) edge (b);
-%   \path (b) edge (c);
-%   \path (b) edge (d);
-%   \path (c) edge (d);
-%   \end{scope}
-%   \node () at (1,-1) {$G_1$};
-%   \end{tikzpicture}
-%   \hspace{1.5cm}
-%   \begin{tikzpicture}
-%   \begin{scope}[every node/.style={circle,thick,draw}]
-%   \node (1) at (0,2) {a};
-%   \node (2) at (2,2) {b};
-%   \node (3) at (2,0) {c};
-%   \node (4) at (0,0) {d};
-%   \end{scope}
-%   \begin{scope}[every edge/.style={draw=black,thick}]
-%   \path (1) edge (2);
-%   \path (1) edge (3);
-%   \path (1) edge (4);
-%   \path (3) edge (4);
-%   \end{scope}
-%   \node () at (1,-1) {$G_2$};
-%   \end{tikzpicture}
-%   \caption{Nice pictures}
-%   \label{tikz:graphs}
-% \end{figure}
-
-
-% \begin{figure}
-%   \centering
-%   \begin{tikzpicture}[node distance=6cm]
-%   \node (a) [rect] {A Big Blue Block};
-%   \node (b) [oval, right of=a] {And His Oval Friend};
-%   \draw [line] (a) -- (b);
-%   \end{tikzpicture}
-%   \caption{Nice pictures}
-%   \label{tikz:graphs}
-% \end{figure}
-
+Microsoft Teams is a proprietary business communication platform developed by Microsoft. Teams offers work space chat and videoconferencing, file storage and application integration. \cite{teams}When Covid-19 first affected us, GMIT switched to using Microsoft Teams for their main form of lecturing and live meetings. We used this platform weekly to have meeting with our supervisor and to communicate with them for advice.
 
 \chapter{Technology Review}
  When we decided that we would be developing a CRUD application our first step was to decide upon what technologies we would be using to develop and test the application. This section will be split into four main focus points; The technology used in the Front End of the application, the technology used in the Back End of the application, the technology used for development, and the technology that is used to organise the development process of the application.
@@ -297,7 +245,7 @@ There was a wide range of technical problems which was faced in web development.
 \end{quote}
 
 \cite{IntroductionReact}React allows data to be displayed on wide scale user interfaces with relative ease. While most frameworks adopt a model, view, controller architecture, it would not be entirely accurate to place React under this category as React focuses more on the "view" as opposed to the model and controller. \par
-React has a range of libraries which can be imported to add functionality to the framework. An example of a library which was used is axios, which is a library that aids the sending of http requests to external resources. \cite{Axios}Axios, as well as many of the other React libraries is well documented and has plenty resources out there to aid development.
+React has a range of libraries which can be imported to add functionality to the framework. An example of a library which was used is Axios, which is a library that aids the sending of http requests to external resources. \cite{Axios}Axios, as well as many of the other React libraries is well documented and has plenty resources out there to aid development.
 
 \subsection{Nods.js}
 We used Node JS because it provides all of the benefits of \cite{fullStackJS}full stack JS development. These include
@@ -480,7 +428,7 @@ Postman is incredibly easy to set up on ones machine. Simply download the applic
 \label{PostmanBody}
 \end{figure}
 
-Then when the user clicks the "send" button, they will get a response specifying if the request was successful of if there was an error in the request. This was an excellent method of testing and confirming that the API calls were functioning before ever having to connect it to the Front End Environment.
+Then when the user clicks the "send" button, they will get a response specifying if the request was successful or if there was an error in the request. This was an excellent method of testing and confirming that the API calls were functioning before ever having to connect it to the Front End Environment.
 
 \subsection{AWS}
 
@@ -492,7 +440,7 @@ Then when the user clicks the "send" button, they will get a response specifying
 \label{AWSLogo}
 \end{figure}
 
-AWS, also known as Amazon Web Services, is one of the leaders in the cloud computer market. AWS was first introduced in 2002 as a means to provide tools and services to developers to incorporate features of Amazon.com into their website. Its first cloud servicing was introduced in 2006. Today, AWS offer a wide range of cloud services that span a wide array of domains. Due to this, the AWS service is now used by over 45\% of the global market. \par
+AWS, also known as Amazon Web Services, is one of the leaders in the cloud computer market. AWS was first introduced in 2002 as a means to provide tools and services to developers to incorporate features of Amazon.com into their website\cite{awsblog}. Its first cloud servicing was introduced in 2006. Today, AWS offer a wide range of cloud services that span a wide array of domains. Due to this, the AWS service is now used by over 45\% of the global market. \par
 AWS is a secure cloud platform that provides computing power, database, networking, content storage and much more. The platform also works on a pay-as-you-go model, meaning you only pay as long as your service is running. Some of the other advantages of AWS are:
 \begin{itemize}
     \item Security: AWS provides a secure and durable platform that offers end-to-end privacy and security.
@@ -621,7 +569,7 @@ This is the platform we used to communicate with our supervisor and to meet for 
 \begin{figure}[ht]
 \renewcommand\thefigure{3.21}
 \centering
-\includegraphics[scale=0.4]{img/teams.PNG}
+\includegraphics[scale=0.5]{img/teams.PNG}
 \caption{Microsoft Teams chat}
 \label{TeamsChat}
 \end{figure}
@@ -646,22 +594,6 @@ Another important feature of Microsoft Teams is the ability to schedule meetings
 
 
 \chapter{System Design}
-%Provide a detailed explanation of the overall system
-%architecture. The HOW of the project.
-%– System designed should be informed by the technology review, i.e.
-%you applied the knowledge that you learned doing the research…
-%– Standards-based where possible. How are components coupled?
-% – Cloud hosted – IaaS / PaaS / Sa.
-% Use diagrams to augment an explanation of the architecture
-%used.
-%– Provide a comprehensive overview of the different components of
-%the system and how they work together.
-%– UML class, sequence and interaction diagrams.
-%– Course and fine grain.
-%– Use screen shots of forms or other UI components.
-%q Page count range difficult to state as varies significantly
-%between projects.
-%As many pages as needed
 This application is a React application that uses a Spring Boot API to communicate fetch and get requests from a MongoDB. The front end of this website is set up with React so that it is a single page application. These kind of websites offer a nice boost in performance, as all of the HTML, CSS and JavaScript is loaded as soon as the website is loaded. Single page applications perform efficient data caching which reduces loading times. SPA's also provide a much better overall experience for the user. \par
 The Back End of this website is set up with Spring Boot. Spring Boot is a Spring module that provides the RAD (Rapid Application Development) feature to the Spring framework \cite{Javapoint}. Spring Boot is a project that uses the Spring Framework as its foundation.
 It makes setting up, configuring, and running both easy and web-based applications simpler and quicker. This provides an overall much easier development time for the programmer. \par
@@ -1040,7 +972,7 @@ getBase64(file, cb) {
         })
     }
 \end{minted}
-To edit items, we first get the data of a certain item has stored by performing a HTTP get request that returns the data of a chosen item. This data is then used to popular the placeholders of the item details, which can be changed or left the same to the users desire. Once the user is happy with the changes and they click the confirmation button, the new data will be sent to the same url using a put method. The put method replaces the data that is currently stored in the database rather than overwriting it which is perfect for editing items.
+To edit items, we first get the data of a certain item which has been previously stored by performing a HTTP get request that returns the data of a chosen item. This data is then used to popular the placeholders of the item details, which can be changed or left the same to the users desire. Once the user is happy with the changes and they click the confirmation button, the new data will be sent to the same url using a put method. The put method replaces the data that is currently stored in the database rather than overwriting it which is perfect for editing items.
 \begin{minted}{js}
 axios.get(`api/test/tutorials` + this.props.match.params.id)
       .then((res) => {
@@ -1144,7 +1076,7 @@ To start Nathan would've liked to have add more categories for the users to choo
 Cathal feels that the Back End could've also done with some key improvements. The retrieval of user info requires a Bearer Key for the API call to be authorized, this possibly could've been edited to allow the front end to access the information without saving it to local storage. \par
 We both feel that if we had more time, that a chat feature of the application could've been implemented instead of an automated email. The bug fixes and the AWS took longer to fix than we had envisioned and we ran out of time to implement this. \par
 Another feature that we would've like to have added would have been a search feature. Technically, the items can be searched for a particular id, but if we had more time, we would have done so using the title(name) of the item as well, allowing for a search bar feature. \par
-To conclude we are both still very happy with the outcome of this project and feel that our skills have really developed from the complications and difficulties we encountered. We are very proud to announce that despite loosing a member of our team after our planning and designing of the application, that we didn't loose and features or functionality that we had set out on doing before hand.
+To conclude we are both still very happy with the outcome of this project and feel that our skills have really developed from the complications and difficulties we encountered. We are very proud to announce that despite loosing a member of our team after our planning and designing of the application, that we didn't lose any features or functionality that we had set out on doing before hand.
 
 \section{Thanks}
 We would like to thank our lecturer and supervisor Martin Kenirons again for all the help and support he provided us with. His guidance and counsel was a vital contribution to us achieving our goals.
