@@ -125,7 +125,15 @@ Methodology is the study of methods used in a field. Its the collection of metho
 \section{Approach to Development}
 During the early stages of the project, our supervisor suggested that we split our selves between Back End Development and Front End Development. After a short while of debating where we should dedicate ourselves to on the Development front, we decided that Nathan should focus on Front End Development, as he is especially talented in making GUIs aesthetically pleasing, that Cathal should focus on Back End Development, as he has pass experiences with working with Databases, and that Anton should lend a hand to both sides as he had experience with both ends.\par
 After these decisions we decided we should utilize an incremental and iterative approach to development. Since there was three of us working on the project, we found that this approach worked well because we were all operating on different schedules due to the personal reasons, so this development strategy allowed us to have more flexible schedules and relieved a lot of pressure, which was essential considering the pressure we were already under due to the COVID 19 pandemic. \par
-\includegraphics[scale=1.3]{img/Incremental-Interative-Design-Approach.jpg} \par
+
+\begin{figure}[th]
+\renewcommand\thefigure{2.1}
+\centering
+\includegraphics[scale=1.3]{img/Incremental-Interative-Design-Approach.jpg}
+\caption{Incremental Iterative Development}
+\label{Agile}
+\end{figure}
+
 \par Iterative and Incremental development is a process that combines the iterative design method with the incremental build model. The combination is of long standing  and has been widely suggested for large development efforts. This Agile method approach to Software Development is modeled around gradually increasing the features of a program and a cyclical release and upgrade pattern. The process usually begins with planning and continues through iterative cycles and the addition of features finishing with the development of a completed program of application at the end of each of these iterative cycles. Below we'll explain each of these individually:
 \begin{itemize}
     \item Iterative: The incremental method divides the software development process into tiny, manageable chunks called increments.Each increment builds on the previous edition, allowing for gradual progress. 
@@ -159,10 +167,10 @@ Creating a GitHub repository was the first step in our development. Cathal creat
 React is an open-source, front end, JavaScript library for building user interfaces or UI components. It is maintained by Facebook and a community of individual developers and companies \cite{React}. We decided to use this for our Front End as it aesthetically pleasing and once saved, the page will update automatically allowing for a quicker and easier development process.
 
 \subsection{Node js}
-\cite{NodsJS}Node JS is an asynchronous event-driven platform built on Chrome's JavaScript runtime that allows easy building of efficient, scalable network applications. NPM, or Node Package Manager is the Node JavaScript platform's package manager. It puts modules in place so that node can find them and intelligently manages dependency conflicts \cite{NodsJS}. Hundreds of thousands of JavaScript developers use it every day because it's battle-tested and remarkably versatile.
+Node JS is an asynchronous event-driven platform built on Chrome's JavaScript runtime that allows easy building of efficient, scalable network applications. NPM, or Node Package Manager is the Node JavaScript platform's package manager. It puts modules in place so that node can find them and intelligently manages dependency conflicts \cite{NodsJS}. Hundreds of thousands of JavaScript developers use it every day because it's battle-tested and remarkably versatile.
 
 \subsection{Express}
-\cite{ExpressJS}Express is a Node.js web application framework that offers a comprehensive set of features for web applications. Express adds a thin layer of basic web application functionality without masking any of Node JS's known features \cite{ExpressJS}. When utilized correctly, express offers data to be fetched from the server and displayed to the client with ease and offers high scalability as well as exemplary security. It is well constructed and documented, making implementation quite an easy and fast process.
+Express is a Node.js web application framework that offers a comprehensive set of features for web applications. Express adds a thin layer of basic web application functionality without masking any of Node JS's known features \cite{ExpressJS}. When utilized correctly, express offers data to be fetched from the server and displayed to the client with ease and offers high scalability as well as exemplary security. It is well constructed and documented, making implementation quite an easy and fast process.
 
 \subsection{Java}
 Java is a class-based, object-orientated programming language that is designed to have as few implementation dependencies as possible \cite{Java}. This is the language that our Back End API, wrote in the Spring Boot framework, relies on. As we chose our API framework in Spring Boot first, we subsequently had to develop it in in Java. This language is one that Cathal has been programming for 6 years in, so as he focused on the Back End Development this was an ideal language to choose.
@@ -272,19 +280,24 @@ Microsoft Teams is a proprietary business communication platform developed by Mi
 \section{Front End Technology}
 \subsection{React}
 The front end for this website was coded up using the React framework. We had only used React once before, in 3rd year, when we created a MERN (MongoDB, Express, React, Node) web application. Although one module during semester wasn't too much time, it was evident during this period that as well as being well documented and relatively user friendly, react is a very advanced framework.
-\begin{center}
-    \includegraphics[width = 16cm, height = 8cm]{img/reactImage.jpeg}
-\end{center}
-    
+
+\begin{figure}[th]
+\renewcommand\thefigure{3.1}
+\centering
+\includegraphics[scale = .2]{img/reactImage.jpeg}
+\caption{React logo}
+\label{React}
+\end{figure}
+
 \subsubsection{Why React?}
-There was a wide range of technical problems which was faced in web development. \cite{IntroductionReact}A large number of these problems were solved when Facebook came out with react and it has been constantly improving since its release in May 2013. React was brought out to solve complex user interface problems and utilizes a philosophy first thought up by Eric Raymond in 2003.
+There was a wide range of technical problems which was faced in web development.A large number of these problems were solved when Facebook came out with react and it has been constantly improving since its release in May 2013. \cite{IntroductionReact}React was brought out to solve complex user interface problems and utilizes a philosophy first thought up by Eric Raymond in 2003.
 
 \begin{quote}
-\cite{ArtOfUnix}\emph{The only way to write complex software that won't fall on its face is to hold global complexity down - to build it out of simple parts connected by well defined interfaces - so that most problems are local and you can have some hope of upgrading a part without braking the whole - Eric S. Raymond}
+\emph{The only way to write complex software that won't fall on its face is to hold global complexity down - to build it out of simple parts connected by well defined interfaces - so that most problems are local and you can have some hope of upgrading a part without braking the whole - Eric S. Raymond} \cite{ArtOfUnix}
 \end{quote}
 
 \cite{IntroductionReact}React allows data to be displayed on wide scale user interfaces with relative ease. While most frameworks adopt a model, view, controller architecture, it would not be entirely accurate to place React under this category as React focuses more on the "view" as opposed to the model and controller. \par
-React has a range of libraries which can be imported to add functionality to the framework.\cite{Axios} An example of a library which was used is axios, which is a library that aids the sending of http requests to external resources. Axios, as well as many of the other React libraries is well documented and has plenty resources out there to aid development.
+React has a range of libraries which can be imported to add functionality to the framework. An example of a library which was used is axios, which is a library that aids the sending of http requests to external resources. \cite{Axios}Axios, as well as many of the other React libraries is well documented and has plenty resources out there to aid development.
 
 \subsection{Nods.js}
 We used Node JS because it provides all of the benefits of \cite{fullStackJS}full stack JS development. These include
@@ -295,11 +308,11 @@ We used Node JS because it provides all of the benefits of \cite{fullStackJS}ful
     \item Wide range of free tools
 \end{itemize}
 
-Due to its asynchronous, single-threaded nature, it works very well with React's responsive web pages and this was very useful during development as it minimised the time to wait between adding a feature and seeing if that feature worked since the website updated in what was pretty much real time. \cite{PaypalNodeJS}Big companies such as PayPal use NodeJS as apposed to something like Java and it's known to allow faster serving of web pages as well as reducing the time it takes to develop server-side software.\par
+Due to its asynchronous, single-threaded nature, it works very well with React's responsive web pages and this was very useful during development as it minimised the time to wait between adding a feature and seeing if that feature worked since the website updated in what was pretty much real time. Big companies such as PayPal use NodeJS as apposed to something like Java and it's known to allow faster serving of web pages as well as reducing the time it takes to develop server-side software.\cite{PaypalNodeJS}\par
 Node makes it very easy to handle all the packages that are required to run the application. It performs a lot of processes with efficiency in the background and provides very user friendly error messages whenever any problems arise during the installation of packages or when running the server. Node removes a lot of the heavy work involved in getting a website to function correctly, and it works extremely well when coupled with React.
 
 \subsection{Express}
-Express has some \href{https://expressjs.com/en/5x/api.html}{good quality documentation}. And although we only coded a tiny portion of this website using express, it was well documented, making it easy to find what we were looking for and implement it correctly. As express state that they are a \cite{ExpressRM}\emph{"Fast, unopinionated, minimalist web framework for node."} Express provides robust routing, focuses on high performance, has great test coverage, provides HTTP helpers for things like caching and redirection. Express also provides an executable which provides simple and quick generation of applications. 
+Express has some \href{https://expressjs.com/en/5x/api.html}{good quality documentation}. And although we only coded a tiny portion of this website using express, it was well documented, making it easy to find what we were looking for and implement it correctly. As express state that they are a \emph{"Fast, unopinionated, minimalist web framework for node."} Express provides robust routing, focuses on high performance, has great test coverage, provides HTTP helpers for things like caching and redirection.\cite{ExpressRM} Express also provides an executable which provides simple and quick generation of applications. 
 
 \subsubsection{express.json} 
 Json is a built-in middleware function in Express. Express.json parses requests received with JSON payloads and it is based on body-parser, which parses incoming request bodies in a middleware. 
@@ -312,12 +325,20 @@ Nodemailer is a NodeJS module that makes sending emails as quite easy. First rel
 The Nodemailer team have a strong focus on security and integrity, which was the main reason why we saw it fit to be our email sending module of choice.
 
 \subsection{Other technologies considered}
-We also considered Angular for the back end framework since we also used Angular for a semester. However, along with Nathan's personal preference of React, its virtual DOM makes it perform much better than Angular. Also, React is the more popular framework and this wider community means more documentation and more activity on forums such as \underline{\href{https://stackoverflow.com}{StackOverflow}}. React goes well with Spring Boot and MongoDB, which was another leading factor in deciding what back end technology to use.  \par
+We also considered Angular for the back end framework since we also used Angular for a semester. However, along with Nathan's personal preference of React, its virtual DOM makes it perform much better than Angular. Also, React is the more popular framework and this wider community means more documentation and more activity on forums such as \underline{\href{https://stackoverflow.com}{StackOverflow}}. React goes well with Spring Boot and MongoDB, which was another leading factor in deciding what back end technology to use. \par
 
 \section{Back End Technology}
 
 \subsection{Java}
-\includegraphics[scale = 0.6]{img/java-logo-1.png}\par
+\begin{figure}[th]
+\renewcommand\thefigure{3.2}
+\centering
+\includegraphics[scale = 0.31]{img/java-logo-1.png}
+\caption{Java logo}
+\label{Java}
+\end{figure}
+\newpage
+
 The main coding language used on the Back End Development of the project is Java. Java was originally developed by James Gosling at Sun Micro systems (Later to be acquired by Oracle) and released in 1995 as a core component of Sun Micro systems' Java platform. Java is a general-purpose programming language intended to let application developers write once, run anywhere(WORA), meaning that compiled Java code can run on all platforms that support Java without the need of recompilation \cite{Java}. \par
 This was the main reason in our choosing of the language for an application in which we intended to deploy, allowing us to not have to worry about errors once the program executed locally without any compilation errors. This is also a language in which we both had many years of experience in allowing us to commit the time we had gained by already knowing the language for our development, into other technologies we hadn't used such as AWS or MongoDB.
 
@@ -350,7 +371,14 @@ Spring Boot's use of these Auto-configuration allowed us to streamline our devel
 \cite{TutorialsPoint}
 
 \subsection{MongoDB}
-\includegraphics[scale=0.5]{img/MongoDB-logo.png} \par
+\begin{figure}[th]
+\renewcommand\thefigure{3.3}
+\centering
+\includegraphics[scale = 0.5]{img/MongoDB-logo.png}
+\caption{MongoDB logo}
+\label{MongoDB}
+\end{figure}
+
 MongoDB is the leading modern, general purpose database platform, designed to unleash the power of software and data for developers and the applications they build. Its built upon the document model, a fundamentally different model than traditional relational databases. \par
 In real world applications it is common place for the data for a single object, like a patient or a user, to spread out among dozens of tables. This adds a massive amount of complexity to the application. This can add a number of downsides to the application:
 \begin{itemize}
@@ -361,38 +389,109 @@ In real world applications it is common place for the data for a single object, 
 \par MongoDB takes an entirely different approach, data is stored in records called documents and just like real physical records, documents can house multiple phone numbers, addresses and more and can be right next to another document that only has one address and no phone number. Records aren't restricted to having the same number of columns. These documents allow us to store data in a way that is easy for the computer to process and natural for humans to read. This allowed us to no longer have to make our application to accommodate the needs database, MongoDB accommodates us to allow us to store our data in a more natural way. This allowed us to add new data to each collection without having to worry about breaking previous data. \par
 
 \subsection{Docker}
-\includegraphics[scale=0.2]{img/docker-logo.png} \par
+\begin{figure}[th]
+\renewcommand\thefigure{3.4}
+\centering
+\includegraphics[scale=0.2]{img/docker-logo.png}
+\caption{Docker logo}
+\label{Docker}
+\end{figure}
+
 Docker is a Software Development platform with aspects of a virtualisation technology that makes it easy for developers to develop and deploy applications inside neatly packaged virtual container environments \cite{Docker}. This means that Docker allows applications to run the same no matter where they are or what type of machine they are running on. Docker containers can be deployed to any machine without any compatibility issues so that our software stays system agnostic making the software simpler to use, less work to develop and easy to maintain and deploy. \par
 These containers running on the computer or server act as miniature micro heaters, each with their own specific job, operating system,isolated CPU processes, memory and network resources. Because of this these containers can be easily added, removed, stopped and started without affecting the run time machine. Containers usually run one specific task, in our case that is the Mongo Database, the React application and the Spring Boot application. These containers are then networked together and potentially scaled. A developer can access the Docker Hub and pull a pre-configured container designed for a specific task from the Hub and integrate it into their own environment. We deiced to make these containers ourselves to gain a better understanding and knowledge of our containers and to ensure that the containers were not executing any unneeded or redundant features.
 
 \subsection{Robo 3T}
-\includegraphics[scale=0.6]{img/robo-logo.png}\par
+\begin{figure}[th]
+\renewcommand\thefigure{3.5}
+\centering
+\includegraphics[scale=0.6]{img/robo-logo.png}
+\caption{Robo logo}
+\label{Robo}
+\end{figure}
+
 Robo 3T is effectively a MongoDB manager. We used Robo 3T to check the Mongo database without having to use a Command Line. This allowed us to visualise our database in a more innovative way. It can be used on multiple OS's including Windows, Linux and MAC. Once Robo 3T has been loaded, it will open up a GUI asking for the user to connect to. \par
-\includegraphics[scale=0.3]{img/robo-connect.PNG}\par
+\begin{figure}[th]
+\renewcommand\thefigure{3.6}
+\centering
+\includegraphics[scale=0.3]{img/robo-connect.PNG}
+\caption{Robo software}
+\label{RoboSoftware}
+\end{figure}
+
 From here the user can select one of the connections, and providing that a MongoDB database is currently running on one of the machines ports, Robo 3T will connect to it displaying contents similar to the following: \par
-\includegraphics[]{img/robo-contents.PNG} \par
+\begin{figure}[th]
+\renewcommand\thefigure{3.7}
+\centering
+\includegraphics[]{{img/robo-contents.PNG}}
+\caption{Robo content I}
+\label{RoboContentI}
+\end{figure}
+
 The user can then select their MongoDB database, in this case it is test, and Robo 3T will display all of the collections within this database. \par
-\includegraphics[]{img/robo-collections.PNG} \par
+\begin{figure}[th]
+\renewcommand\thefigure{3.8}
+\centering
+\includegraphics[]{{img/robo-collections.PNG}}
+\caption{Robo content II}
+\label{RoboContentII}
+\end{figure}
+
 The user can then select these collections and execute various commands that would normally be entered into a command line interface. \par
-\includegraphics[scale=0.4]{img/robo-users.PNG} \par
+\begin{figure}[th]
+\renewcommand\thefigure{3.9}
+\centering
+\includegraphics[scale=0.35]{{img/robo-users.PNG}}
+\caption{Robo users}
+\label{RoboUsers}
+\end{figure}
+
 As we can see above, Robo 3T executes these commands, this time it being: 
-\begin{minted}{console}
+\begin{minted}{bash}
 db.getCollection('users').find({})
 \end{minted}
 This can save many users the much needed time that would otherwise be lost in a CMD window trying to configure the requests and ensuring that their syntax is correct.
 
-
 \subsection{Postman}
-\includegraphics[scale=0.4]{img/postman-inc-logo-vector.png} \par
+\begin{figure}[th]
+\renewcommand\thefigure{3.10}
+\centering
+\includegraphics[scale=0.4]{{img/postman-inc-logo-vector.png}}
+\caption{Postman logo}
+\label{Postman}
+\end{figure}
+
 Postman is a modular API testing tool that integrates seamlessly into your CI/CD pipeline.Before connecting the API to the Front End React environment, we used Postman to send API requests to the Spring Boot application while it was live. Cathal was able to function and test his environment without the need for Nathan to attach it to the Front End as a result of this. \par
 Postman is incredibly easy to set up on ones machine. Simply download the application from the website and its ready to go. Postman is a tab based application, meaning that every time you want to test a new request function, we recommend you open a new tab. From here you're presented with something similar to this: \par
-\includegraphics[scale=0.4]{img/postman-tab.PNG}\par
+\begin{figure}[bh]
+\renewcommand\thefigure{3.11}
+\centering
+\includegraphics[scale=0.3]{img/postman-tab.PNG}
+\caption{Postman tab}
+\label{PostmanTab}
+\end{figure}
+
 \par As you can see, the user can then select the type of request they mean to specify eg. GET/POST/PUT/DELETE. Then when they enter the specified URL, http://localhost:8081 for example, they can then select the body. This part of Postman is where the user decides what to enter. As MongoDB is a document based database structure, we send raw JSON data with our requests. \par
-\includegraphics[scale = 0.8]{img/postman-JSON.PNG} \par
+
+\begin{figure}[bh]
+\renewcommand\thefigure{3.12}
+\centering
+\includegraphics[scale = 0.8]{img/postman-JSON.PNG}
+\caption{Postman body}
+\label{PostmanBody}
+\end{figure}
+
 Then when the user clicks the "send" button, they will get a response specifying if the request was successful of if there was an error in the request. This was an excellent method of testing and confirming that the API calls were functioning before ever having to connect it to the Front End Environment.
 
 \subsection{AWS}
-\includegraphics[scale = 0.4]{img/aws_logo_smile_1200x630.png}\par
+
+\begin{figure}[h]
+\renewcommand\thefigure{3.13}
+\centering
+\includegraphics[scale = 0.3]{img/aws_logo_smile_1200x630.png}
+\caption{AWS logo}
+\label{AWSLogo}
+\end{figure}
+
 AWS, also known as Amazon Web Services, is one of the leaders in the cloud computer market. AWS was first introduced in 2002 as a means to provide tools and services to developers to incorporate features of Amazon.com into their website. Its first cloud servicing was introduced in 2006. Today, AWS offer a wide range of cloud services that span a wide array of domains. Due to this, the AWS service is now used by over 45\% of the global market. \par
 AWS is a secure cloud platform that provides computing power, database, networking, content storage and much more. The platform also works on a pay-as-you-go model, meaning you only pay as long as your service is running. Some of the other advantages of AWS are:
 \begin{itemize}
@@ -417,10 +516,18 @@ Visual studio code was the IDE which we used to help us create all of the front 
 \section{Organisation Technology}
 
 \subsection{GitHub}
-\includegraphics[scale=0.7]{img/github-logo.jpg}
+\begin{figure}[h]
+\renewcommand\thefigure{3.14}
+\centering
+\includegraphics[scale=0.6]{img/github-logo.jpg}
+\caption{GitHub logo}
+\label{GithubLogo}
+\end{figure}
+
 GitHub has a multitude of different features to vastly improve the development of a project of any level of difficulty. GitHub is an online framework that can be used to host a variety of different programming languages such as Java, C++ and Ruby. GitHub is a git repository hosting service and can be used for version control management. \par
 GitHub also has many social network functionalities built into its framework. A user on GitHub can follow other users, view their repositories and their projects, search the entirety of public GitHub repositories and more. This was the main method of storing, updating and trading code with one another. If a compile error on one of our ends were to develop, we could always clone the most recent version of our project back onto our machines instead of spending hours trying to roll back to when our own versions last compiled properly. \par
 Below we will list some basic commands that users can enter into a Command-Line Interface (cmd) to initialise and to push to a repository of their own.
+
 \subsubsection{Git commands}
 \begin{minted}{console}
 # to initialise a repository inside the current directory
@@ -447,31 +554,96 @@ git push
 \end{minted}
 
 \subsection{Jira}
-\includegraphics[scale=0.4]{img/jira.png}\par
+\begin{figure}[h]
+\renewcommand\thefigure{3.15}
+\centering
+\includegraphics[scale=0.4]{img/jira.png}
+\caption{Jira logo}
+\label{JiraLogo}
+\end{figure}
+
 Jira is an online web application that allows users to create and set sprints. Jira can also allow you to inform your team of the latest bugs and problem, and also of new features of what has been done. These bugs, tasks or features can be documented deeply allowing for everyone on the team to be in the know and completely aware of these updates to their project. \par
 Jira was mostly used by us in creating sprints for us to work on for the week or weeks ahead. We would set up our tasks and set up the goals, and as they are completed, they can be moved over to the "done" section allowing everyone on the team to be aware of this development in the project. \par
-\includegraphics[scale=0.7]{img/jira-sprint.PNG}\par
+
+\begin{figure}[h]
+\renewcommand\thefigure{3.16}
+\centering
+\includegraphics[scale=0.7]{img/jira-sprint.PNG}
+\caption{Jira sprint}
+\label{JiraSprint}
+\end{figure}
+
 
 \subsection{Discord}
-\includegraphics[scale=0.15]{img/discord-logo.jpg} \par
-The Discord application is an almost unbeatable means of communication between developers, especially in the world we live in today with the Covid-19 pandemic. Discord was essential in our development of this project, as when we were pair programming, refer to our methodology for more information on this, this was the platform we used to do so. Discord allows a user to share their screen, and all other members of the Discord call to view their screen in real time. Discord also has the feature of bots. These bots can do numerous functions. We created a Final Year Project Server on Discord for our development process. One of the bots included in this server was a bot called "Groovy". This bot allows users to enter commands into the text channels, requesting a song. The bot will automatically join the call and play the song in question. This was utilized a multitude of times to increase our moral and enthusiasm as we worked on the project. \par
-\includegraphics[scale=0.5]{img/server.jpg}
+
+\begin{figure}[hb]
+\renewcommand\thefigure{3.17}
+\centering
+\includegraphics[scale=0.1]{img/discord-logo.jpg}
+\caption{Discord}
+\label{Discord}
+\end{figure}
 \par
+The Discord application is an almost unbeatable means of communication between developers, especially in the world we live in today with the Covid-19 pandemic. Discord was essential in our development of this project, as when we were pair programming, refer to our methodology for more information on this, this was the platform we used to do so. Discord allows a user to share their screen, and all other members of the Discord call to view their screen in real time. Discord also has the feature of bots. These bots can do numerous functions. We created a Final Year Project Server on Discord for our development process. One of the bots included in this server was a bot called "Groovy". This bot allows users to enter commands into the text channels, requesting a song. The bot will automatically join the call and play the song in question. This was utilized a multitude of times to increase our moral and enthusiasm as we worked on the project. \par
+
+\begin{figure}[h]
+\renewcommand\thefigure{3.18}
+\centering
+\includegraphics[scale=0.5]{img/server.jpg}
+\caption{Discord Server}
+\label{DiscordServer}
+\end{figure}
 
 \subsection{Facebook Messenger}
-\includegraphics[scale=0.3]{img/messenger.png} \par
+\begin{figure}[ht]
+\renewcommand\thefigure{3.19}
+\centering
+\includegraphics[scale=0.3]{img/messenger.png}
+\caption{Messenger logo}
+\label{MessengerLogo}
+\end{figure}
+
 Facebook messenger was utilised by us as a form of communication when both of us were away from our machines. Since first year, this has been our main platform for communicating with one another so it was a natural choice for us to continue to use the platform for our planning and development. When one was working on the project and needed to get in touch with the other developer, we could utilize messenger's built in call feature. This will ring the receiver's phone the same as a normal telephone call, but doesn't require any credit, as unemployed students this was a great method for instantly getting in touch with one another.
 
 \subsection{Microsoft Teams}
-\includegraphics[scale=0.5]{img/teams-728.jpg}\par
+
+\begin{figure}[hb]
+\renewcommand\thefigure{3.20}
+\centering
+\includegraphics[scale=0.4]{img/teams-728.jpg}
+\caption{Microsoft Teams logo}
+\label{TeamsLogo}
+\end{figure}
+
 In 2020 when the Covid-19 restrictions first came into place in Ireland, Galway-Mayo Institute of Technology switched to the Microsoft Teams platform to continue to do live lectures and labs. As the college decided to keep our course at home for the 2 semesters of our final year, Microsoft Teams was used very often with our modules for live labs and lectures. \par
 This is the platform we used to communicate with our supervisor and to meet for our weekly meetings. GMIT linked our GMIT accounts with the Microsoft office, meaning we didn't even need to create an account for ourselves, and we were already connected to all of our lecturers and fellow students, saving us some much needed time. It has vast number of different features for users. It allows the user to do most of the same functions as Discord, but we used it for a more professional manner. We had a private chat between ourselves and Martin in which we could message each other and send in photos. This was used to communicate ideas and problems we came across in the development phase. \par
 
-\includegraphics[scale=0.4]{img/teams.PNG}\par
-Another important feature of Microsoft Teams is the ability to schedule meetings between multiple users for a specific Date and Time. This notifies all users invited that they have a scheduled meeting for this Time and Date. This was important in keeping us on top of our weekly meetings. As i stated above with the GMIT accounts and the Microsoft accounts being linked, if we logged into Windows built in Mail application with our GMIT accounts, the scheduled meetings automatically appear on the Windows calendar, further notifying the user of a meeting and ensuring ease of use and punctuality for that user.\par
-\includegraphics[scale=0.4]{img/Caledar.PNG} \par
-In teams scheduled meetings \par
-\includegraphics[scale=0.4]{img/TCalendar.PNG}\par
+\begin{figure}[ht]
+\renewcommand\thefigure{3.21}
+\centering
+\includegraphics[scale=0.4]{img/teams.PNG}
+\caption{Microsoft Teams chat}
+\label{TeamsChat}
+\end{figure}
+
+Another important feature of Microsoft Teams is the ability to schedule meetings between multiple users for a specific Date and Time. This notifies all users invited that they have a scheduled meeting for this Time and Date. This was important in keeping us on top of our weekly meetings. As i stated above with the GMIT accounts and the Microsoft accounts being linked, if we logged into Windows built in Mail application with our GMIT accounts, the scheduled meetings automatically appear on the Windows calendar, further notifying the user of a meeting and ensuring ease of use and punctuality for that user.
+\begin{figure}[ht]
+\renewcommand\thefigure{3.22}
+\centering
+\includegraphics[scale=0.4]{img/Caledar.PNG}
+\caption{Microsoft Teams calendar}
+\label{TeamsCalendar}
+\end{figure}
+
+
+\begin{figure}[ht]
+\renewcommand\thefigure{3.23}
+\centering
+\includegraphics[scale=0.4]{img/TCalendar.PNG}
+\caption{In Teams scheduled meetings}
+\label{TeamsMeetings}
+\end{figure}
+
 
 \chapter{System Design}
 %Provide a detailed explanation of the overall system
@@ -493,11 +665,19 @@ In teams scheduled meetings \par
 This application is a React application that uses a Spring Boot API to communicate fetch and get requests from a MongoDB. The front end of this website is set up with React so that it is a single page application. These kind of websites offer a nice boost in performance, as all of the HTML, CSS and JavaScript is loaded as soon as the website is loaded. Single page applications perform efficient data caching which reduces loading times. SPA's also provide a much better overall experience for the user. \par
 The Back End of this website is set up with Spring Boot. Spring Boot is a Spring module that provides the RAD (Rapid Application Development) feature to the Spring framework \cite{Javapoint}. Spring Boot is a project that uses the Spring Framework as its foundation.
 It makes setting up, configuring, and running both easy and web-based applications simpler and quicker. This provides an overall much easier development time for the programmer. \par
-Spring Boot communicates with the MongoDB Database through the Mongo Repositories set up within the Spring Boot API. The below image may provide more context for the reader: \par
-\includegraphics[scale=0.5]{img/architecture.png}
+Spring Boot communicates with the MongoDB Database through the Mongo Repositories set up within the Spring Boot API. The below image may provide more context for the reader:
+
+\begin{figure}[ht]
+\renewcommand\thefigure{4.1}
+\centering
+\includegraphics[scale=0.28]{img/architecture.png}
+\caption{System architecture}
+\label{SystemArch}
+\end{figure}
 
 \section{Overview of components}
 \subsection{Front End}
+
 \subsubsection{Starting out}
 The \underline{\href{https://react-bootstrap.github.io/getting-started/introduction/}{ReactJS documentation}} explains how to use node and npm to build a new single-page application with the default template, which was an excellent starting point.
 \begin{minted}[bgcolor=black,formatcom=\color{yellow}]{bash}
@@ -518,9 +698,14 @@ npm install react-bootstrap bootstrap
 \subsubsection{Sign Up}
 Since the first semester was rather challenging for a number of reasons, our main goal was to have an example homepage along with working login and register pages prepared in time for our Christmas presentation. For this reason, sign up was the first front end component which was worked on. \par
 The user can navigate to the sign up page by clicking on sign up in the navigation bar or by alternatively adding /signup to end of the URL. To sign up, users must provide a username, password and email address. 
-\par
-\includegraphics{img/fe_signup.png}
-\par
+\begin{figure}[ht]
+\renewcommand\thefigure{4.2}
+\centering
+\includegraphics[scale=1]{img/fe_signup.png}
+\caption{Sign up component}
+\label{SignUp}
+\end{figure}
+
 Once signed up, the user is automatically logged in and redirected to the home. Since they're signed in, they're now permitted to access a number of additional features of the website such as adding an item or saving an item.  
 
 \subsubsection{Login}
@@ -555,12 +740,21 @@ Once logged in, there is a state change in the top navigation bar which changes 
     </li>
 )}
 \end{minted}
+
 \subsubsection{Homepage}
 Coupled with the top nav bar, which is static and stays there no matter what page the user navigates to, the homepage also has a navigation bar on the side with links to the different pages they can access.
-\par
+
+\begin{figure}[ht]
+\renewcommand\thefigure{4.3}
+\centering
 \includegraphics[scale=0.3]{img/fe_homepage.PNG}
+\caption{Home page}
+\label{HomePage}
+\end{figure}
+
 \par
 The homepage also has a number of images which can be clicked to find available items which are filtered by the selected category.The homepage is quite intuitive and user friendly, making it easy for client's to find their way around the site.  
+
 \subsubsection{View Items}
 Users are able to view both the available and the wanted items which other users have listed on the website i.e. stored in the database. For the available items, the items are filtered only if the user accesses the available items by clicking on one of the categories on the homepage. Otherwise, all items will be displayed. The page that displays wanted items has a section at the top that allows the user to display all counties or filter by County.
 \begin{minted}[fontsize=\footnotesize]{js}
@@ -587,14 +781,38 @@ Users are able to view both the available and the wanted items which other users
     </div>
 )}
 \end{minted}
-\includegraphics[width=\textwidth]{img/fe_wanteditems.PNG}
-\par
-Each item has a button which can be clicked to display more information about that item. Once the user is signed in, they are able to send an email to the owner of the item if they wish. All they have to do is type their message to the user into the input box and once they click send, an email is sent to the owner of the item. The email is sent from our 'barter4tradenc' email address and informs the item's owner of the name of the user interested in their item, the name of the item they're interested in and the user's message. There is also a button that allows the user to add an item to their list of saved items.
-\includegraphics[width=\textwidth]{img/fe_itemcontact.PNG}
+
+Each item has a button which can be clicked to display more information about that item. Once the user is signed in, they are able to send an email to the owner of the item if they wish. All they have to do is type their message to the user into the input box and once they click send, an email is sent to the owner of the item. This email is sent from our 'barter4tradenc@gmail.com' address and informs the item's owner of the name of the user interested in their item, the name of the item they're interested in and the message the user entered. There is also a button that allows the user to add an item to their list of saved items.
+\newpage
+
+\begin{figure}[ht]
+\renewcommand\thefigure{4.3}
+\centering
+\includegraphics[width = \textwidth]{img/fe_wanteditems.PNG}
+\caption{View Wanted Items page}
+\label{WantedItems}
+\end{figure}
+
+\begin{figure}[h]
+\renewcommand\thefigure{4.4}
+\centering
+\includegraphics[width = \textwidth]{img/fe_itemcontact.PNG}
+\caption{Contacting users}
+\label{Contact}
+\end{figure}
+\newpage
+
 \subsubsection{Add Items}
 Users can add items for trade and wanted items to the database which is used to display the items. The user must be logged in to use the add item pages and once they're their they must input a name, category, description and location. They must also choose an image to represent the item.
-\par
+
+\begin{figure}[h]
+\renewcommand\thefigure{4.5}
+\centering
 \includegraphics[scale=.6]{img/fe_additem.PNG}
+\caption{Adding items}
+\label{AddItem}
+\end{figure}
+
 \subsubsection{My Account}
 The account page has 3 options for users:
 \begin{enumerate}
@@ -603,15 +821,30 @@ The account page has 3 options for users:
   \item My Saved Items
 \end{enumerate}
 By selecting "My Available Items" or "My Wanted Items", the user will be brought to a page that displays the available/wanted items which they have posted themselves. From here, they are able to delete these items or edit the details of the items by clicking the designated buttons.
-\par
-\includegraphics{img/fe_editdelete.PNG}
-\par
+
+\begin{figure}[h]
+\renewcommand\thefigure{4.6}
+\centering
+\includegraphics[scale=.6]{img/fe_editdelete.PNG}
+\caption{Available Item in "My Available Items"}
+\label{AvailableItem}
+\end{figure}
+
 They can also view the items belonging to other users which they have saved. The user is able to view information about any of these saved items by simply clicking on them. 
+
 \subsubsection{Contact form}
 The contact form is a simple page which contains a small box which prompts the user to input their name, email and message. Once they have filled out the form, they can send it to the 'barter4tradenc' email address by clicking on the 'Submit' button.
-\par
-\includegraphics{img/fe_contact.PNG}
+
+\begin{figure}[h]
+\renewcommand\thefigure{4.7}
+\centering
+\includegraphics[scale=.6]{img/fe_contact.PNG}
+\caption{"Contact Form"}
+\label{ContactForm}
+\end{figure}
+
 \subsection{Back End}
+
 \subsubsection{Starting up}
 There's no prerequisites to setting up a Spring Boot Application other than having a version of Java installed (We would recommend 8 or above) and an Integrated Development Environment (We would recommend IntelliJ). Inside your IDE, create a new Spring web tool to create the Spring Boot project. This will automatically create most of the files you need for your Spring Boot Application to work. \par
 The next step is to open the pom.XML file. This file should be located in the main directory of your project, not within a package. Here is the location of all of the dependencies that the Spring Boot Application will install. The one needed for Mongo and the JWT authentication are as follows: \par
@@ -634,6 +867,7 @@ The next step is to open the pom.XML file. This file should be located in the ma
   <version>0.9.1</version>
 </dependency>
 \end{minted}
+
 \subsubsection{Sign up}
 From the beginning of the first semester, the main goal of the project was to achieve a working sign up and login. Naturally it made more sense to begin with a Sign up functionality, to be able to send data to our database through our API. To explain how this will work in lament terms:
 \begin{itemize}
@@ -654,6 +888,7 @@ From the beginning of the first semester, the main goal of the project was to ac
   userRepository.save(user);
   return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
 \end{minted}
+
 \subsubsection{Login}
 After we tested our new API request, by using Postman and Robo 3T, the next step was to make a login feature, to ensure we could retrieve data from our MongoDB Database as well. This API also has numerous steps that we will explain below: \par
 \begin{itemize}
@@ -674,6 +909,7 @@ The signin is also a POST request, as the username and password are getting sent
                 userDetails.getEmail(),
                 roles));
 \end{minted}
+
 \subsubsection{Add Item}
 The Sign up and the Login component were completed development before the December presentation in the first semester. We each took a few weeks off after that to allow for holidays, work on other individual projects and for some personal time. When we began development again in late January. The main focus of the Back End development was to allow the users of the website the ability to add items to the database and to be able to retrieve this information. The classes associated to this are as follows: \par
 \begin{itemize}
@@ -718,9 +954,11 @@ The main class in the addition of items is the controller. This Class allows for
     }
 \end{minted}
 The code from these parts of the Back End Environment were adapted from this cite \cite{zKoder}.
+
 \subsubsection{Wanted Item}
 When the development of the add items was complete, the next objective we turned our focus to was the Wanted Items page. This if for when a user is looking to buy or purchase and item, they can post to this page to advertise their want for this item. \par
-The overall design of the Wanted Item's Back End classes are similar to the Add Items. As both items are structurally the same (the need for item name, category, location etc), we felt this was the best method of moving along with its development. Due to this, the Wanted Items is functionally the same as Add Items, therefore we wont repeat ourselves by showing the model, controller and repository for these classes, as the code is very similar to the code explained above in the Add Item section. \par 
+The overall design of the Wanted Item's Back End classes are similar to the Add Items. As both items are structurally the same (the need for item name, category, location etc), we felt this was the best method of moving along with its development. Due to this, the Wanted Items is functionally the same as Add Items, therefore we wont repeat ourselves by showing the model, controller and repository for these classes, as the code is very similar to the code explained above in the Add Item section. \par
+
 \subsubsection{Saved Item}
 The development of the Wanted Item was completed in early March. After this this was a lull in the Back End environment as we were working on other modules and Cathal was attempting to get the AWS for the website functional. In early April we created the Saved Items function. This was to allow users to add items from the available items, to another page of their own displaying the items they intended on purchasing or trading for in the future. \par
 The structure behind this is similar to the Add Item and the Wanted Item. They contain a Model, a Controller and a Repository that work very similarly to the classes in the other components mentioned above. There are small difference however, as we only needed to store an ID, a username and a title in the Saved Item. We use these variables to search through the available items, and to display only the items with the same ID as the ones stored in this repository. This is done through a method in the controllers: \par
@@ -736,6 +974,7 @@ The structure behind this is similar to the Add Item and the Wanted Item. They c
         }
     }
 \end{minted}
+
 \section{How they work together}
 This section outlines how we intertwined the React with Spring Boot and MongoDB. This was mainly done through pair programming as Cathal understood all of the back end elements, while Nathan understood all of the Front End elements. Upon completion of the back end elements, we scheduled a meeting between us whereby Cathal showed how all of the back end elements worked through the use of discord, robo, postman and docker. This methodology allowed us both to gain a better understanding on how each environment of the project worked. \par
 The first task was installing Axios, which is a Node.js library that allows us to make HTTP requests to external sources. Axios was the best choice as we had both used it before as part of a 3rd Year project and it is not too difficult to configure, offers a lot of good documentation and a wide community due to its popularity and offers really good error handling that makes debugging problems a lot easier. \par
@@ -834,6 +1073,7 @@ deleteItem(id, e) {
 \end{minted}
 \chapter{System Evaluation}
 This part of the dissertation will be dedicated to the testing and evaluation of the project. We will compare our objectives of the dissertation to the functionality of the application. This section will also cover the comparison of the timeline that we set out to follow in the development process and the timeline in which those objectives were reached. We will then move onto the testing process and conclude this chapter by listing our limitations of the project.\par
+
 \subsection{Objectives}
 To begin the System Evaluation we will begin by reiterating over our objectives set in the introduction. The main functionality we wanted to achieve was:
 \begin{itemize}
@@ -843,8 +1083,16 @@ To begin the System Evaluation we will begin by reiterating over our objectives 
     \item Users can add items to a Wish list
 \end{itemize}
 \par Upon our evaluation of the objectives listed above, we feel that we did achieve them all. Users can register through the sign up option on the NavBar. Users can browse the available items, whether they are currently signed in or not, allowing completion of objective one. These available items are able to be published by anyone, and can be viewed by everyone, completing our second objective. The third objective listed above has also been completed once the user has been logged in, where they can send an email to the owner of the item. Lastly, the users can add items to their wish list page through the SavedItems component. With this recap of our objectives and the functionality of the application, we believe that all of the tasks we lined out in our objective section have been achieved completely. \par
+
 \subsection{Timeline and Scope}
+\begin{figure}[h]
+\renewcommand\thefigure{4.7}
+\centering
 \includegraphics[scale=0.4]{img/timeline.png}
+\caption{"Project Timeline"}
+\label{Timeline}
+\end{figure}
+
 This graph lays out the timeline that we set for ourselves after the completion of the 1st semester. As we lost Anton just before the Christmas period, this led us to have to reevaluate our entire process and the scope of the project. 
 \begin{itemize}
     \item January 31st - This date was the goal to achieve the login and the sign up functioning in the react Front End i.e. making it possible to sign up and login with the spring boot through the app. This goal was achieved on this date exactly.
@@ -854,13 +1102,16 @@ This graph lays out the timeline that we set for ourselves after the completion 
     \item April 30th - We had aimed to have all features of the website functioning and to have the dissertation completed by this deadline. Due to circumstances relating to other modules, this goal was not reached. By this date we had achieved all functionality, other than contacting other users and the dissertation was not complete.
     \item May 7th - This date was dedicated to having all testing and bug fixes implemented by. By this date, as the deadline for the project had changed, we still hadn't completed the dissertation. most bug fixes had been achieved, but not completely.
 \end{itemize}
+
 \subsubsection{Evaluating our Timeline}
 When the development of our project had begun properly, we made good use of the timeline and achieving the deadlines that we had set for ourselves. But as the timeline moved on, and other module's assignment dates grew closer, we started to miss our deadlines. There were also personal reasons behind such complications, mostly due to COVID-19 and our own mental health. These goals were still reached, none the less, but just late. We are still very pleased with our completion of our objectives, despite the missing of goals, when we consider that our three man project became a two man project.
+
 \subsection{Testing}
 Our testing was executed as the goals that we had set for ourselves were achieved. We did this to ensure that we were happy with each individual component of the application before we started the development of another. As we used an Iterative and Incremental development process, we commenced the testing of these components as soon as we felt that we had achieved a new iteration in the design.\par
 This was done through white box testing, where the tester has knowledge as to the components and the functionality of the software in question. This was essential in our development as it allowed us to confirm that our programs were executing as designed. This method however, led to some of our bugs being discovered later in the development, where if we had implement black box testing, these may have been discovered earlier in the development. \par 
 When we were pair programming, as soon as a new commit was made by one of us to either the Front End or the Back End, we immediately pulled the new commit and tested the new function to ensure that they were working on both machines. This method of testing allowed us to always have a working version of the application on GitHub and to also allow us to confirm that the code could be cloned and work on another station.\par
 We conclude that this endeavor resulted in a more robust framework overall, and we were able to move on with the project after completing these tests. We are confident with the method that we used to test, and to confirm our code was executing properly, that the system we have designed now is robust due to its ability to cope with errors on compile time.
+
 \subsection{Limitations}
 There were many complications that were met along the way of this project. They range vastly in terms of small issues with JSON data formatting, all the way to having to change the structure of the design completely. The first issue we will be discussing is the change of Back End environment that we made in the 1st semester. \par
 As we already explained, we had originally planned on using a flask application coded through Python for the Back End environment. This was planned from the very beginning of the development cycle. Cathal and Anton were the ones in charge of this implementation. They researched into Flask together and attempted to get a functioning sign up and login in working in Flask. \par
@@ -869,6 +1120,7 @@ When it came to the MongoDB Database we chose for storing our information, there
 \chapter{Conclusion}
 We are both extremely happy with the final result of our hard months of work for this Final Year Project. It was both challenging and rewarding in its own way. We enjoyed our own free reign to make requirements and the ability to challenge them in any method we found fit to. We found that choosing our own technologies and having to overcome their short ends and their limitations resulted in a learning curve that couldn't have been accomplished by any other means. After seven months of designing, researching, planning, development and deployment we are happy to confirm that we have completed the project. \par
 To reevaluate again, the goal of our project was to develop a full stack CRUD application developed for trade and exchange of items between multiple users. The Back End data storage was wrote in Java with a Spring Boot framework, and the Front End was wrote in JavaScript as a React application. We will now re-summarise our objectives of this project. \par
+
 \section{Objectives}
 The first objective of the project was to ensure that a new user to the website could firstly access the website, could then register and sign in with the credentials entered in the registry, and lastly could then browse and view items that are available for trade on the website. This was achieved as early as mid-February. We were extremely pleased with this project so early in the development process. \par
 The next object we will bring to light is to allow users to select the items from other users. This was mostly implemented in early April, as Nathan added an entirely new page that would display the details associated with the item the user was to click on. This was implemented late in the development, this was due to it not being a major priority of the project at the time. \par
