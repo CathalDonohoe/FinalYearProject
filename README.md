@@ -26,6 +26,10 @@ This will open a new tab on your default browser. <br>
 Inside the FYPproject directory is the Back End Spring Boot application. To start this environment, open the folder inside an IDE with Java installed on your machine. <br>
 Run the ```FyPprojectApplication.java``` and the Spring Boot should run. <br>
 Inside the Dissertation directory is the Dissertation wrote in Latex, along with a PDF of the Dissertation.
+
+## Video
+[![Link to screencast here](https://img.youtube.com/vi/https://youtu.be/tls4ONw545c/0.jpg)](https://youtu.be/tls4ONw545c)
+
 ## Authors
 <li> Nathan Garrihy
 <li> Cathal Donohoe
