@@ -1,5 +1,5 @@
 # FinalYearProject
-This repository house the Final Year Project for Cathal Donohoe and Nathan Garrihy. The project is a CRUD application that has been made in React with a MongoDB Database and a Spring Boot API. The goal of this project was for both of us to improve and increase our skills and to learn and understand new technologies we havent worked with in this method before. A user of the application can create and account, sign in, add items for trade, browse items and contact the owners of those items.
+This repository houses the Final Year Project for Cathal Donohoe and Nathan Garrihy. The project is a CRUD application that has been made in React with a MongoDB Database and a Spring Boot API. The purpose of this project was for both of us to develop and expand our skills, as well as to learn and comprehend new technologies that we hadn't previously worked with in this manner.  A user of the application can create and account, sign in, add items for trade, browse items and contact the owners of those items.
 
 ## What is inside the project
 <li> A React application
