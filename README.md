@@ -28,8 +28,7 @@ Run the ```FyPprojectApplication.java``` and the Spring Boot should run. <br>
 Inside the Dissertation directory is the Dissertation wrote in Latex, along with a PDF of the Dissertation.
 
 ## Video
-[![Link to screencast here](https://img.youtube.com/vi/https://youtu.be/tls4ONw545c/0.jpg)](https://youtu.be/tls4ONw545c)
-
+[![Foo](https://www.webwise.ie/wp-content/uploads/2015/10/youtube.png)](https://youtu.be/tls4ONw545c/)
 ## Authors
 <li> Nathan Garrihy
 <li> Cathal Donohoe
